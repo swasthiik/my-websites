@@ -17,7 +17,6 @@
     }
 
     * { box-sizing:border-box; margin:0; padding:0 }
-    html, body { height:100% }
     body {
       font-family:"Poppins",sans-serif;
       background:var(--bg);
@@ -38,7 +37,7 @@
       z-index:1000;
     }
     .logo-row { display:flex; gap:12px; align-items:center }
-    .logo-row img { width:54px; height:54px; border-radius:50%; object-fit:cover; border:2px solid var(--accent); background:#fff }
+    .logo-row img { width:54px; height:54px; border-radius:50%; object-fit:cover; border:2px solid var(--accent) }
     .site-title { font-weight:700; color:var(--green); font-size:1.25rem }
     nav ul { display:flex; gap:18px; list-style:none }
     nav a { color:#222; text-decoration:none; font-weight:600; font-size:0.95rem }
@@ -130,12 +129,14 @@
     #contact .inner { position:relative; z-index:2; max-width:1100px; margin:0 auto; display:flex; gap:28px; flex-wrap:wrap; justify-content:center }
     .contact-left { text-align:center }
     .social-btns a img {
-      width:100px;
+      width:70px;
+      height:70px;
       margin:8px;
-      border-radius:12px;
+      border-radius:50%;
+      object-fit:cover;
       transition:transform 0.3s ease;
     }
-    .social-btns a img:hover { transform:scale(1.08) }
+    .social-btns a img:hover { transform:scale(1.1) }
     .contact-right { background:rgba(255,255,255,0.1); padding:18px; border-radius:10px; flex:1; max-width:480px }
     .contact-right a { color:#fff; text-decoration:none }
     .btn { display:inline-block; padding:10px 14px; border-radius:8px; text-decoration:none; font-weight:700 }
@@ -184,81 +185,21 @@
       <h2 id="services-title"><strong>Our Services</strong></h2>
 
       <div class="services-grid">
-        <!-- 10 services with images -->
-        <div class="service-card">
-          <img src="images/service1.jpg" alt="Acupressure">
-          <div class="svc-body">
-            <div class="svc-title"><strong>Acupressure</strong></div>
-            <div class="svc-text">Balance energy and reduce pain by applying precise pressure to key points on the body.</div>
-          </div>
-        </div>
-        <div class="service-card">
-          <img src="images/service2.jpg" alt="Acupuncture">
-          <div class="svc-body">
-            <div class="svc-title"><strong>Acupuncture</strong></div>
-            <div class="svc-text">Ancient therapy to restore flow and promote natural healing.</div>
-          </div>
-        </div>
-        <div class="service-card">
-          <img src="images/service3.jpg" alt="Aura Cleansing">
-          <div class="svc-body">
-            <div class="svc-title"><strong>Aura Cleansing</strong></div>
-            <div class="svc-text">Clear negative energies, bring calmness and emotional balance.</div>
-          </div>
-        </div>
-        <div class="service-card">
-          <img src="images/service4.jpg" alt="Cupping Therapy">
-          <div class="svc-body">
-            <div class="svc-title"><strong>Cupping Therapy</strong></div>
-            <div class="svc-text">Improve circulation, ease tension and promote detoxification.</div>
-          </div>
-        </div>
-        <div class="service-card">
-          <img src="images/service5.jpg" alt="Casa Therapy">
-          <div class="svc-body">
-            <div class="svc-title"><strong>Casa Therapy</strong></div>
-            <div class="svc-text">Holistic techniques to re-align and restore natural balance.</div>
-          </div>
-        </div>
-        <div class="service-card">
-          <img src="images/service6.jpg" alt="Magnetic Therapy">
-          <div class="svc-body">
-            <div class="svc-title"><strong>Magnetic Therapy</strong></div>
-            <div class="svc-text">Support circulation and reduce chronic discomfort using magnetic energy balance.</div>
-          </div>
-        </div>
-        <div class="service-card">
-          <img src="images/service7.jpg" alt="Numerology Guidance">
-          <div class="svc-body">
-            <div class="svc-title"><strong>Numerology Guidance</strong></div>
-            <div class="svc-text">Insightful guidance using numerology to support personal growth and clarity.</div>
-          </div>
-        </div>
-        <div class="service-card">
-          <img src="images/service8.jpg" alt="Reiki Healing">
-          <div class="svc-body">
-            <div class="svc-title"><strong>Reiki Healing</strong></div>
-            <div class="svc-text">Gentle energy therapy to calm the mind and boost wellbeing.</div>
-          </div>
-        </div>
-        <div class="service-card">
-          <img src="images/service9.jpg" alt="Sujok Therapy">
-          <div class="svc-body">
-            <div class="svc-title"><strong>Sujok Therapy</strong></div>
-            <div class="svc-text">Hand & foot mapping therapy for natural internal healing.</div>
-          </div>
-        </div>
-        <div class="service-card">
-          <img src="images/service10.jpg" alt="Vastu Consultation">
-          <div class="svc-body">
-            <div class="svc-title"><strong>Vastu Consultation</strong></div>
-            <div class="svc-text">Design your space for harmony, prosperity and health.</div>
-          </div>
-        </div>
+        <div class="service-card"><img src="images/service1.jpg" alt="Acupressure"><div class="svc-body"><div class="svc-title"><strong>Acupressure</strong></div><div class="svc-text">Balance energy and reduce pain by applying precise pressure to key points on the body.</div></div></div>
+        <div class="service-card"><img src="images/service2.jpg" alt="Acupuncture"><div class="svc-body"><div class="svc-title"><strong>Acupuncture</strong></div><div class="svc-text">Ancient therapy to restore flow and promote natural healing.</div></div></div>
+        <div class="service-card"><img src="images/service3.jpg" alt="Aura Cleansing"><div class="svc-body"><div class="svc-title"><strong>Aura Cleansing</strong></div><div class="svc-text">Clear negative energies, bring calmness and emotional balance.</div></div></div>
+        <div class="service-card"><img src="images/service4.jpg" alt="Cupping Therapy"><div class="svc-body"><div class="svc-title"><strong>Cupping Therapy</strong></div><div class="svc-text">Improve circulation, ease tension and promote detoxification.</div></div></div>
+        <div class="service-card"><img src="images/service5.jpg" alt="Casa Therapy"><div class="svc-body"><div class="svc-title"><strong>Casa Therapy</strong></div><div class="svc-text">Holistic techniques to re-align and restore natural balance.</div></div></div>
+        <div class="service-card"><img src="images/service6.jpg" alt="Magnetic Therapy"><div class="svc-body"><div class="svc-title"><strong>Magnetic Therapy</strong></div><div class="svc-text">Support circulation and reduce chronic discomfort using magnetic energy balance.</div></div></div>
+        <div class="service-card"><img src="images/service7.jpg" alt="Numerology Guidance"><div class="svc-body"><div class="svc-title"><strong>Numerology Guidance</strong></div><div class="svc-text">Insightful guidance using numerology to support personal growth and clarity.</div></div></div>
+        <div class="service-card"><img src="images/service8.jpg" alt="Reiki Healing"><div class="svc-body"><div class="svc-title"><strong>Reiki Healing</strong></div><div class="svc-text">Gentle energy therapy to calm the mind and boost wellbeing.</div></div></div>
+        <div class="service-card"><img src="images/service9.jpg" alt="Sujok Therapy"><div class="svc-body"><div class="svc-title"><strong>Sujok Therapy</strong></div><div class="svc-text">Hand & foot mapping therapy for natural internal healing.</div></div></div>
+        <div class="service-card"><img src="images/service10.jpg" alt="Vastu Consultation"><div class="svc-body"><div class="svc-title"><strong>Vastu Consultation</strong></div><div class="svc-text">Design your space for harmony, prosperity and health.</div></div></div>
       </div>
     </div>
   </section>
 
+  <!-- About Us -->
   <section id="why">
     <div class="wrap">
       <h2>DR. DIPALI PREMALKUMAR PATEL</h2>
@@ -272,19 +213,21 @@
     </div>
   </section>
 
+  <!-- Contact -->
   <section id="contact">
     <div class="inner">
       <div class="contact-left">
         <p><strong>Connect on Social</strong></p>
         <div class="social-btns">
           <a href="https://www.instagram.com/harpal_acupressure/?igsh=eTE0cXRwMDBiOHk0" target="_blank">
-            <img src="images/QR.JPG" alt="Instagram">
+            <img src="images/instagram_icon.png" alt="Instagram">
           </a>
           <a href="https://m.facebook.com/share/1GioYfoyAg/?wtsid=rdr_0amyqscvfVj53aAWz" target="_blank">
-            <img src="images/QR2.JPG" alt="Facebook">
+            <img src="images/facebook_icon.png" alt="Facebook">
           </a>
         </div>
       </div>
+
       <div class="contact-right">
         <div><strong>DR. DIPALI PREMALKUMAR PATEL</strong></div>
         <p><strong>Marma Magnetic & Sujok Therapist</strong></p>
