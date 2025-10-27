@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Harpal Acupressure — Healing & Wellness</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+    body{background:#fff;color:#333;line-height:1.6;}
+
+    /* Header */
+    header{
+      position:fixed;width:100%;top:0;left:0;background:#000;
+      display:flex;justify-content:space-between;align-items:center;
+      padding:15px 80px;z-index:1000;
+    }
+    header img{width:70px;height:70px;border-radius:50%;object-fit:cover;}
+    nav ul{display:flex;gap:30px;list-style:none;}
+    nav ul li a{color:#fff;text-decoration:none;font-weight:500;}
+    nav ul li a:hover{color:#ffd700;}
+
+    /* Hero */
+    .hero{
+      display:flex;align-items:center;justify-content:space-between;
+      background:url('images/background.jpg') no-repeat center/cover;
+      height:100vh;padding:100px 80px;color:#fff;position:relative;
+    }
+    .hero::before{
+      content:'';position:absolute;top:0;left:0;width:100%;height:100%;
+      background:rgba(0,0,0,0.55);
+    }
+    .hero-content{position:relative;z-index:1;max-width:55%;}
+    .hero-content h1{font-size:48px;font-weight:700;margin-bottom:20px;}
+    .hero-content p{font-size:18px;margin-bottom:30px;}
+    .hero img{
+      position:relative;z-index:1;width:38%;
+      border-radius:20px;box-shadow:0 4px 12px rgba(0,0,0,0.4);
+    }
+
+    /* About */
+    #about{
+      background:url('images/background2.jpg') no-repeat center/cover;
+      color:#fff;padding:100px 60px;position:relative;
+    }
+    #about::before{
+      content:'';position:absolute;top:0;left:0;width:100%;height:100%;
+      background:rgba(0,0,0,0.5);
+    }
+    #about .inner{
+      position:relative;z-index:1;max-width:1100px;margin:auto;
+      display:flex;align-items:center;gap:50px;
+    }
+    #about img{
+      width:45%;border-radius:20px;box-shadow:0 4px 12px rgba(0,0,0,0.4);
+    }
+    #about .text{flex:1;}
+    #about h2{font-size:38px;margin-bottom:20px;}
+    #about p{font-size:18px;margin-bottom:25px;}
+    #about a{
+      display:inline-block;padding:12px 28px;background:#ffd700;color:#000;
+      font-weight:600;border-radius:30px;text-decoration:none;
+      box-shadow:0 4px 8px rgba(0,0,0,0.2);transition:all 0.3s ease;
+    }
+    #about a:hover{background:#ffea3c;transform:translateY(-2px);}
+
+    /* Services */
+    #services{
+      background:url('images/background3.jpg') no-repeat center/cover;
+      padding:100px 60px;text-align:center;
+    }
+    #services h2{font-size:38px;margin-bottom:50px;color:#fff;text-shadow:1px 1px 3px #000;}
+    .services-grid{
+      display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:30px;
+    }
+    .service-card{
+      background:rgba(255,255,255,0.9);border-radius:15px;overflow:hidden;
+      box-shadow:0 4px 10px rgba(0,0,0,0.3);transition:transform 0.3s ease;
+    }
+    .service-card:hover{transform:translateY(-8px);}
+    .service-card img{width:100%;height:180px;object-fit:cover;}
+    .svc-body{padding:20px;}
+    .svc-title{font-size:20px;font-weight:600;margin-bottom:10px;color:#222;}
+    .svc-body p{font-size:15px;color:#555;}
+
+    /* Testimonials */
+    #testimonials{
+      background:url('images/background4.jpg') no-repeat center/cover;
+      color:#fff;padding:100px 60px;text-align:center;position:relative;
+    }
+    #testimonials::before{
+      content:'';position:absolute;top:0;left:0;width:100%;height:100%;
+      background:rgba(0,0,0,0.6);
+    }
+    #testimonials .inner{position:relative;z-index:1;max-width:1000px;margin:auto;}
+    .testimonial{
+      background:rgba(255,255,255,0.15);
+      padding:30px;border-radius:20px;margin-bottom:25px;
+      box-shadow:0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    /* Contact */
+    #contact {
+      background:#111;
+      color:#fff;
+      padding:80px 60px;
+      text-align:center;
+    }
+    #contact .inner {
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:space-between;
+      align-items:flex-start;
+      gap:40px;
+      max-width:1200px;
+      margin:auto;
+      text-align:left;
+    }
+    .contact-left, .contact-center, .quick-links {
+      flex:1;
+      min-width:280px;
+    }
+    .social-btns img {
+      width:40px;
+      height:40px;
+      margin-right:12px;
+      transition:transform 0.3s;
+      border-radius:50%;
+    }
+    .social-btns img:hover {transform:scale(1.1);}
+    .btn-area {margin-top:15px;}
+    .btn {
+      display:inline-block;
+      padding:10px 20px;
+      border-radius:25px;
+      font-weight:600;
+      text-decoration:none;
+      margin-right:10px;
+      transition:all 0.3s ease;
+    }
+    .btn-call {background:#ffd700;color:#000;}
+    .btn-wa {background:#25D366;color:#fff;}
+    .btn:hover {transform:translateY(-2px);opacity:0.9;}
+    .final-line {
+      margin-top:50px;
+      text-align:center;
+      font-size:0.95rem;
+      color:#ccc;
+      max-width:900px;
+      margin:auto;
+      line-height:1.6;
+    }
+    footer {
+      background:#000;
+      color:#aaa;
+      text-align:center;
+      padding:20px 0;
+      font-size:0.9rem;
+    }
+    footer a {color:#ffd700;text-decoration:none;}
+    footer a:hover {text-decoration:underline;}
+    .quick-links a{
+      display:block;
+      color:#ccc;
+      text-decoration:none;
+      margin-bottom:8px;
+      font-size:0.95rem;
+    }
+    .quick-links a:hover{color:#ffd700;}
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header>
+    <img src="images/logo.jpg" alt="Harpal Logo">
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1>Welcome to Harpal Acupressure</h1>
+      <p>Experience natural healing, relaxation, and holistic care. Restore your energy and live pain-free with ancient acupressure and wellness therapies.</p>
+      <a href="#about" style="display:inline-block;padding:12px 28px;background:#ffd700;color:#000;font-weight:600;border-radius:30px;text-decoration:none;box-shadow:0 4px 8px rgba(0,0,0,0.2);">Learn More →</a>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <div class="inner">
+      <img src="images/photo1.png" alt="Harpal Acupressure">
+      <div class="text">
+        <h2>About Us</h2>
+        <p>At Harpal Acupressure, we blend traditional healing with modern wellness to rejuvenate your body and mind. Our expert therapies help you achieve balance, harmony, and energy renewal for complete well-being.</p>
+        <a href="about.html">Read More →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services">
+    <h2>Our Services</h2>
+    <div class="services-grid">
+      <div class="service-card"><img src="images/service1.jpg"><div class="svc-body"><div class="svc-title">Acupressure Therapy</div><p>Relieve stress, pain, and fatigue using targeted acupressure points.</p></div></div>
+      <div class="service-card"><img src="images/service2.jpg"><div class="svc-body"><div class="svc-title">Reflexology</div><p>Promote better circulation and energy flow through reflex zone massage.</p></div></div>
+      <div class="service-card"><img src="images/service3.jpg"><div class="svc-body"><div class="svc-title">Cupping Therapy</div><p>Boost blood flow and detox your body with effective cupping sessions.</p></div></div>
+      <div class="service-card"><img src="images/service4.jpg"><div class="svc-body"><div class="svc-title">Magnet Therapy</div><p>Balance energy and relieve chronic pain using natural magnetic fields.</p></div></div>
+      <div class="service-card"><img src="images/service5.jpg"><div class="svc-body"><div class="svc-title">Su-jok Therapy</div><p>Stimulate pressure points on your hands and feet for overall healing.</p></div></div>
+      <div class="service-card"><img src="images/service6.jpg"><div class="svc-body"><div class="svc-title">Aroma Healing</div><p>Enhance relaxation and mood with our premium essential oil blends.</p></div></div>
+      <div class="service-card"><img src="images/service7.jpg"><div class="svc-body"><div class="svc-title">Spine Therapy</div><p>Special care for spinal health and posture correction naturally.</p></div></div>
+      <div class="service-card"><img src="images/service8.jpg"><div class="svc-body"><div class="svc-title">Diet & Lifestyle</div><p>Customized wellness plans that fit your body type and energy balance.</p></div></div>
+      <div class="service-card"><img src="images/service9.jpg"><div class="svc-body"><div class="svc-title">Pain Management</div><p>Safe and effective techniques for joint, back, and headache relief.</p></div></div>
+      <div class="service-card"><img src="images/service10.jpg"><div class="svc-body"><div class="svc-title">Holistic Consultation</div><p>Personalized healing guidance for your physical and mental well-being.</p></div></div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials">
+    <div class="inner">
+      <h2>What Our Clients Say</h2>
+      <div class="testimonial"><p>"The acupressure sessions truly changed my life — my back pain is completely gone!"</p></div>
+      <div class="testimonial"><p>"I felt deeply relaxed after every visit. Harpal Acupressure has a healing touch!"</p></div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="inner">
+      <div class="contact-left">
+        <h3>Connect on Social</h3>
+        <div class="social-btns">
+          <a href="https://www.instagram.com/harpal_acupressure/?igsh=eTE0cXRwMDBiOHk0" target="_blank">
+            <img src="images/instagram.png" alt="Instagram">
+          </a>
+          <a href="https://m.facebook.com/share/1GioYfoyAg/?wtsid=rdr_0amyqscvfVj53aAWz" target="_blank">
+            <img src="images/facebook.png" alt="Facebook">
+          </a>
+        </div>
+        <p>Email: <a href="mailto:info@harpalaccupressure.com">info@harpalaccupressure.com</a></p>
+        <div class="btn-area">
+          <a class="btn btn-call" href="tel:+9189980455518">📞 Call</a>
+          <a class="btn btn-wa" href="https://wa.me/918866556830" target="_blank">💬 WhatsApp</a>
+        </div>
+      </div>
+
+      <div class="contact-center">
+        <h3>Visit Us</h3>
+        <p><strong>DR. DIPALI PREMALKUMAR PATEL</strong><br>Marma Magnetic & Sujok Therapist</p>
+        <p><strong>Clinic Address:</strong><br>
+          Shop No. 3, Samanvay North Park,<br>
+          Opp Darshanam King Square,<br>
+          Ankodiya Road, Panchvati, Vadodara,<br>
+          Ankodiya, Gujarat - 390016
+        </p>
+        <p><a href="https://maps.app.goo.gl/6wJNQphf7XSe5wKk8" target="_blank" style="color:#ffd700;text-decoration:none;">📍 Open in Google Maps</a></p>
+        <p><strong>Residence Address:</strong><br>
+          B-25, Nipa Tenament No.2,<br>
+          B/H Jesal Society, Gorwa,<br>
+          Opp. Sahyog Society,<br>
+          Vadodara, Gujarat - 390016
+        </p>
+      </div>
+
+      <div class="quick-links">
+        <h4 style="margin-top:15px;color:#fff;">Quick Links</h4>
+        <a href="#home">🏠 Home</a>
+        <a href="#about">ℹ️ About Us</a>
+        <a href="#services">💆‍♀️ Services</a>
+        <a href="#testimonials">💬 Testimonials</a>
+        <a href="#contact">📞 Contact</a>
+      </div>
+    </div>
+
+    <div class="final-line">
+      A PLACE OF HEALING, RELAXATION, HOLISTIC WELLNESS, AND POSITIVE ENERGY — DEDICATED TO HEALTH, HAPPINESS, AND WELL-BEING.
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Harpal Acupressure | Designed with ❤️ by Swasthik</p>
+  </footer>
+
+</body>
+</html>

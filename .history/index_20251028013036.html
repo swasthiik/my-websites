@@ -13,29 +13,18 @@
     /* Header */
     header{
       position:fixed;width:100%;top:0;left:0;
-      background:#0c4b46; /* ✅ Matching dark teal */
+      background:linear-gradient(90deg,#2e7d32,#66bb6a);
       display:flex;justify-content:space-between;align-items:center;
-      padding:15px 80px;z-index:1000;
+      padding:15px 80px;z-index:1000;backdrop-filter:blur(6px);
       box-shadow:0 2px 10px rgba(0,0,0,0.25);
     }
-    .logo-area{
-      display:flex;align-items:center;gap:15px;
-    }
-    header img{
-      width:65px;height:65px;border-radius:50%;object-fit:cover;
-      border:2px solid #ffd700;
-    }
-    .logo-text{
-      color:#fff;font-size:1.3rem;font-weight:600;
-      letter-spacing:0.5px;
-    }
-
+    header img{width:70px;height:70px;border-radius:50%;object-fit:cover;}
     nav ul{display:flex;gap:30px;list-style:none;}
     nav ul li a{
       color:#fff;text-decoration:none;font-weight:500;
       transition:color 0.3s ease;
     }
-    nav ul li a:hover{color:#ffd700;} /* Soft gold hover */
+    nav ul li a:hover{color:#ffd700;}
 
     /* Hero Section */
     .hero{
@@ -178,10 +167,7 @@
 
   <!-- Header -->
   <header>
-    <div class="logo-area">
-      <img src="images/logo.jpg" alt="Harpal Logo">
-      <span class="logo-text">Harpal Acupressure</span>
-    </div>
+    <img src="images/logo.jpg" alt="Harpal Logo">
     <nav>
       <ul>
         <li><a href="#home">Home</a></li>
