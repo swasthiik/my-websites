@@ -28,7 +28,6 @@
       scroll-behavior:smooth;
     }
 
-    /* header */
     header{
       background:#fff;
       box-shadow:0 4px 18px rgba(15,15,15,0.06);
@@ -47,7 +46,6 @@
     nav a{color:#222;text-decoration:none;font-weight:600;font-size:0.95rem;opacity:0.95}
     nav a:hover{color:var(--green)}
 
-    /* hero (bigger) */
     .hero{
       min-height:80vh;
       display:flex;
@@ -57,7 +55,6 @@
       padding:60px 20px;
       position:relative;
       background: url('images/background.png') center/cover no-repeat;
-      background-size:cover;
       color:#fff;
     }
     .hero::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,0.5)}
@@ -68,7 +65,6 @@
     .hero h2{font-size:1.15rem;color:#fff;font-weight:600;margin-bottom:16px}
     .hero p{max-width:760px;margin:0 auto;color:#eaf6ef;font-size:1.05rem}
 
-    /* services - grid 4 per row on large screens */
     #services{
       position:relative;
       padding:48px 20px;
@@ -100,7 +96,6 @@
     .svc-title{color:var(--dark);font-weight:700;font-size:1.05rem;margin-bottom:8px}
     .svc-text{color:#222;font-size:0.95rem;line-height:1.45}
 
-    /* why choose us (cards look) */
     #why{padding:44px 18px;background:#f7faf5;text-align:center}
     #why .wrap{max-width:900px;margin:0 auto}
     #why h2{color:var(--green);font-size:1.9rem;margin-bottom:12px;font-weight:700}
@@ -110,7 +105,6 @@
     .why-card strong{display:block;color:var(--green);margin-bottom:6px}
     .why-card p{color:#555;font-size:0.95rem}
 
-    /* contact */
     #contact{
       padding:44px 20px;background: url('images/background3.jpg') center/cover no-repeat;color:#fff;position:relative;
     }
@@ -129,12 +123,9 @@
     .btn-call{background:var(--green);color:#fff}
     .btn-wa{background:#43a047;color:#fff}
 
-    /* final healing line */
     .final-line{background:#f4f6ef;padding:26px 18px;text-align:center;color:var(--muted);font-style:italic;margin-top:8px}
 
-    /* footer */
     footer{background:#111;padding:36px 18px;color:#ddd}
-    /* use grid so center column can be fixed width and centered */
     .foot-inner{
       max-width:1100px;
       margin:0 auto;
@@ -151,7 +142,6 @@
     .col h4{color:var(--accent);margin-bottom:8px}
     .col p, .col a{color:#ccc;font-size:0.95rem;text-decoration:none;display:block;margin:6px 0}
 
-    /* small embedded map */
     .map-wrapper{
       display:inline-block;
       margin-top:14px;
@@ -166,7 +156,6 @@
       border:0;
       display:block;
     }
-    /* transparent overlay link (clicking map opens Google Maps) */
     .map-overlay{
       position:absolute;
       inset:0;
@@ -180,7 +169,6 @@
 
     .copyright{text-align:center;color:#888;margin-top:18px;font-size:0.95rem}
 
-    /* responsive breakpoints */
     @media (max-width:1200px){
       .services-grid{grid-template-columns: repeat(3, 1fr);}
       .hero h1{font-size:2.8rem}
@@ -189,13 +177,7 @@
       nav ul{display:none}
       .services-grid{grid-template-columns: repeat(2, 1fr);}
       .hero h1{font-size:2.4rem}
-      /* stack footer cleanly on mobile with center column between others */
-      .foot-inner{
-        grid-template-columns: 1fr;
-        justify-items:center;
-        text-align:center;
-        gap:18px;
-      }
+      .foot-inner{grid-template-columns: 1fr;text-align:center;gap:18px;}
       .col.follow{text-align:center}
       .col.center{text-align:center}
       .col.quick{text-align:center}
@@ -210,7 +192,6 @@
 </head>
 
 <body>
-  <!-- header -->
   <header>
     <div class="logo-row">
       <img src="images/logo.jpg" alt="Harpal logo">
@@ -227,7 +208,6 @@
     </nav>
   </header>
 
-  <!-- hero -->
   <section id="home" class="hero" role="banner" aria-label="Harpal Acupressure Hero">
     <div class="hero-inner">
       <img src="images/logo.jpg" alt="Harpal logo" class="hero-logo">
@@ -237,13 +217,11 @@
     </div>
   </section>
 
-  <!-- services -->
   <section id="services" aria-labelledby="services-title">
     <div class="inner">
       <h2 id="services-title"><strong>Our Services</strong></h2>
 
       <div class="services-grid">
-        <!-- 10 services with images -->
         <div class="service-card">
           <img src="images/service1.jpg" alt="Acupressure">
           <div class="svc-body">
@@ -318,7 +296,6 @@
     </div>
   </section>
 
-  <!-- why choose us -->
   <section id="why">
     <div class="wrap">
       <h2><strong>Why Choose Harpal Accupressure</strong></h2>
@@ -334,7 +311,6 @@
     </div>
   </section>
 
-  <!-- contact -->
   <section id="contact" aria-label="Contact">
     <div class="inner">
       <div class="contact-left">
@@ -345,7 +321,7 @@
 
       <div class="contact-right" role="contentinfo">
         <div class="name"><strong>DR. DIPALI PREMALKUMAR PATEL</strong></div>
-        <div class="title"><strong>MARMA MAGNETIC &amp; SUJOK THERAPIST</strong></div>
+        <div class="title"><strong>MARMA MAGNETIC & SUJOK THERAPIST</strong></div>
 
         <div class="info">
           <p><strong>Address:</strong><br>
@@ -383,30 +359,24 @@
     </strong>
   </div>
 
-  <!-- footer with centered address & clickable small map -->
   <footer>
     <div class="foot-inner">
-      <!-- left: Follow Us -->
       <div class="col follow">
         <h4>Follow Us</h4>
-        <p><a href="https://www.instagram.com/harpal_acupressure?igsh=ZXc2aDUwODRuYjJh" target="_blank" rel="noopener noreferrer">Instagram</a></p>
-        <p><a href="https://www.facebook.com/share/1BRri4cidH/" target="_blank" rel="noopener noreferrer">Facebook</a></p>
+        <p><a href="https://www.instagram.com/harpal_acupressure/?igsh=eTE0cXRwMDBiOHk0" target="_blank" rel="noopener noreferrer">Instagram</a></p>
+        <p><a href="https://www.facebook.com/share/1GioYfoyAg/?wtsid=rdr_0amyqscvfVj53aAWz" target="_blank" rel="noopener noreferrer">Facebook</a></p>
       </div>
 
-      <!-- center: Clinic Address + small map -->
       <div class="col center">
         <h4>Clinic Address</h4>
         <p>Shop No. 3, Samanvay North Park,<br>Opp Darshanam King Square,<br>Ankodiya Road, Vadodara, Gujarat - 390016</p>
 
-        <!-- MAP WRAPPER: clicking map opens Google Maps (overlay link) -->
         <div class="map-wrapper" aria-hidden="false">
           <iframe
             title="Harpal Accupressure location - embedded map"
             class="map-small"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3717.0578831698593!2d73.14796207522617!3d22.315689379684028!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395fc9e4e92f2c0b%3A0xd03477b305ba8028!2sSamanvay%20North%20Park!5e0!3m2!1sen!2sin!4v1728761234567!5m2!1sen!2sin"
             loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-
-          <!-- transparent overlay link: opens the same location in Google Maps app/site -->
           <a class="map-overlay" href="https://maps.app.goo.gl/6wJNQphf7XSe5wKk8" target="_blank" rel="noopener noreferrer">Open in Google Maps</a>
         </div>
 
@@ -415,7 +385,6 @@
         </div>
       </div>
 
-      <!-- right: Quick Links -->
       <div class="col quick">
         <h4>Quick Links</h4>
         <p><a href="#services">Services</a></p>
@@ -425,7 +394,7 @@
     </div>
 
     <div class="copyright">
-      © 2025 Harpal Acupressure | All Rights Reserved
+      © 2025 Harpal Accupressure | All Rights Reserved
     </div>
   </footer>
 </body>
