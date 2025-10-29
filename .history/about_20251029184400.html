@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About – Harpal Acupressure</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    * {margin: 0; padding: 0; box-sizing: border-box;}
+    body {font-family: 'Poppins', sans-serif; background-color: #fdfdfd; color: #333;}
+
+    /* HEADER */
+    header {
+      background: #0c4b46;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 8%;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .logo-area {display: flex; align-items: center; gap: 10px;}
+    .logo-area img {height: 50px; width: 50px; border-radius: 50%; object-fit: cover;}
+    .logo-text {color: white; font-size: 1.2rem; font-weight: 600;}
+
+    nav ul {list-style: none; display: flex; gap: 25px;}
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    nav ul li a:hover {color: #ffd700;}
+
+    /* MENU TOGGLE FOR MOBILE */
+    .menu-toggle {
+      display: none;
+      font-size: 1.8rem;
+      color: white;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+    @media (max-width: 800px) {
+      nav ul {
+        display: none;
+        flex-direction: column;
+        background: #0c4b46;
+        position: absolute;
+        top: 60px;
+        right: 8%;
+        width: 200px;
+        border-radius: 10px;
+        padding: 15px;
+      }
+      nav ul.show {display: flex;}
+      .menu-toggle {display: block;}
+    }
+
+    /* ABOUT SECTION */
+    section {
+      position: relative;
+      padding: 70px 10%;
+      max-width: 1100px;
+      margin: auto;
+      color: #fff;
+      background: url('images/tps1.jpg') center/cover no-repeat;
+      overflow: hidden;
+    }
+    section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.65);
+      z-index: 0;
+    }
+    section * {position: relative; z-index: 1;}
+    h2 {
+      text-align: center;
+      color: #ffd700;
+      font-size: 2.2rem;
+      margin-bottom: 25px;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
+    }
+    .content-box {
+      background: rgba(255,255,255,0.08);
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+      color: #f2f2f2;
+    }
+    ul {list-style: disc; margin-left: 25px;}
+    ul li {margin-bottom: 10px;}
+    h3 {
+      color: #ffd700;
+      margin-top: 30px;
+      margin-bottom: 12px;
+      font-size: 1.5rem;
+      border-bottom: 2px solid rgba(255,215,0,0.3);
+      display: inline-block;
+      padding-bottom: 4px;
+    }
+
+    /* TROPHIES SECTION */
+    #achievements {
+      background: url('images/tps2.jpg') center/cover no-repeat;
+      position: relative;
+      padding: 100px 10%;
+      color: #fff;
+      text-align: center;
+    }
+    #achievements::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.7);
+      z-index: 0;
+    }
+    #achievements .inner {position: relative; z-index: 1;}
+    #achievements h2 {
+      font-size: 2.3rem;
+      color: #ffd700;
+      margin-bottom: 15px;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.9);
+    }
+    #achievements p {
+      max-width: 700px;
+      margin: 0 auto 50px;
+      font-size: 1.1rem;
+      color: #f0f0f0;
+      line-height: 1.8;
+    }
+    .trophy-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 25px;
+      z-index: 1;
+    }
+    .trophy-card {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 14px;
+      padding: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+      transition: all 0.3s ease;
+    }
+    .trophy-card:hover {
+      transform: translateY(-6px) scale(1.03);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+    }
+    .trophy-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #0c4b46;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 20px;
+      font-size: 0.95rem;
+    }
+    footer a {color: #ffd700; text-decoration: none; margin-left: 5px;}
+    footer a:hover {text-decoration: underline;}
+
+    @media (max-width: 768px) {
+      section, #achievements {padding: 60px 5%;}
+      h2 {font-size: 1.8rem;}
+      .trophy-card img {height: 180px;}
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo-area">
+      <img src="images/logo.jpg" alt="Harpal Logo">
+      <span class="logo-text">Harpal Acupressure</span>
+    </div>
+    <button class="menu-toggle">☰</button>
+    <nav>
+      <ul>
+        <li><a href="index.html#home">Home</a></li>
+        <li><a href="about.html" style="color:#ffd700;">About</a></li>
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="testimonials.html">Testimonials</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- MAIN ABOUT CONTENT -->
+  <section>
+    <h2>Journey & Achievements</h2>
+    <div class="content-box">
+      <ul>
+        <li>2005 – Completed Basic Acupressure Course from Indira Gandhi Open University (IGNOU).</li>
+        <li>2007 – Completed M.D. from Indian Academy of Acupressure Science, Indore University, Sri Lanka.</li>
+        <li>2007 – Gold Medal recognition by Charotar Moti Satyavis.</li>
+        <li>2009 – Gold Medal from Indian Academy of Acupressure at 8th National Acupressure Conference.</li>
+        <li>2010 – Became a certified member of Rajasthan Vaikalpik Swasthya Sanstha (Acupressure Board).</li>
+        <li>2013 – Awarded Doctor’s Degree in Naturopathy Science.</li>
+        <li>Organised multiple 3-day Acupressure & Sujok Therapy camps in Umreth and Nasik.</li>
+        <li>Delivered lecture at Sai Baba Temple Trust, Vadodara, and Shivyog events in Pune.</li>
+        <li>2016 – Completed Dietitian Course from JSRFC Trust (16 Dec 2016).</li>
+        <li>2017 – Gold Medal at National Conference on Health & Wellness (Heritage Foundation).</li>
+        <li>2018 – Honoured by Association of Alliance Clubs International, Ahmedabad.</li>
+        <li>Received “Shrimani Award” & “Diamond Award” for excellence in natural healing.</li>
+      </ul>
+
+      <h3>Profile Summary</h3>
+      <ul>
+        <li>Specialised in Acupressure, Naturopathy, and Sujok therapies.</li>
+        <li>Conducted over 20 national-level workshops and wellness training programs.</li>
+        <li>Guest speaker at holistic healing conferences and community health events.</li>
+        <li>Recognised for contributions to spreading awareness about natural healing.</li>
+        <li>Dedicated to training new learners and helping patients achieve balance & positivity.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- TROPHIES -->
+  <section id="achievements">
+    <div class="inner">
+      <h2>Our Trophies & Certificates</h2>
+      <p>We are proud to showcase our milestones and recognitions that reflect years of dedication to holistic healing and wellness.</p>
+
+      <div class="trophy-grid">
+        <div class="trophy-card"><img src="images/crt1.jpg" alt="Certificate 1"></div>
+        <div class="trophy-card"><img src="images/crt2.jpg" alt="Certificate 2"></div>
+        <div class="trophy-card"><img src="images/crt3.jpg" alt="Certificate 3"></div>
+        <div class="trophy-card"><img src="images/crt4.jpg" alt="Certificate 4"></div>
+        <div class="trophy-card"><img src="images/crt5.jpg" alt="Certificate 5"></div>
+        <div class="trophy-card"><img src="images/crt6.jpg" alt="Certificate 6"></div>
+        <div class="trophy-card"><img src="images/crt7.jpg" alt="Certificate 7"></div>
+        <div class="trophy-card"><img src="images/crt8.jpg" alt="Certificate 8"></div>
+        <div class="trophy-card"><img src="images/crt9.jpg" alt="Certificate 9"></div>
+        <div class="trophy-card"><img src="images/crt10.jpg" alt="Certificate 10"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2025 Harpal Acupressure |
+    <a href="index.html">Home</a> |
+    Designed with ❤️ by Swasthik
+  </footer>
+
+  <script>
+    const toggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('nav ul');
+    toggle.addEventListener('click', () => nav.classList.toggle('show'));
+  </script>
+</body>
+</html>

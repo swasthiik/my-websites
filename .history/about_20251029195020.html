@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us — Harpal Acupressure</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    * {margin:0; padding:0; box-sizing:border-box;}
+    body {font-family:'Poppins',sans-serif; background:#fdfdfd; color:#333; line-height:1.6;}
+
+    /* HEADER */
+    header {
+      background:#0c4b46;
+      color:#fff;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:12px 8%;
+      position:sticky; top:0; z-index:1000;
+    }
+    .logo-area {display:flex; align-items:center; gap:10px;}
+    .logo-area img {height:50px; width:50px; border-radius:50%; object-fit:cover;}
+    .logo-text {font-size:1.2rem; font-weight:600;}
+    nav ul {list-style:none; display:flex; gap:25px;}
+    nav ul li a {color:#fff; text-decoration:none; font-weight:500;}
+    nav ul li a:hover {color:#ffd700;}
+
+    /* ABOUT SECTION */
+    #about-page {
+      background:url('images/background2.jpg') no-repeat center center/cover;
+      padding:80px 10%;
+    }
+    .about-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap:40px;
+      align-items:center;
+      justify-content:center;
+      background:rgba(255,255,255,0.95);
+      border-radius:25px;
+      padding:40px;
+      box-shadow:0 6px 20px rgba(0,0,0,0.2);
+      border:3px solid #0c4b46;
+    }
+    .about-img {
+      flex:1 1 300px;
+      text-align:center;
+    }
+    .about-img img {
+      width:260px; height:260px; border-radius:50%;
+      box-shadow:0 6px 20px rgba(0,0,0,0.4);
+      object-fit:cover;
+    }
+    .about-text {
+      flex:2 1 500px;
+    }
+    .about-text h2 {
+      color:#0c4b46;
+      font-size:2rem;
+      margin-bottom:15px;
+    }
+    .about-text p {
+      margin-bottom:15px;
+      font-size:1rem;
+    }
+    .about-text ul {margin-left:20px;}
+    .about-text ul li {margin-bottom:8px;}
+
+    /* CERTIFICATES SECTION */
+    #certificates {
+      background:url('images/background3.jpg') no-repeat center center/cover;
+      padding:70px 8%;
+      text-align:center;
+    }
+    #certificates h2 {
+      font-size:2rem;
+      color:#0c4b46;
+      margin-bottom:30px;
+    }
+    .cert-grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+      gap:20px;
+    }
+    .cert-card {
+      background:rgba(255,255,255,0.95);
+      border-radius:20px;
+      padding:15px;
+      border:2px solid #0c4b46;
+      box-shadow:0 4px 12px rgba(0,0,0,0.2);
+    }
+    .cert-card img {
+      width:100%;
+      border-radius:15px;
+      height:220px;
+      object-fit:cover;
+    }
+
+    /* CONTACT SECTION */
+    #contact {
+      background:#0c4b46;
+      color:white;
+      padding:80px 10%;
+    }
+    #contact .inner {
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:space-between;
+      gap:40px;
+    }
+    #contact h3 {color:#ffd700;}
+    .social-btns img {
+      width:40px;
+      margin-right:10px;
+      transition:transform 0.3s;
+    }
+    .social-btns img:hover {transform:scale(1.1);}
+    .btn-area a {
+      display:inline-block;
+      margin:10px 5px;
+      padding:10px 20px;
+      border-radius:8px;
+      text-decoration:none;
+      font-weight:600;
+      transition:background 0.3s;
+    }
+    .btn-call {background:#ffd700; color:#000;}
+    .btn-wa {background:#25d366; color:white;}
+    .btn-call:hover {background:#ffb700;}
+    .btn-wa:hover {background:#20b958;}
+    .quick-links a {
+      display:block; color:#fff; text-decoration:none; margin:5px 0;
+    }
+    .quick-links a:hover {color:#ffd700;}
+    .final-line {
+      text-align:center; margin-top:40px;
+      font-size:0.9rem; color:#ffd700;
+    }
+
+    /* FOOTER */
+    footer {
+      background:#0c4b46;
+      color:white;
+      text-align:center;
+      padding:15px;
+      font-size:0.95rem;
+    }
+    footer a {color:#ffd700; text-decoration:none;}
+    footer a:hover {text-decoration:underline;}
+
+    @media(max-width:900px){
+      .about-container {flex-direction:column;}
+      #contact .inner {flex-direction:column; text-align:center;}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo-area">
+      <img src="images/logo.jpg" alt="Harpal Logo">
+      <span class="logo-text">Harpal Acupressure</span>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html#home">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="index.html#feedback-section">Testimonials</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ABOUT SECTION -->
+  <section id="about-page">
+    <div class="about-container">
+      <div class="about-img">
+        <img src="images/photo1.png" alt="Dr. Dipali Premalkumar Patel">
+      </div>
+      <div class="about-text">
+        <h2>About Dr. Dipali Premalkumar Patel</h2>
+        <p>Dr. Dipali is a certified Marma, Magnetic, and Sujok therapist dedicated to holistic healing and energy balance. Her approach combines ancient natural techniques with modern wellness practices to help people heal from within — naturally and effectively.</p>
+        <p>With years of experience, Dr. Dipali has treated a wide range of physical and emotional concerns through non-invasive therapies. Her goal is to bring relief, positivity, and harmony to every individual who visits Harpal Acupressure.</p>
+        <h3 style="color:#0c4b46; margin-top:15px;">Achievements & Certifications:</h3>
+        <ul>
+          <li>Certified Marma & Sujok Therapist</li>
+          <li>Licensed Reiki Master</li>
+          <li>Certified Cupping & Acupuncture Expert</li>
+          <li>Specialized in Vastu & Numerology Healing</li>
+          <li>Recognized with 26 National-Level Certificates for Excellence in Alternative Therapy</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATES SECTION -->
+  <section id="achievements">
+    <div class="inner">
+      <h2>Our Trophies & Certificates</h2>
+      <p>We are proud to showcase our milestones, recognitions, and excellence in natural healing and holistic wellness.</p>
+
+      <div class="trophy-grid">
+        <!-- Certificates / Trophies -->
+        <div class="trophy-card"><img src="images/crt1.jpg" alt="Certificate 1"></div>
+        <div class="trophy-card"><img src="images/crt2.jpg" alt="Certificate 2"></div>
+        <div class="trophy-card"><img src="images/crt3.jpg" alt="Certificate 3"></div>
+        <div class="trophy-card"><img src="images/crt4.jpg" alt="Certificate 4"></div>
+        <div class="trophy-card"><img src="images/crt5.jpg" alt="Certificate 5"></div>
+        <div class="trophy-card"><img src="images/crt6.jpg" alt="Certificate 6"></div>
+        <div class="trophy-card"><img src="images/crt7.jpg" alt="Certificate 7"></div>
+        <div class="trophy-card"><img src="images/crt8.jpg" alt="Certificate 8"></div>
+        <div class="trophy-card"><img src="images/crt9.jpg" alt="Certificate 9"></div>
+        <div class="trophy-card"><img src="images/crt10.jpg" alt="Certificate 10"></div>
+        <div class="trophy-card"><img src="images/crt11.jpg" alt="Certificate 11"></div>
+        <div class="trophy-card"><img src="images/crt12.jpg" alt="Certificate 12"></div>
+        <div class="trophy-card"><img src="images/crt13.jpg" alt="Certificate 13"></div>
+        <div class="trophy-card"><img src="images/crt14.jpg" alt="Certificate 14"></div>
+        <div class="trophy-card"><img src="images/crt15.jpg" alt="Certificate 15"></div>
+        <div class="trophy-card"><img src="images/crt16.jpg" alt="Certificate 16"></div>
+        <div class="trophy-card"><img src="images/crt17.jpg" alt="Certificate 17"></div>
+        <div class="trophy-card"><img src="images/crt18.jpg" alt="Certificate 18"></div>
+        <div class="trophy-card"><img src="images/crt19.jpg" alt="Certificate 19"></div>
+        <div class="trophy-card"><img src="images/crt20.jpg" alt="Certificate 20"></div>
+        <div class="trophy-card"><img src="images/crt21.jpg" alt="Certificate 21"></div>
+        <div class="trophy-card"><img src="images/crt22.jpg" alt="Certificate 22"></div>
+        <div class="trophy-card"><img src="images/crt23.jpg" alt="Certificate 23"></div>
+        <div class="trophy-card"><img src="images/crt24.jpg" alt="Certificate 24"></div>
+        <div class="trophy-card"><img src="images/crt25.jpg" alt="Certificate 25"></div>
+        <div class="trophy-card"><img src="images/crt26.jpg" alt="Certificate 26"></div>
+      </div>
+    </div>
+  </section>
+  <!-- CONTACT SECTION -->
+  <section id="contact">
+    <div class="inner">
+      <div class="contact-left">
+        <h3>Connect on Social</h3>
+        <div class="social-btns">
+          <a href="https://www.instagram.com/harpal_acupressure/?igsh=eTE0cXRwMDBiOHk0" target="_blank"><img src="images/instagram.png" alt="Instagram"></a>
+          <a href="https://m.facebook.com/share/1GioYfoyAg/?wtsid=rdr_0amyqscvfVj53aAWz" target="_blank"><img src="images/facebook.png" alt="Facebook"></a>
+        </div>
+        <p>Email: <a href="mailto:info@harpalaccupressure.com" style="color:#ffd700;">info@harpalaccupressure.com</a></p>
+        <div class="btn-area">
+          <a class="btn btn-call" href="tel:+9189980455518">📞 Call</a>
+          <a class="btn btn-wa" href="https://wa.me/918866556830" target="_blank">💬 WhatsApp</a>
+        </div>
+      </div>
+
+      <div class="contact-center">
+        <h3>Visit Us</h3>
+        <p><strong>DR. DIPALI PREMALKUMAR PATEL</strong><br>Marma Magnetic & Sujok Therapist</p>
+        <p><strong>Clinic Address:</strong><br>
+          Shop No. 3, Samanvay North Park,<br>
+          Opp Darshanam King Square,<br>
+          Ankodiya Road, Panchvati, Vadodara,<br>
+          Ankodiya, Gujarat - 390016
+        </p>
+        <p><a href="https://www.google.com/maps/place/Harpal+Acupressure/data=!4m7!3m6!1s0x395fcf317a6ef859:0xaeb304d82ccaf2c4!8m2!3d22.3107475!4d73.1275673!16s%2Fg%2F11t6zy0ghv!19sChIJWZpucNPefkcRLMrL2ICDsq4?authuser=0&hl=en&rclk=1#lrd=0x395fcf317a6ef859:0xaeb304d82ccaf2c4,3" target="_blank" style="color:#ffd700;text-decoration:none;">⭐ View Ratings & Feedback</a></p>
+        <p><strong>Residence Address:</strong><br>
+          B-25, Nipa Tenament No.2,<br>
+          B/H Jesal Society, Gorwa,<br>
+          Opp. Sahyog Society,<br>
+          Vadodara, Gujarat - 390016
+        </p>
+      </div>
+
+      <div class="quick-links">
+        <h4 style="margin-top:15px;color:#fff;">Quick Links</h4>
+        <a href="index.html#home">🏠 Home</a>
+        <a href="about.html">ℹ️ About Us</a>
+        <a href="index.html#services">💆‍♀️ Services</a>
+        <a href="index.html#feedback-section">💬 Testimonials</a>
+        <a href="index.html#contact">📞 Contact</a>
+      </div>
+    </div>
+
+    <div class="final-line">
+      A PLACE OF HEALING, RELAXATION, HOLISTIC WELLNESS, AND POSITIVE ENERGY — DEDICATED TO HEALTH, HAPPINESS, AND WELL-BEING.
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2025 Harpal Acupressure |
+    <a href="index.html#feedback-section">📝 Feedback & Appointment</a> |
+    Designed with ❤️ by Swasthik
+  </footer>
+
+</body>
+</html>

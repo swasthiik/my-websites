@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Harpal Acupressure — Healing & Wellness</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #fff;
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    /* Header */
+    header {
+      background: #0c4b46;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 8%;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header img { width: 45px; margin-right: 10px; }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      color: #fff;
+      font-weight: 600;
+      font-size: 1.2rem;
+    }
+
+    nav ul { display: flex; gap: 25px; list-style: none; }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav a:hover { color: #ffd700; }
+
+    /* Hero */
+    .hero {
+      background: url('images/bg2.jpg') center/cover no-repeat;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      padding: 0 10%;
+      position: relative;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    .hero * { position: relative; z-index: 1; }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+      text-shadow: 2px 2px 10px rgba(0,0,0,0.7);
+    }
+
+    .hero p {
+      max-width: 700px;
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+    }
+
+    /* About */
+    #about {
+      background: url('images/tps1.jpg') center/cover no-repeat;
+      color: white;
+      padding: 80px 10%;
+      position: relative;
+    }
+
+    #about::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.65);
+      z-index: 0;
+    }
+
+    #about * { position: relative; z-index: 1; }
+
+    #about h2 {
+      text-align: center;
+      color: #ffd700;
+      font-size: 2.2rem;
+      margin-bottom: 30px;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
+    }
+
+    #about .content-box {
+      background: rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+    }
+
+    #about ul {
+      margin: 15px 0 20px 25px;
+      line-height: 1.8;
+    }
+
+    #about h3 {
+      color: #ffd700;
+      margin-top: 25px;
+      border-bottom: 2px solid rgba(255,215,0,0.3);
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    /* Certificates */
+    .trophy-gallery {
+      background: url('images/tps2.jpg') center/cover no-repeat;
+      position: relative;
+      padding: 100px 10%;
+      color: #fff;
+      text-align: center;
+    }
+
+    .trophy-gallery::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.7);
+    }
+
+    .trophy-gallery .inner { position: relative; z-index: 1; }
+
+    .trophy-gallery h2 {
+      color: #ffd700;
+      margin-bottom: 30px;
+      font-size: 2.3rem;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.9);
+    }
+
+    .trophy-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .trophy-card {
+      background: rgba(255, 255, 255, 0.12);
+      border-radius: 10px;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    }
+
+    .trophy-card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+    }
+
+    .trophy-card:hover { transform: scale(1.05); }
+
+    /* Services */
+    #services {
+      padding: 80px 10%;
+      background: #f6f6f6;
+      text-align: center;
+    }
+
+    #services h2 {
+      color: #0c4b46;
+      font-size: 2.2rem;
+      margin-bottom: 30px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+
+    .service-card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .service-card:hover { transform: translateY(-5px); }
+
+    .service-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .svc-body {
+      padding: 20px;
+      text-align: left;
+    }
+
+    .svc-title {
+      color: #0c4b46;
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+    }
+
+    .svc-text { font-size: 0.95rem; color: #555; }
+
+    /* Testimonials */
+    #testimonials {
+      background: #0c4b46;
+      color: white;
+      padding: 80px 10%;
+      text-align: center;
+    }
+
+    #testimonials h2 {
+      color: #ffd700;
+      margin-bottom: 40px;
+      font-size: 2.1rem;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+
+    .testimonial-card {
+      background: rgba(255,255,255,0.1);
+      border-radius: 10px;
+      padding: 25px;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .testimonial-card span {
+      display: block;
+      margin-top: 10px;
+      color: #ffd700;
+      font-weight: 600;
+    }
+
+    /* Contact + Footer */
+    .contact-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 35px;
+      color: #fff;
+      background: #0c4b46;
+      padding: 50px 20px;
+      border-top: 4px solid #ffd700;
+    }
+
+    .contact-left h3, .contact-center h3 {
+      color: #ffd700;
+      margin-bottom: 15px;
+    }
+
+    .social-btns img {
+      width: 35px;
+      margin: 0 8px;
+      transition: transform 0.3s ease;
+    }
+
+    .social-btns img:hover { transform: scale(1.1); }
+
+    .btn-area { margin-top: 15px; }
+
+    .btn {
+      display: inline-block;
+      margin: 6px 8px;
+      padding: 10px 18px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .btn-call { background: #ffd700; color: #000; }
+    .btn-wa { background: #25d366; color: #fff; }
+    .btn-appoint { background: #ff9800; color: #fff; }
+
+    .btn:hover { opacity: 0.85; }
+
+    .quick-links a {
+      color: #fff;
+      text-decoration: none;
+      margin: 5px 0;
+      display: block;
+      transition: color 0.3s;
+    }
+
+    .quick-links a:hover { color: #ffd700; }
+
+    .final-line {
+      text-align: center;
+      font-size: 0.9rem;
+      padding: 20px;
+      color: #fff;
+      background: #033c35;
+      border-top: 1px solid rgba(255,255,255,0.2);
+      font-weight: 500;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2rem; }
+      nav ul { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <img src="images/logo.png" alt="Logo"> Harpal Acupressure
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <h1>Welcome to Harpal Acupressure</h1>
+    <p>Experience natural healing, relaxation, and holistic care. Restore your energy and live pain-free with ancient acupressure and wellness therapies.</p>
+  </section>
+
+  <section id="about">
+    <h2>About Harpal Acupressure</h2>
+    <div class="content-box">
+      <ul>
+        <li>2005 – Completed Basic Acupressure Course from Indira Gandhi Open University (IGNOU).</li>
+        <li>2007 – Completed M.D. from Indian Academy of Acupressure Science, Indore University, Sri Lanka.</li>
+        <li>2010 – Certified member of Rajasthan Vaikalpik Swasthya Sanstha (Acupressure Board).</li>
+        <li>2013 – Awarded Doctor’s Degree in Naturopathy Science.</li>
+        <li>2018 – Received “Diamond Award” from Acupressure Training & Research Centre.</li>
+      </ul>
+
+      <h3>Profile Summary</h3>
+      <ul>
+        <li>Specialised in Acupressure, Naturopathy, and Sujok therapies.</li>
+        <li>Conducted 20+ workshops and lectures across India.</li>
+        <li>Recognised for holistic wellness contributions.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="trophy-gallery">
+    <div class="inner">
+      <h2>Certificates & Achievements</h2>
+      <div class="trophy-grid">
+        <!-- 26 Certificate Images -->
+        <div class="trophy-card"><img src="images/crt1.jpg" alt=""></div>
+        <div class="trophy-card"><img src="images/crt2.jpg" alt=""></div>
+        <div class="trophy-card"><img src="images/crt3.jpg" alt=""></div>
+        <div class="trophy-card"><img src="images/crt4.jpg" alt=""></div>
+        <div class="trophy-card"><img src="images/crt5.jpg" alt=""></div>
+        <div class="trophy-card"><img src="images/crt6.jpg" alt=""></div>
+        <div class="trophy-card"><img src="images/crt7.jpg" alt=""></div>
+        <div class="trophy-card"><img src="images/crt8.jpg" alt=""></div>
+        <div class="trophy-card"><img src="images/crt9.jpg" alt=""></div>
+        <div class="trophy-card"><img src="images/crt10.jpg" alt=""></div>
+        <div class="trophy-card"><img src="images/crt11.jpg" alt=""></div>
+        <div class="trophy-card"><img src="images/crt12.jpg" alt=""></div>
+        <div class="trophy-card"><img src="images/crt13.jpg" alt=""></div>
+        <div class="trophy-card"><img src="images/crt14.jpg" alt=""></div>
+        <div class="trophy-card"><img src="images/crt15.jpg" alt=""></div>
+        <div class="trophy-card"><img src="images/crt16.jpg" alt=""></div>
+        <div class="trophy-card"><img src="images/crt17.jpg" alt=""></div>
+        <div class="trophy-card"><img src="images/crt18.jpg" alt=""></div>
+        <div class="trophy-card"><img src="images/crt19.jpg" alt=""></div>
+        <div class="trophy-card"><img src="images/crt20.jpg" alt=""></div>
+        <div class="trophy-card"><img src="images/crt21.jpg" alt=""></div>
+        <div class="trophy-card"><img src="images/crt22.jpg" alt=""></div>
+        <div class="trophy-card"><img src="images/crt23.jpg" alt=""></div>
+        <div class="trophy-card"><img src="images/crt24.jpg" alt=""></div>
+        <div class="trophy-card"><img src="images/crt25.jpg" alt=""></div>
+        <div class="trophy-card"><img src="images/crt26.jpg" alt=""></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="inner">
+      <h2><strong>Our Services</strong></h2>
+      <div class="services-grid">
+        <div class="service-card"><img src="images/service1.jpg" alt="Acupressure Therapy"><div class="svc-body"><div class="svc-title"><strong>Acupressure Therapy</strong></div><div class="svc-text">Targeted pressure techniques to relieve pain, improve circulation, and restore energy balance.</div></div></div>
+        <div class="service-card"><img src="images/service2.jpg" alt="Acupuncture"><div class="svc-body"><div class="svc-title"><strong>Acupuncture</strong></div><div class="svc-text">Traditional needle therapy to stimulate healing pathways and reduce chronic symptoms.</div></div></div>
+        <div class="service-card"><img src="images/service3.jpg" alt="Aura Cleansing"><div class="svc-body"><div class="svc-title"><strong>Aura Cleansing</strong></div><div class="svc-text">Gentle energetic clearing to remove negativity, calm the mind, and uplift emotions.</div></div></div>
+        <div class="service-card"><img src="images/service4.jpg" alt="Cupping Therapy"><div class="svc-body"><div class="svc-title"><strong>Cupping Therapy</strong></div><div class="svc-text">Improves blood flow, reduces muscle tension, and supports detoxification.</div></div></div>
+        <div class="service-card"><img src="images/service5.jpg" alt="Casa Therapy"><div class="svc-body"><div class="svc-title"><strong>Casa Therapy</strong></div><div class="svc-text">Holistic alignment focused on posture, balance, and natural healing responses.</div></div></div>
+        <div class="service-card"><img src="images/service6.jpg" alt="Magnetic Therapy"><div class="svc-body"><div class="svc-title"><strong>Magnetic Therapy</strong></div><div class="svc-text">Non-invasive magnetic treatments to support circulation and relieve chronic discomfort.</div></div></div>
+        <div class="service-card"><img src="images/service7.jpg" alt="Numerology Guidance"><div class="svc-body"><div class="svc-title"><strong>Numerology Guidance</strong></div><div class="svc-text">Numerology readings offering insight for life choices, timing, and growth.</div></div></div>
+        <div class="service-card"><img src="images/service8.jpg" alt="Reiki Healing"><div class="svc-body"><div class="svc-title"><strong>Reiki Healing</strong></div><div class="svc-text">Energy healing sessions to reduce stress, restore calm, and accelerate recovery.</div></div></div>
+        <div class="service-card"><img src="images/service9.jpg" alt="Sujok Therapy"><div class="svc-body"><div class="svc-title"><strong>Sujok Therapy</strong></div><div class="svc-text">Hand & foot mapping therapy to influence internal organs and promote natural healing.</div></div></div>
+        <div class="service-card"><img src="images/service10.jpg" alt="Vastu Consultation"><div class="svc-body"><div class="svc-title"><strong>Vastu Consultation</strong></div><div class="svc-text">Practical Vastu suggestions to harmonize your home or workplace for better wellbeing.</div></div></div>
+      </div>
+    </div>
+  </section>
+ 
+
+  <section id="contact">
+    <div class="inner contact-section">
+      <div class="contact-left">
+        <h3>Connect on Social</h3>
+        <div class="social-btns">
+          <a href="https://www.instagram.com/harpal_acupressure/?igsh=eTE0cXRwMDBiOHk0" target="_blank"><img src="images/instagram.png"></a>
+          <a href="https://m.facebook.com/share/1GioYfoyAg/?wtsid=rdr_0amyqscvfVj53aAWz" target="_blank"><img src="images/facebook.png"></a>
+        </div>
+        <p>Email: <a href="mailto:info@harpalaccupressure.com" style="color:#ffd700;">info@harpalaccupressure.com</a></p>
+        <div class="btn-area">
+          <a class="btn btn-call" href="tel:+9189980455518">📞 Call</a>
+          <a class="btn btn-wa" href="https://wa.me/918866556830" target="_blank">💬 WhatsApp</a>
+          <a class="btn btn-appoint" href="https://maps.app.goo.gl/6wJNQphf7XSe5wKk8" target="_blank">📅 Book Appointment</a>
+        </div>
+      </div>
+
+      <div class="contact-center">
+        <h3>Visit Us</h3>
+        <p><strong>DR. DIPALI PREMALKUMAR PATEL</strong><br>Marma Magnetic & Sujok Therapist</p>
+        <p><strong>Clinic Address:</strong><br>Shop No. 3, Samanvay North Park,<br>Opp Darshanam King Square,<br>Ankodiya Road, Vadodara, Gujarat - 390016</p>
+        <p><a href="https://maps.app.goo.gl/6wJNQphf7XSe5wKk8" target="_blank" style="color:#ffd700;">📍 Open in Google Maps</a></p>
+      </div>
+
+      <div class="quick-links">
+        <h4 style="margin-top:15px;color:#fff;">Quick Links</h4>
+        <a href="#home">🏠 Home</a>
+        <a href="#about">ℹ️ About</a>
+        <a href="#services">💆‍♀️ Services</a>
+        <a href="#testimonials">💬 Testimonials</a>
+        <a href="#contact">📞 Contact</a>
+      </div>
+    </div>
+
+    <div class="final-line">
+      A PLACE OF HEALING, RELAXATION, HOLISTIC WELLNESS, AND POSITIVE ENERGY — DEDICATED TO HEALTH, HAPPINESS, AND WELL-BEING.
+    </div>
+  </section>
+
+</body>
+</html>

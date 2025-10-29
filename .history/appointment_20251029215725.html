@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Book Appointment — Harpal Acupressure</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <img src="images/logo.png" alt="Harpal Acupressure Logo">
+      <h1>Harpal Acupressure</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#services">Our Services</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="feedback.html">Feedback</a></li>
+        <li><a href="appointment.html" class="active">Book Appointment</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Appointment Section -->
+  <section id="appointment-page" class="appointment-section">
+    <div class="inner">
+      <h2><strong>Book Your Appointment</strong></h2>
+      <p>Schedule your healing session with Dr. Dipali Premalkumar Patel at Harpal Acupressure. Fill out the form below and we’ll get in touch soon.</p>
+
+      <div class="appointment-form">
+        <form action="mailto:info@harpalaccupressure.com" method="post" enctype="text/plain">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="Name" placeholder="Enter your full name" required>
+
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="Phone" placeholder="Enter your phone number" required>
+
+          <label for="date">Preferred Date</label>
+          <input type="date" id="date" name="Preferred Date" required>
+
+          <label for="message">Message / Health Concern</label>
+          <textarea id="message" name="Message" rows="5" placeholder="Write your concern or preferred time..." required></textarea>
+
+          <button type="submit" class="btn-submit">Book Appointment</button>
+        </form>
+      </div>
+
+      <div class="map-box" style="margin-top:50px;">
+        <h3>Visit Our Clinic 📍</h3>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3683.1977924323587!2d73.13290447507392!3d22.3341551796626!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395fc50d8847d091%3A0x9e20bcbba91a17ee!2sHarpal%20Acupressure!5e0!3m2!1sen!2sin!4v1730209202432!5m2!1sen!2sin"
+          width="100%" height="300" style="border:0;" allowfullscreen loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Harpal Acupressure. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>

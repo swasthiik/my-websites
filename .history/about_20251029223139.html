@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — Harpal Acupressure</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      background: url('images/background2.jpg') no-repeat center/cover;
+      color: #fff;
+      position: relative;
+    }
+    body::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.55);
+      z-index: 0;
+    }
+    .about-container {
+      position: relative;
+      z-index: 1;
+      max-width: 1100px;
+      margin: 120px auto;
+      padding: 40px 60px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 40px;
+    }
+    .about-container img {
+      width: 350px;
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    }
+    .about-text {
+      flex: 1;
+      min-width: 280px;
+    }
+    .about-text h2 {
+      font-size: 2.2rem;
+      color: #ffd700;
+      margin-bottom: 20px;
+    }
+    .about-text p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+    .about-text strong {
+      color: #ffd700;
+    }
+    .back-btn {
+      display: inline-block;
+      padding: 10px 25px;
+      border-radius: 25px;
+      background: #ffd700;
+      color: #0c4b46;
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    .back-btn:hover {
+      background: #fff;
+    }
+    footer {
+      background: #0c4b46;
+      color: #fff;
+      text-align: center;
+      padding: 20px 10px;
+      font-size: 0.95rem;
+      margin-top: 60px;
+    }
+    @media (max-width: 768px) {
+      .about-container {
+        flex-direction: column;
+        padding: 30px;
+      }
+      .about-container img {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <img src="images/logo.jpg" alt="Harpal Acupressure Logo" />
+      <h1>Harpal Acupressure</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#" class="active">About</a></li>
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="about-container">
+    <img src="images/photo1.png" alt="Dr. Dipali Premalkumar Patel" />
+    <div class="about-text">
+      <h2>Dr. Dipali Premalkumar Patel</h2>
+      <p><strong>Marma Magnetic & Sujok Therapist</strong><br>
+      Certified holistic healing specialist offering therapies that combine <strong>traditional acupressure</strong>, <strong>magnetic therapy</strong>, and <strong>energy healing</strong> methods to promote balance, relief, and vitality.</p>
+      
+      <p>With years of experience in natural healing, Dr. Dipali’s approach focuses on the root causes of discomfort — restoring the body’s natural energy flow through touch, energy alignment, and emotional balance.</p>
+      
+      <p>Her mission is to help every individual live a pain-free and peaceful life through natural, side-effect-free treatments. Each session is customized to support relaxation, recovery, and rejuvenation.</p>
+      
+      <a href="index.html" class="back-btn">← Back to Home</a>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Harpal Acupressure — All Rights Reserved
+  </footer>
+</body>
+</html>

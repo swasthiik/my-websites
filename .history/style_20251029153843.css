@@ -1,0 +1,117 @@
+/* Base */
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+:root{
+  --primary:#0c4b46;
+  --accent:#ffd700;
+  --muted:#f2f2f2;
+  --card-bg: rgba(255,255,255,0.95);
+}
+
+/* Header (shared) */
+.site-header, .about-header {
+  width:100%;
+  background:var(--primary);
+  color:#fff;
+  position:fixed;
+  top:0;
+  left:0;
+  z-index:1000;
+  box-shadow:0 2px 10px rgba(0,0,0,0.25);
+}
+.header-inner, .about-header-inner{
+  max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:12px 20px;gap:12px;
+}
+.logo-area{display:flex;align-items:center;gap:12px;}
+.logo-area.small .logo-img{width:50px;height:50px;}
+.logo-img{width:65px;height:65px;border-radius:50%;object-fit:cover;border:2px solid var(--accent);}
+.logo-text-wrap{line-height:1;}
+.logo-title{font-weight:700;color:#fff;font-size:1.05rem;}
+.logo-sub{font-size:0.8rem;color:#f6f6f6;opacity:0.95;}
+.site-nav ul{display:flex;gap:18px;list-style:none;}
+.site-nav ul li a{color:#fff;text-decoration:none;font-weight:500;padding:6px 4px;}
+.site-nav.open{display:block;}
+.nav-toggle{display:none;background:transparent;border:0;color:#fff;font-size:1.4rem;cursor:pointer;}
+
+/* Utility container */
+.container{max-width:1200px;margin:0 auto;padding:0 20px;}
+
+/* Hero */
+.hero{height:82vh;display:flex;align-items:center;justify-content:center;background:url('images/background.jpg') center/cover no-repeat;padding-top:90px;position:relative;color:#fff;text-align:center;}
+.hero::before{content:'';position:absolute;inset:0;background:rgba(0,0,0,0.55);}
+.hero-content{position:relative;z-index:2;padding:30px 12px;}
+.hero-content h1{font-size:44px;margin-bottom:14px;text-shadow:2px 2px 8px rgba(0,0,0,0.6);}
+.hero-content p{font-size:18px;margin-bottom:18px;max-width:900px;margin-left:auto;margin-right:auto;}
+.hero-cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:8px;}
+.btn{display:inline-block;padding:10px 18px;border-radius:26px;text-decoration:none;font-weight:600;transition:all .25s;}
+.btn-primary{background:var(--accent);color:#111;}
+.btn-secondary{background:rgba(255,255,255,0.12);color:#fff;border:1px solid rgba(255,255,255,0.08);}
+.btn-outline{background:transparent;border:2px solid var(--accent);color:var(--accent);padding:8px 16px;border-radius:30px;}
+
+/* About on home */
+.about-home{padding:40px 0 60px 0;margin-top:20px;background:transparent;}
+.about-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:30px;padding:40px 20px;}
+.about-image{flex:1;text-align:center;}
+.about-image img{width:90%;max-width:320px;border-radius:14px;box-shadow:0 6px 18px rgba(0,0,0,0.35);}
+.doctor-name{color:var(--accent);font-weight:700;margin-top:10px;}
+.about-text{flex:1;padding:12px;}
+
+/* Services */
+.services-section{padding:60px 0;background:url('images/background3.jpg') center/cover no-repeat;color:#fff;}
+.services-section h2{color:var(--accent);text-align:center;margin-bottom:28px;text-shadow:1px 1px 3px rgba(0,0,0,0.6);}
+.services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;max-width:1200px;margin:0 auto;padding:0 20px;}
+.service-card{background:var(--card-bg);border-radius:14px;overflow:hidden;box-shadow:0 6px 18px rgba(0,0,0,0.12);transition:transform .25s;}
+.service-card img{width:100%;height:160px;object-fit:cover;}
+.svc-body{padding:14px;}
+.svc-body h3{margin-bottom:8px;color:#222;}
+.svc-body p{color:#555;font-size:0.95rem;line-height:1.45;}
+
+/* Testimonials */
+.testimonials{padding:60px 0;background:url('images/background4.jpg') center/cover no-repeat;color:#fff;}
+.testimonials h2{text-align:center;color:var(--accent);margin-bottom:20px;}
+.test-list{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:14px;padding:0 20px;}
+.testimonial-card{background:rgba(255,255,255,0.12);padding:18px;border-radius:12px;font-style:italic;box-shadow:0 6px 18px rgba(0,0,0,0.25);}
+
+/* Contact */
+.contact{padding:40px 0 80px 0;background:#111;color:#fff;}
+.contact-inner{display:flex;gap:24px;align-items:flex-start;flex-wrap:wrap;padding:30px 20px;}
+.contact-box{flex:1;min-width:260px;background:rgba(255,255,255,0.03);padding:18px;border-radius:12px;}
+.social-row img{width:38px;height:38px;margin-right:10px;border-radius:50%;}
+.contact-actions{margin-top:10px;display:flex;gap:8px;flex-wrap:wrap;}
+.maps-link{color:var(--accent);text-decoration:none;}
+
+/* Final line + footer */
+.final-line{text-align:center;color:#ddd;margin-top:20px;padding:8px 20px;}
+.site-footer{background:#000;color:#aaa;text-align:center;padding:14px 10px;margin-top:30px;}
+
+/* About page specifics */
+.about-journey{min-height:420px;padding:110px 0 60px 0;background:url('images/tps1.jpg') center/cover no-repeat;position:relative;color:#fff;}
+.about-journey::before{content:'';position:absolute;inset:0;background:rgba(0,0,0,0.55);}
+.about-journey .inner{position:relative;z-index:2;max-width:1100px;margin:0 auto;padding:0 20px;}
+.content-box{background:rgba(255,255,255,0.06);padding:20px;border-radius:12px;color:#f4f4f4;box-shadow:0 8px 20px rgba(0,0,0,0.3);}
+.achievements-section{padding:80px 0;background:url('images/tps2.jpg') center/cover no-repeat;position:relative;color:#fff;}
+.achievements-section::before{content:'';position:absolute;inset:0;background:rgba(0,0,0,0.6);}
+.achievements-section .inner{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:0 20px;text-align:center;}
+.trophy-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:18px;}
+.trophy-card{background:rgba(255,255,255,0.06);padding:10px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.3);}
+
+/* Responsive */
+@media (max-width:1100px){
+  .services-grid{grid-template-columns:repeat(3,1fr);}
+}
+@media (max-width:900px){
+  .services-grid{grid-template-columns:repeat(2,1fr);}
+  .about-inner{flex-direction:column;align-items:center;text-align:center;}
+  .hero{height:70vh;}
+  .logo-img{width:56px;height:56px;}
+  .nav-toggle{display:block;}
+  .site-nav{display:none;}
+  .site-nav.open{display:block;position:absolute;top:70px;right:20px;background:var(--primary);padding:12px;border-radius:8px;}
+  .site-nav ul{flex-direction:column;gap:10px;}
+}
+@media (max-width:600px){
+  .services-grid{grid-template-columns:1fr;}
+  .hero-content h1{font-size:28px;}
+  .hero-content p{font-size:15px;}
+  .header-inner{padding:10px;}
+  .logo-text-wrap{display:none;}
+}

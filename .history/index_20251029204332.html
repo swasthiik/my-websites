@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Harpal Accupressure — Healing & Wellness</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #000;
+      color: #fff;
+      scroll-behavior: smooth;
+    }
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(0,0,0,0.8);
+      backdrop-filter: blur(8px);
+      z-index: 1000;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header img {
+      height: 50px;
+    }
+    nav a {
+      color: #ffd700;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    nav a:hover {
+      color: #fff;
+    }
+    .inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 100px 20px 50px;
+    }
+    section {
+      padding: 60px 0;
+    }
+    /* About */
+    #about {
+      background: url('images/bg2.jpg') no-repeat center/cover;
+      text-align: center;
+      border-radius: 10px;
+      margin: 20px;
+      padding: 80px 20px;
+    }
+    #about h2 {
+      color: #ffd700;
+      font-size: 2.2rem;
+      margin-bottom: 20px;
+    }
+    #about img {
+      width: 180px;
+      border-radius: 50%;
+      border: 3px solid #ffd700;
+      margin-bottom: 20px;
+    }
+    #about p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      max-width: 800px;
+      margin: auto;
+    }
+    #moreText { display: none; }
+    .read-btn {
+      margin-top: 15px;
+      background: #ffd700;
+      border: none;
+      color: #000;
+      padding: 8px 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    /* Feedback + Appointment Section */
+    .feedback-section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: stretch;
+      gap: 30px;
+      background: rgba(255,255,255,0.05);
+      padding: 50px 20px;
+      border-radius: 10px;
+      margin: 20px;
+    }
+    .feedback-box {
+      flex: 1;
+      min-width: 300px;
+      background: rgba(0,0,0,0.7);
+      padding: 30px;
+      border-radius: 10px;
+      text-align: center;
+    }
+    .feedback-box h3 {
+      color: #ffd700;
+      margin-bottom: 10px;
+    }
+    .feedback-box a {
+      display: inline-block;
+      background: #ffd700;
+      color: #000;
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    .feedback-box a:hover {
+      background: #fff;
+    }
+
+    /* Contact */
+    #contact {
+      background: #111;
+      color: #fff;
+      padding: 50px 20px;
+    }
+    .contact-left, .contact-center, .quick-links {
+      flex: 1;
+      min-width: 280px;
+      padding: 20px;
+    }
+    .inner-contact {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    .social-btns img {
+      width: 35px;
+      margin-right: 10px;
+      border-radius: 50%;
+    }
+    .btn-area .btn {
+      display: inline-block;
+      margin: 5px;
+      background: #ffd700;
+      color: #000;
+      padding: 10px 15px;
+      border-radius: 5px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .final-line {
+      text-align: center;
+      padding: 15px;
+      font-size: 0.9rem;
+      background: #000;
+      color: #ffd700;
+    }
+    @media (max-width: 768px) {
+      nav { display: none; }
+      header { flex-wrap: wrap; }
+      .inner-contact { flex-direction: column; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <img src="images/logo.png" alt="Logo">
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- About Section -->
+  <section id="about">
+    <div class="inner">
+      <h2>About Us</h2>
+      <img src="images/mam.jpg" alt="Dr. Dipali Patel">
+      <p>
+        <strong>Dr. Dipali Premalkumar Patel</strong> is a certified Marma Magnetic & Sujok Therapist with years of holistic healing experience. 
+        She specializes in energy balancing and natural pain relief techniques. 
+        <span id="dots">...</span>
+        <span id="moreText">Her clinic is dedicated to healing through traditional methods combined with modern understanding. Each therapy is focused on restoring mind-body harmony and promoting total well-being.</span>
+      </p>
+      <button class="read-btn" onclick="toggleRead()">Read More</button>
+    </div>
+  </section>
+
+   <!-- Services -->
+  <section id="services" aria-labelledby="services-title">
+    <div class="inner">
+      <h2 id="services-title"><strong>Our Services</strong></h2>
+      <div class="services-grid">
+        <div class="service-card"><img src="images/service1.jpg" alt="Acupressure Therapy"><div class="svc-body"><div class="svc-title"><strong>Acupressure Therapy</strong></div><div class="svc-text">Targeted pressure techniques to relieve pain, improve circulation, and restore energy balance.</div></div></div>
+        <div class="service-card"><img src="images/service2.jpg" alt="Acupuncture"><div class="svc-body"><div class="svc-title"><strong>Acupuncture</strong></div><div class="svc-text">Traditional needle therapy to stimulate healing pathways and reduce chronic symptoms.</div></div></div>
+        <div class="service-card"><img src="images/service3.jpg" alt="Aura Cleansing"><div class="svc-body"><div class="svc-title"><strong>Aura Cleansing</strong></div><div class="svc-text">Gentle energetic clearing to remove negativity, calm the mind, and uplift emotions.</div></div></div>
+        <div class="service-card"><img src="images/service4.jpg" alt="Cupping Therapy"><div class="svc-body"><div class="svc-title"><strong>Cupping Therapy</strong></div><div class="svc-text">Improves blood flow, reduces muscle tension, and supports detoxification.</div></div></div>
+        <div class="service-card"><img src="images/service5.jpg" alt="Casa Therapy"><div class="svc-body"><div class="svc-title"><strong>Casa Therapy</strong></div><div class="svc-text">Holistic alignment focused on posture, balance, and natural healing responses.</div></div></div>
+        <div class="service-card"><img src="images/service6.jpg" alt="Magnetic Therapy"><div class="svc-body"><div class="svc-title"><strong>Magnetic Therapy</strong></div><div class="svc-text">Non-invasive magnetic treatments to support circulation and relieve chronic discomfort.</div></div></div>
+        <div class="service-card"><img src="images/service7.jpg" alt="Numerology Guidance"><div class="svc-body"><div class="svc-title"><strong>Numerology Guidance</strong></div><div class="svc-text">Numerology readings offering insight for life choices, timing, and growth.</div></div></div>
+        <div class="service-card"><img src="images/service8.jpg" alt="Reiki Healing"><div class="svc-body"><div class="svc-title"><strong>Reiki Healing</strong></div><div class="svc-text">Energy healing sessions to reduce stress, restore calm, and accelerate recovery.</div></div></div>
+        <div class="service-card"><img src="images/service9.jpg" alt="Sujok Therapy"><div class="svc-body"><div class="svc-title"><strong>Sujok Therapy</strong></div><div class="svc-text">Hand & foot mapping therapy to influence internal organs and promote natural healing.</div></div></div>
+        <div class="service-card"><img src="images/service10.jpg" alt="Vastu Consultation"><div class="svc-body"><div class="svc-title"><strong>Vastu Consultation</strong></div><div class="svc-text">Practical Vastu suggestions to harmonize your home or workplace for better wellbeing.</div></div></div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Feedback + Appointment -->
+  <section class="feedback-section">
+    <div class="feedback-box">
+      <h3>📅 Book an Appointment</h3>
+      <p>Click below to schedule your healing session today!</p>
+      <a href="https://maps.app.goo.gl/6wJNQphf7XSe5wKk8" target="_blank">Book Now</a>
+    </div>
+    <div class="feedback-box">
+      <h3>⭐ Share Your Feedback</h3>
+      <p>Your experience matters to us. Share your review on Google!</p>
+      <a href="https://www.google.com/maps/place/Harpal+Acupressure/@22.2860217,73.1458599,17z/data=!4m8!3m7!1s0x395fcf65a3fd41a3:0xa59c5ec5c260ca9e!8m2!3d22.2860217!4d73.1458599!9m1!1b1!16s%2Fg%2F11h_3f2q2s?entry=ttu"
+         target="_blank">Give Feedback</a>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="inner-contact">
+      <div class="contact-left">
+        <h3>Connect on Social</h3>
+        <div class="social-btns">
+          <a href="https://www.instagram.com/harpal_acupressure/?igsh=eTE0cXRwMDBiOHk0" target="_blank"><img src="images/instagram.png" alt="Instagram"></a>
+          <a href="https://m.facebook.com/share/1GioYfoyAg/?wtsid=rdr_0amyqscvfVj53aAWz" target="_blank"><img src="images/facebook.png" alt="Facebook"></a>
+        </div>
+        <p>Email: <a href="mailto:info@harpalaccupressure.com" style="color:#ffd700;">info@harpalaccupressure.com</a></p>
+        <div class="btn-area">
+          <a class="btn btn-call" href="tel:+9189980455518">📞 Call</a>
+          <a class="btn btn-wa" href="https://wa.me/918866556830" target="_blank">💬 WhatsApp</a>
+        </div>
+      </div>
+
+      <div class="contact-center">
+        <h3>Visit Us</h3>
+        <p><strong>DR. DIPALI PREMALKUMAR PATEL</strong><br>Marma Magnetic & Sujok Therapist</p>
+        <p><strong>Clinic Address:</strong><br>
+        Shop No. 3, Samanvay North Park,<br>
+        Opp Darshanam King Square,<br>
+        Ankodiya Road, Vadodara, Gujarat - 390016</p>
+        <p><a href="https://maps.app.goo.gl/6wJNQphf7XSe5wKk8" target="_blank" style="color:#ffd700;">📍 Open in Google Maps</a></p>
+      </div>
+
+      <div class="quick-links">
+        <h4 style="color:#ffd700;">Quick Links</h4>
+        <a href="#home">🏠 Home</a><br>
+        <a href="#about">ℹ️ About</a><br>
+        <a href="#services">💆‍♀️ Services</a><br>
+        <a href="#testimonials">💬 Testimonials</a><br>
+        <a href="#contact">📞 Contact</a>
+      </div>
+    </div>
+
+    <div class="final-line">
+      A PLACE OF HEALING, RELAXATION, HOLISTIC WELLNESS, AND POSITIVE ENERGY — DEDICATED TO HEALTH, HAPPINESS, AND WELL-BEING.
+    </div>
+  </section>
+
+  <script>
+    function toggleRead() {
+      const dots = document.getElementById("dots");
+      const moreText = document.getElementById("moreText");
+      const btn = document.querySelector(".read-btn");
+
+      if (dots.style.display === "none") {
+        dots.style.display = "inline";
+        moreText.style.display = "none";
+        btn.textContent = "Read More";
+      } else {
+        dots.style.display = "none";
+        moreText.style.display = "inline";
+        btn.textContent = "Read Less";
+      }
+    }
+  </script>
+</body>
+</html>

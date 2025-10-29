@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About – Harpal Acupressure</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #fdfdfd;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* Header */
+    header {
+      background: #0c4b46;
+      color: white;
+      padding: 18px 20px;
+      text-align: center;
+      font-size: 1.6rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    }
+
+    /* Journey Section */
+    section {
+      position: relative;
+      padding: 70px 10%;
+      max-width: 1100px;
+      margin: auto;
+      color: #fff;
+      background: url('images/tps1.jpg') center/cover no-repeat;
+      overflow: hidden;
+    }
+
+    section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.65);
+      z-index: 0;
+    }
+
+    section * {
+      position: relative;
+      z-index: 1;
+    }
+
+    h2 {
+      text-align: center;
+      color: #ffd700;
+      font-size: 2.2rem;
+      margin-bottom: 25px;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
+    }
+
+    .content-box {
+      background: rgba(255,255,255,0.08);
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+      color: #f2f2f2;
+    }
+
+    ul {
+      list-style: disc;
+      margin-left: 25px;
+    }
+
+    ul li {
+      margin-bottom: 10px;
+    }
+
+    h3 {
+      color: #ffd700;
+      margin-top: 30px;
+      margin-bottom: 12px;
+      font-size: 1.5rem;
+      border-bottom: 2px solid rgba(255,215,0,0.3);
+      display: inline-block;
+      padding-bottom: 4px;
+    }
+
+    /* Achievements Section */
+    #achievements {
+      background: url('images/tps2.jpg') center/cover no-repeat;
+      position: relative;
+      padding: 90px 6%;
+      color: #fff;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    #achievements::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.75);
+      z-index: 0;
+    }
+
+    #achievements .inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    #achievements h2 {
+      font-size: 2.3rem;
+      color: #ffd700;
+      margin-bottom: 20px;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.9);
+    }
+
+    #achievements p {
+      max-width: 700px;
+      margin: 0 auto 50px;
+      font-size: 1.1rem;
+      color: #f0f0f0;
+      line-height: 1.8;
+    }
+
+    /* Trophy Grid Compact Layout */
+    .trophy-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      z-index: 1;
+      background: rgba(255,255,255,0.05);
+      padding: 25px;
+      border-radius: 16px;
+      box-shadow: inset 0 0 12px rgba(255,215,0,0.15);
+    }
+
+    .trophy-card {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      padding: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+      transition: all 0.3s ease;
+    }
+
+    .trophy-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+    }
+
+    .trophy-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    footer {
+      text-align: center;
+      background: #0c4b46;
+      color: #fff;
+      padding: 14px;
+      font-size: 0.95rem;
+      letter-spacing: 0.5px;
+      margin-top: 0;
+    }
+
+    @media (max-width: 768px) {
+      section, #achievements {
+        padding: 60px 5%;
+      }
+      h2 {
+        font-size: 1.8rem;
+      }
+      .trophy-grid {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      }
+      .trophy-card img {
+        height: 150px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>About Harpal Acupressure</header>
+
+  <!-- Journey Section -->
+  <section>
+    <h2>Journey & Achievements</h2>
+    <div class="content-box">
+      <ul>
+        <li>2005 – Completed Basic Acupressure Course from Indira Gandhi Open University (IGNOU).</li>
+        <li>2007 – Completed M.D. from Indian Academy of Acupressure Science, Indore University, Sri Lanka.</li>
+        <li>2007 – Gold Medal recognition by Charotar Moti Satyavis.</li>
+        <li>2009 – Gold Medal from Indian Academy of Acupressure at 8th National Acupressure Conference.</li>
+        <li>2010 – Became a certified member of Rajasthan Vaikalpik Swasthya Sanstha (Acupressure Board).</li>
+        <li>2013 – Awarded Doctor’s Degree in Naturopathy Science.</li>
+        <li>Organised multiple 3-day Acupressure & Sujok Therapy camps in Umreth and Nasik.</li>
+        <li>Delivered lecture at Sai Baba Temple Trust, Vadodara, and Shivyog events in Pune.</li>
+        <li>2016 – Completed Dietitian Course from JSRFC Trust (16 Dec 2016).</li>
+        <li>2017 – Gold Medal at National Conference on Health & Wellness (Heritage Foundation).</li>
+        <li>2018 – Honoured by Association of Alliance Clubs International, Ahmedabad.</li>
+        <li>Received “Shrimani Award” & “Diamond Award” for excellence in natural healing.</li>
+      </ul>
+
+      <h3>Profile Summary</h3>
+      <ul>
+        <li>Specialised in Acupressure, Naturopathy, and Sujok therapies.</li>
+        <li>Conducted over 20 national-level workshops and wellness training programs.</li>
+        <li>Guest speaker at holistic healing conferences and community health events.</li>
+        <li>Recognised for contributions to spreading awareness about natural healing.</li>
+        <li>Dedicated to training new learners and helping patients achieve balance & positivity.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Certificates & Trophies -->
+  <section id="achievements">
+    <div class="inner">
+      <h2>Our Trophies & Certificates</h2>
+      <p>We are proud to showcase our milestones and recognitions that reflect years of dedication to holistic healing and wellness.</p>
+
+      <div class="trophy-grid">
+        <!-- 26 certificate images -->
+        <div class="trophy-card"><img src="images/crt1.jpg" alt="Certificate 1"></div>
+        <div class="trophy-card"><img src="images/crt2.jpg" alt="Certificate 2"></div>
+        <div class="trophy-card"><img src="images/crt3.jpg" alt="Certificate 3"></div>
+        <div class="trophy-card"><img src="images/crt4.jpg" alt="Certificate 4"></div>
+        <div class="trophy-card"><img src="images/crt5.jpg" alt="Certificate 5"></div>
+        <div class="trophy-card"><img src="images/crt6.jpg" alt="Certificate 6"></div>
+        <div class="trophy-card"><img src="images/crt7.jpg" alt="Certificate 7"></div>
+        <div class="trophy-card"><img src="images/crt8.jpg" alt="Certificate 8"></div>
+        <div class="trophy-card"><img src="images/crt9.jpg" alt="Certificate 9"></div>
+        <div class="trophy-card"><img src="images/crt10.jpg" alt="Certificate 10"></div>
+        <div class="trophy-card"><img src="images/crt11.jpg" alt="Certificate 11"></div>
+        <div class="trophy-card"><img src="images/crt12.jpg" alt="Certificate 12"></div>
+        <div class="trophy-card"><img src="images/crt13.jpg" alt="Certificate 13"></div>
+        <div class="trophy-card"><img src="images/crt14.jpg" alt="Certificate 14"></div>
+        <div class="trophy-card"><img src="images/crt15.jpg" alt="Certificate 15"></div>
+        <div class="trophy-card"><img src="images/crt16.jpg" alt="Certificate 16"></div>
+        <div class="trophy-card"><img src="images/crt17.jpg" alt="Certificate 17"></div>
+        <div class="trophy-card"><img src="images/crt18.jpg" alt="Certificate 18"></div>
+        <div class="trophy-card"><img src="images/crt19.jpg" alt="Certificate 19"></div>
+        <div class="trophy-card"><img src="images/crt20.jpg" alt="Certificate 20"></div>
+        <div class="trophy-card"><img src="images/crt21.jpg" alt="Certificate 21"></div>
+        <div class="trophy-card"><img src="images/crt22.jpg" alt="Certificate 22"></div>
+        <div class="trophy-card"><img src="images/crt23.jpg" alt="Certificate 23"></div>
+        <div class="trophy-card"><img src="images/crt24.jpg" alt="Certificate 24"></div>
+        <div class="trophy-card"><img src="images/crt25.jpg" alt="Certificate 25"></div>
+        <div class="trophy-card"><img src="images/crt26.jpg" alt="Certificate 26"></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Harpal Acupressure — All Rights Reserved
+  </footer>
+</body>
+</html>
