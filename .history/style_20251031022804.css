@@ -1,6 +1,4 @@
-/* style.css */
-
-/* GENERAL BODY & TYPOGRAPHY */
+GENERAL BODY & TYPOGRAPHY */
 :root {
     --primary-color: #213803; /* A deep, earthy green */
     --secondary-color: #064421; /* A slightly darker, richer green */
@@ -88,7 +86,7 @@ header {
 .logo-area {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 20px; /* Increased gap between logo and title */
     flex-shrink: 0; /* Prevent logo from shrinking */
 }
 
@@ -377,221 +375,32 @@ section::before {
     color: var(--accent-color);
 }
 
-/* Inner grid for contact details */
-.contact-details-grid {
+/* Styles for the 'inner' div within the homepage contact section */
+#contact-section-home .section-card .inner {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adjusted min-width for better fit */
+    gap: 40px; /* Increased space between columns/rows */
     margin-top: 30px;
-    text-align: center;
+    margin-bottom: 40px; /* Add some space below the inner content */
+    text-align: center; /* Ensures content inside is centered horizontally by default */
+    align-items: start; /* Align items to the start of their grid cell */
 }
 
-.contact-info-block {
-    background: rgba(255, 255, 255, 0.08); /* Lighter glass for info blocks */
-    padding: 30px 20px;
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    display: flex;
+/* Styling for the individual content blocks within the .inner grid */
+#contact-section-home .contact-left,
+#contact-section-home .contact-center,
+#contact-section-home .quick-links {
+    padding: 25px; /* Added internal padding */
+    background: rgba(255, 255, 255, 0.08); /* Subtle background for distinction */
+    border-radius: 12px; /* Rounded corners for the blocks */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2); /* Soft shadow */
+    display: flex; /* Use flexbox for vertical alignment inside the blocks */
     flex-direction: column;
-    align-items: center;
+    justify-content: flex-start; /* Align content to the top */
+    align-items: center; /* Center items horizontally within their block */
 }
-
-.contact-info-block h3 {
-    color: #ffffff;
-    margin-bottom: 15px;
-    font-size: 1.6em;
-}
-
-.contact-info-block p, .contact-info-block ul {
-    color: #e0e0e0;
-    margin-bottom: 10px;
-}
-
-.contact-info-block ul {
-    list-style: none;
-    padding: 0;
-}
-
-.contact-info-block li {
-    margin-bottom: 5px;
-}
-
-.contact-info-block a {
-    color: var(--accent-color);
-    font-weight: 500;
-}
-
-.contact-info-block a:hover {
-    color: #ffffff;
-    text-decoration: underline;
-}
-
-.social-btns {
-    margin-top: 20px;
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-}
-
-.social-btns img {
-    height: 40px;
-    width: 40px;
-    filter: invert(1) brightness(0.8); /* Make icons white/subtle */
-    transition: all 0.3s ease;
-}
-
-.social-btns img:hover {
-    transform: scale(1.1);
-    filter: invert(0) brightness(1); /* Restore color or make brighter on hover */
-}
-
-/* Buttons for contact section */
-.contact-actions {
-    margin-top: 30px;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.contact-actions .btn {
-    min-width: 150px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    background-color: var(--accent-color); /* Use accent for action buttons */
-    color: var(--bg-color); /* Dark text for contrast */
-}
-
-.contact-actions .btn:hover {
-    background-color: #ffffff;
-    color: var(--bg-color);
-}
-
-.contact-actions .btn-whatsapp {
-    background-color: #25d366; /* WhatsApp brand color */
-    color: #ffffff;
-}
-
-.contact-actions .btn-whatsapp:hover {
-    background-color: #1da851;
-}
-
-/* Footer */
-footer {
-    background-color: var(--secondary-color);
-    color: #ffffff;
-    text-align: center;
-    padding: 20px 5%;
-    font-size: 0.9em;
-    height: var(--footer-height);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 -2px 8px rgba(0,0,0,0.3);
-}
-
-/* Responsive Design */
-@media (max-width: 992px) {
-    header {
-        flex-direction: row; /* Keep logo and nav on one line if possible */
-        justify-content: space-between;
-        height: auto;
-        padding: 15px 4%;
-    }
-
-    .nav-menu {
-        display: none; /* Hide desktop nav by default on smaller screens */
-        flex-direction: column;
-        width: 100%;
-        background: var(--primary-color);
-        position: absolute;
-        top: var(--header-height); /* Position below header */
-        left: 0;
-        right: 0;
-        padding: 15px 0;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-        z-index: 999; /* Below mobile button */
-    }
-
-    .nav-menu.active {
-        display: flex;
-    }
-
-    .nav-menu ul {
-        flex-direction: column;
-        gap: 10px;
-        align-items: center;
-    }
-
-    .nav-menu li {
-        margin: 0;
-        width: 100%;
-        text-align: center;
-    }
-
-    .nav-menu a {
-        display: block;
-        padding: 12px 0;
-        border-radius: 0;
-    }
-
-    .nav-menu a:hover, .nav-menu a.active {
-        background-color: rgba(255, 255, 255, 0.15);
-    }
-
-    .mobile-menu-button {
-        display: flex; /* Show button on smaller screens */
-    }
-
-    #hero {
-        height: calc(100vh - var(--header-height)); /* Still adjust for header height */
-        padding-top: var(--header-height); /* Ensure content isn't under sticky header */
-    }
-
-    #hero h1 { font-size: 2.8em; }
-    #hero p { font-size: 1.1em; }
-
-    section {
-        padding: 60px 4%;
-        min-height: 400px;
-    }
-
-    .glass-section .section-card {
-        padding: 30px;
-    }
-
-    .glass-section .section-card h2 {
-        font-size: 2.2em;
-        margin-bottom: 30px;
-    }
-
-    .about-content-grid {
-        grid-template-columns: 1fr; /* Stack on smaller screens */
-        text-align: center;
-    }
-
-    .about-image-wrapper { order: -1; /* Image above text on mobile */ }
-    .about-content-grid p { text-align: center; }
-
-    .services-grid, .feedback-grid, .contact-details-grid {
-        grid-template-columns: 1fr; /* Stack all cards/items on smaller screens */
-        gap: 25px;
-    }
-
-    .service-card, .feedback-item, .contact-info-block {
-        max-width: 100%; /* Take full width */
-    }
-}
-
-@media (max-width: 576px) {
-    .site-title { font-size: 1.5em; }
-    .logo-area .logo { height: 45px; width: 45px; }
-
-    #hero h1 { font-size: 2.2em; }
-    #hero p { font-size: 1em; }
+#hero p { font-size: 1em; }
     .hero-overlay { padding: 30px 15px; }
 
     section {
@@ -616,5 +425,212 @@ footer {
     footer {
         padding: 15px 3%;
         font-size: 0.8em;
+    }
+}
+
+/* contact.css - Styles specific to the dedicated contact page */
+/* This section is integrated into style.css */
+
+/* Page-specific background for the contact page */
+#contact-page {
+    background-image: url('images/background7.jpg'); /* Ensure this image exists! */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Parallax effect */
+    padding: 80px 5%; /* General padding from style.css, overridden if needed */
+    min-height: calc(100vh - var(--header-height) - var(--footer-height));
+    display: flex;
+    align-items: center; /* Center content vertically */
+    justify-content: center;
+    position: relative;
+    z-index: 1; /* Ensure it's above the body background if any */
+}
+
+/* Overlay for contact page background (similar to generic section::before) */
+#contact-page::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.65); /* Darker overlay for strong contrast */
+    z-index: 0; /* Below actual content */
+}
+
+/* Main glass card on the contact page - CHANGED BACKGROUND COLOR HERE */
+#contact-page .section-card {
+    max-width: 900px; /* Specific width for contact page card */
+    margin: 40px auto; /* Centered, with vertical spacing */
+    padding: 40px;
+    background: rgba(18, 56, 30, 0.7); /* A distinct, slightly lighter opaque green */
+    backdrop-filter: blur(12px); /* Consistent blur */
+    border: 1px solid var(--glass-card-border); /* Consistent border */
+    box-shadow: 0 8px 32px 0 var(--glass-card-shadow); /* Consistent shadow */
+    color: var(--text-color-light);
+    width: 100%; /* Take full available width within max-width */
+    position: relative; /* Above ::before overlay */
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 30px; /* Space between individual contact blocks */
+    text-align: center; /* Center content within the card */
+}
+
+#contact-page-title {
+    text-align: center;
+    font-size: 3em; /* Slightly larger title for impact */
+    margin-bottom: 25px;
+    color: var(--accent-color); /* Highlight with accent color */
+    text-shadow: 0 0 10px rgba(0, 255, 136, 0.5); /* Glowing effect */
+    font-weight: 700;
+}
+
+.contact-intro {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 1.15em;
+    line-height: 1.7;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--text-color-light);
+    opacity: 0.9;
+}
+
+/* Styles for individual contact blocks (e.g., Address, Phone, Email, Social) */
+.contact-info-card {
+    background: rgba(255, 255, 255, 0.12); /* Slightly brighter/more opaque for contrast with main card */
+    border-radius: 12px; /* Slightly less rounded than main card */
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    color: var(--text-color-light);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: left; /* Align text left within these blocks */
+}
+
+.contact-info-card h3 {
+    font-size: 1.8em;
+    color: #ffffff; /* White heading for clarity */
+    margin-bottom: 20px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1); /* Subtle separator */
+    padding-bottom: 10px;
+    font-weight: 600;
+    text-align: center; /* Center card titles */
+}
+
+.contact-info-card p,
+.contact-info-card ul {
+    margin-bottom: 15px;
+    line-height: 1.8;
+    color: #e0e0e0; /* Slightly off-white for paragraphs */
+}
+
+.contact-info-card ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 0;
+}
+
+.contact-info-card li {
+    margin-bottom: 12px;
+}
+
+.contact-info-card a {
+    color: var(--accent-color); /* Use accent color for links */
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.2s ease;
+    display: flex; /* Allow content and icon to be on one line */
+    align-items: center;
+    font-weight: 500;
+    white-space: normal;
+    word-break: break-word;
+}
+
+.contact-info-card a:hover {
+    color: #ffffff; /* White on hover */
+    transform: translateX(5px);
+}
+
+/* Specific icon styling for clarity */
+.contact-info-card a.tel-link::before { content: 'ðŸ“ž'; margin-right: 10px; font-size: 1.2em; flex-shrink: 0; }
+.contact-info-card a.whatsapp-link::before { content: ''; margin-right: 10px; font-size: 1.2em; flex-shrink: 0; }
+.contact-info-card a.email-link::before { content: ''; margin-right: 10px; font-size: 1.2em; flex-shrink: 0; }
+
+/* Contact page social buttons specific styling */
+.social-btns-contact-page {
+    display: flex;
+    justify-content: center;
+    gap: 25px; /* Spacing between social icons on contact page */
+    margin-top: 20px;
+    margin-bottom: 10px; /* Space above other content */
+}
+
+.social-btns-contact-page img {
+    height: 50px; /* Slightly larger icons for contact page */
+    width: 50px;
+    filter: invert(1) brightness(0.8); /* Make icons white/subtle */
+    transition: all 0.3s ease;
+}
+
+.social-btns-contact-page img:hover {
+    transform: scale(1.15); /* Slightly larger hover effect */
+    filter: invert(0) brightness(1) drop-shadow(0 0 8px var(--accent-color)); /* Glow effect on hover */
+}
+
+/* Map specific styling on Contact page */
+.contact-map {
+    width: 100%;
+    margin-top: 30px;
+    border-radius: 12px;
+    overflow: hidden; /* Ensures iframe corners are rounded */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.contact-map iframe {
+    border-radius: 12px; /* Inherit border-radius for the iframe itself */
+}
+
+/* Adjustments for print if needed */
+@media print {
+    header, footer, .mobile-menu-button, .btn {
+        display: none !important;
+    }
+    body {
+        background-color: #fff;
+        color: #000;
+    }
+    section, .glass-section .section-card {
+        background: none !important;
+        box-shadow: none !important;
+        filter: none !important;
+        border: none !important;
+        padding: 0 !important;
+    }
+    #hero {
+        height: auto;
+        padding: 20px;
+    }
+    #hero .hero-overlay {
+        background: none;
+        backdrop-filter: none;
+        border: none;
+        box-shadow: none;
+        color: #000;
+        text-shadow: none;
+    }
+    h1, h2, h3, h4, h5, h6 {
+        color: #000;
+    }
+    a {
+        color: #00f;
+        text-decoration: underline;
+    }
+    .contact-info-card {
+        background: none !important;
+        box-shadow: none !important;
+        border: none !important;
+        padding: 10px 0 !important;
     }
 }
