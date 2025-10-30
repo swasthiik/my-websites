@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Harpal Acupressure — Healing & Wellness. Dr. Dipali Patel offers acupressure, acupuncture, aura cleansing, and holistic therapies in Vadodara, Gujarat." />
   <title>Harpal Acupressure — Healing & Wellness</title>
 
   <!-- Google Font -->
@@ -11,7 +12,7 @@
   <!-- Favicon -->
   <link rel="icon" href="images/logo.jpg">
 
-  <!-- Main stylesheet -->
+  <!-- Main stylesheet (styles for both index.html and general styles for contact.html) -->
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -19,13 +20,15 @@
   <!-- HEADER -->
   <header>
     <div class="logo-area">
+      <!-- Link logo and title to home page -->
       <a href="index.html" aria-label="Harpal Acupressure Home">
         <img src="images/logo.jpg" alt="Harpal Acupressure Logo" class="logo">
         <h1 class="site-title">Harpal Acupressure</h1>
       </a>
     </div>
 
-    <button class="mobile-menu-button" id="menu-button" aria-label="Open Menu" aria-expanded="false">
+    <!-- Mobile Menu Button -->
+    <button class="mobile-menu-button" id="menu-button" aria-label="Open navigation menu" aria-expanded="false">
         <div class="dot"></div>
         <div class="dot"></div>
         <div class="dot"></div>
@@ -33,11 +36,11 @@
 
     <nav class="nav-menu" id="nav-menu" aria-label="Main navigation">
       <ul>
-        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html" class="active">Home</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="#services">Services</a></li>
+        <li><a href="#services">Services</a></li> <!-- Scrolls to Services on index.html -->
         <li><a href="feedback.html">Feedback</a></li>
-        <li><a href="contact.html">Contact</a></li> <!-- Link changed to internal #contact-section-home -->
+        <li><a href="contact.html">Contact</a></li> <!-- Links to separate contact.html page -->
       </ul>
     </nav>
   </header>
@@ -62,8 +65,8 @@
           and well-being. Our approach is rooted in ancient wisdom, providing a serene environment for healing and rejuvenation.
         </p>
         <div class="about-image-wrapper">
-          <!-- Placeholder for the about summary image (e.g., a serene herbal image or the bookshelf image) -->
-          <!-- Consider adding an actual image here for visual appeal, e.g., <img src="images/dr-patel-profile.jpg" alt="Dr. Dipali Patel"> -->
+          <!-- Placeholder for the about summary image -->
+          <img src="images/about-summary.jpg" alt="Dr. Dipali Patel's office or treatment room" style="max-width: 100%; height: auto; border-radius: 8px;">
         </div>
       </div>
       <a href="about.html" class="btn">Read More →</a>
@@ -182,23 +185,23 @@
     </div>
   </section>
 
-  <!-- CONTACT (Integrated Section - note the ID change for linking) -->
-  <section id="contact-section-home" class="glass-section" aria-labelledby="contact-title">
-    <div class="section-card" id="contact-card">
-      <h2 id="contact-title"><strong>Get In Touch</strong></h2>
+  <!-- CONTACT SUMMARY SECTION (on home page) -->
+  <section id="contact-summary-home" class="glass-section" aria-labelledby="contact-summary-title">
+    <div class="section-card" id="contact-card-summary">
+      <h2 id="contact-summary-title"><strong>Get In Touch</strong></h2>
       <div class="inner">
         <div class="contact-left">
           <h3>Connect on Social</h3>
           <div class="social-btns">
-            <a href="https://www.instagram.com/harpal_acupressure/" target="_blank" rel="noopener"><img src="images/instagram.png" alt="Instagram"></a>
-            <a href="https://m.facebook.com/share/1GioYfoyAg/" target="_blank" rel="noopener"><img src="images/facebook.png" alt="Facebook"></a>
+            <a href="https://www.instagram.com/harpal_acupressure/" target="_blank" rel="noopener noreferrer"><img src="images/instagram.png" alt="Instagram"></a>
+            <a href="https://m.facebook.com/share/1GioYfoyAg/" target="_blank" rel="noopener noreferrer"><img src="images/facebook.png" alt="Facebook"></a>
           </div>
 
           <p class="email-line">Email: <a href="mailto:info@harpalaccupressure.com">info@harpalaccupressure.com</a></p>
 
           <div class="btn-area">
             <a class="btn btn-call" href="tel:+919173952555">📞 Call</a>
-            <a class="btn btn-wa" href="https://wa.me/919173952555" target="_blank" rel="noopener">WhatsApp</a>
+            <a class="btn btn-wa" href="https://wa.me/919173952555" target="_blank" rel="noopener noreferrer">💬 WhatsApp</a>
           </div>
         </div>
 
@@ -216,7 +219,9 @@
             Akota, Vadodara, Gujarat - 390020
           </p>
 
-          <p><a href="https://maps.app.goo.gl/6wJNQphf7XSe5wKk8" target="_blank" rel="noopener">📍 Open in Google Maps</a></p>
+          <p><a href="https://maps.app.goo.gl/6wJNQphf7XSe5wKk8" target="_blank" rel="noopener noreferrer">📍 Open Clinic in Google Maps</a></p>
+          <!-- Placeholder for Residence Map Link if you want it here too -->
+          <p><a href="https://maps.app.goo.gl/YourResidenceMapLink" target="_blank" rel="noopener noreferrer">🏠 Open Residence in Google Maps</a></p>
         </div>
 
         <div class="quick-links">
@@ -225,7 +230,7 @@
           <a href="about.html">ℹ About</a>
           <a href="#services">💆 Services</a>
           <a href="feedback.html">💬 Feedback</a>
-          <a href="contact.html">📞 Contact</a>
+          <a href="contact.html">📞 Full Contact Page</a> <!-- Link to the separate contact.html -->
         </div>
       </div>
 
@@ -235,7 +240,32 @@
 
   <footer>© 2025 Harpal Acupressure. All Rights Reserved.</footer>
 
-  <!-- Link to the NEW main.js script -->
-  <script src="main.js"></script>
+  <!-- NEW: JavaScript for the Mobile Menu -->
+  <script>
+    const menuButton = document.getElementById('menu-button');
+    const navMenu = document.getElementById('nav-menu');
+
+    menuButton.addEventListener('click', () => {
+      const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
+      menuButton.setAttribute('aria-expanded', !isExpanded);
+      navMenu.classList.toggle('active');
+    });
+
+    // Optional: Close menu when a link is clicked
+    document.querySelectorAll('#nav-menu a').forEach(item => {
+        item.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+            menuButton.setAttribute('aria-expanded', 'false');
+        });
+    });
+
+    // Optional: Close menu if user clicks outside of it
+    document.addEventListener('click', (event) => {
+        if (!navMenu.contains(event.target) && !menuButton.contains(event.target) && navMenu.classList.contains('active')) {
+            navMenu.classList.remove('active');
+            menuButton.setAttribute('aria-expanded', 'false');
+        }
+    });
+  </script>
 </body>
 </html>

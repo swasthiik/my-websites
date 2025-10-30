@@ -1,0 +1,255 @@
+/* contact.css */
+
+/* This file contains styles specific to the contact page.
+   It builds upon the global styles defined in style.css. */
+
+/* Page-specific background for the contact page */
+#contact-page {
+    background-image: url('images/background7.jpg'); /* Ensure this image exists! */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Parallax effect */
+    padding: 80px 5%; /* General padding from style.css, overridden if needed */
+    min-height: calc(100vh - var(--header-height) - var(--footer-height));
+    display: flex;
+    align-items: center; /* Center content vertically */
+    justify-content: center;
+    position: relative;
+    z-index: 1; /* Ensure it's above the body background if any */
+}
+
+/* Overlay for contact page background (similar to generic section::before) */
+#contact-page::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.65); /* Darker overlay for strong contrast */
+    z-index: 0; /* Below actual content */
+}
+
+/* Main glass card on the contact page - CHANGED BACKGROUND COLOR HERE */
+#contact-page .section-card {
+    max-width: 900px; /* Specific width for contact page card */
+    margin: 40px auto; /* Centered, with vertical spacing */
+    padding: 40px;
+    /* --- NEW BACKGROUND COLOR FOR THE MAIN GLASS CARD --- */
+    background: rgba(18, 56, 30, 0.7); /* A distinct, slightly lighter opaque green */
+    /* --------------------------------------------------- */
+    backdrop-filter: blur(12px); /* Consistent blur */
+    border: 1px solid var(--glass-card-border); /* Consistent border */
+    box-shadow: 0 8px 32px 0 var(--glass-card-shadow); /* Consistent shadow */
+    color: var(--text-color-light);
+    width: 100%; /* Take full available width within max-width */
+    position: relative; /* Above ::before overlay */
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 30px; /* Space between individual contact blocks */
+    text-align: center; /* Center content within the card */
+}
+
+#contact-page-title {
+    text-align: center;
+    font-size: 3em; /* Slightly larger title for impact */
+    margin-bottom: 25px;
+    color: var(--accent-color); /* Highlight with accent color */
+    text-shadow: 0 0 10px rgba(0, 255, 136, 0.5); /* Glowing effect */
+    font-weight: 700;
+}
+
+.contact-intro {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 1.15em;
+    line-height: 1.7;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--text-color-light);
+    opacity: 0.9;
+}
+
+/* Styles for individual contact blocks (e.g., Address, Phone, Email, Social) */
+.contact-info-card {
+    /* --- NEW BACKGROUND COLOR FOR INNER CARDS --- */
+    background: rgba(255, 255, 255, 0.12); /* Slightly brighter/more opaque for contrast with main card */
+    /* ------------------------------------------- */
+    border-radius: 12px; /* Slightly less rounded than main card */
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    color: var(--text-color-light);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: left; /* Align text left within these blocks */
+}
+
+.contact-info-card h3 {
+    font-size: 1.8em;
+    color: #ffffff; /* White heading for clarity */
+    margin-bottom: 20px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1); /* Subtle separator */
+    padding-bottom: 10px;
+    font-weight: 600;
+    text-align: center; /* Center card titles */
+}
+
+.contact-info-card p,
+.contact-info-card ul {
+    margin-bottom: 15px;
+    line-height: 1.8;
+    color: #e0e0e0; /* Slightly off-white for paragraphs */
+}
+
+.contact-info-card ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 0;
+}
+
+.contact-info-card li {
+    margin-bottom: 12px;
+}
+
+.contact-info-card a {
+    color: var(--accent-color); /* Use accent color for links */
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.2s ease;
+    display: flex; /* Allow content and icon to be on one line */
+    align-items: center;
+    font-weight: 500;
+    white-space: normal;
+    word-break: break-word;
+}
+
+.contact-info-card a:hover {
+    color: #ffffff; /* White on hover */
+    transform: translateX(5px);
+}
+
+/* Specific icon styling for clarity */
+.contact-info-card a.tel-link::before { content: '📞'; margin-right: 10px; font-size: 1.2em; flex-shrink: 0; }
+.contact-info-card a.whatsapp-link::before { content: '💬'; margin-right: 10px; font-size: 1.2em; flex-shrink: 0; }
+.contact-info-card a.email-link::before { content: '📧'; margin-right: 10px; font-size: 1.2em; flex-shrink: 0; }
+.contact-info-card a.map-link::before { content: '📍'; margin-right: 10px; font-size: 1.2em; flex-shrink: 0; }
+
+
+/* Map specific styling */
+.contact-map {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    background: var(--glass-card-bg-dark-opacity); /* Consistent dark glass background */
+    padding: 0;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    border: 1px solid var(--glass-card-border); /* Consistent border */
+}
+
+.contact-map iframe {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px; /* Slightly smaller radius than parent for inner frame */
+    border: none;
+}
+
+/* Social Media Card Styling */
+.contact-info-card.social-card {
+    text-align: center;
+    padding: 30px;
+}
+
+.contact-info-card.social-card h3 {
+    margin-bottom: 25px;
+    border-bottom: none; /* No border for social title */
+    padding-bottom: 0;
+}
+
+.social-btns-contact-page {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.social-btns-contact-page img {
+    width: 65px;
+    height: 65px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    filter: invert(1) brightness(0.9); /* Makes them look white/light */
+}
+
+.social-btns-contact-page img:hover {
+    transform: scale(1.15);
+    filter: invert(0) brightness(1); /* Removes invert, shows original color, or brightens */
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    #contact-page {
+        padding: 60px 4%;
+    }
+    #contact-page .section-card {
+        padding: 30px;
+        margin: 30px auto;
+        gap: 25px;
+    }
+    #contact-page-title {
+        font-size: 2.5em;
+        margin-bottom: 20px;
+    }
+    .contact-intro {
+        margin-bottom: 30px;
+        font-size: 1.05em;
+    }
+    .contact-info-card h3 {
+        font-size: 1.6em;
+        margin-bottom: 15px;
+    }
+    .contact-map {
+        height: 350px;
+    }
+    .social-btns-contact-page img {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+@media (max-width: 576px) {
+    #contact-page {
+        padding: 40px 3%;
+    }
+    #contact-page .section-card {
+        padding: 20px;
+        margin: 20px auto;
+        gap: 20px;
+    }
+    #contact-page-title {
+        font-size: 2em;
+        margin-bottom: 15px;
+    }
+    .contact-intro {
+        margin-bottom: 25px;
+        font-size: 0.95em;
+    }
+    .contact-info-card {
+        padding: 20px;
+    }
+    .contact-info-card h3 {
+        font-size: 1.4em;
+        margin-bottom: 10px;
+    }
+    .contact-map {
+        height: 280px;
+    }
+    .social-btns-contact-page img {
+        width: 50px;
+        height: 50px;
+    }
+}

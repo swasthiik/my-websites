@@ -1,0 +1,299 @@
+/* ======================== */
+/* Contact Page Specific Styles - FINAL REVISION */
+/* ======================== */
+
+/* Root variables (ensure these are in your style.css or here for quick testing) */
+:root {
+    --primary-color: #8dc63f; /* A vibrant green for accents */
+    --accent-color: #c8e6c9;  /* A lighter green for subtle highlights */
+    --link-color: #8dc63f;    /* Bright green for links */
+    --text-color-dark: #333;
+    --text-color-light: #f0f0f0; /* Default light text for dark backgrounds */
+    --header-height: 80px;
+    --footer-height: 60px;
+    /* Adding some base dark tones for the overall theme */
+    --dark-bg-color: #1e2d28; /* A deep dark green for main backgrounds */
+    --card-bg-color: rgba(30, 45, 40, 0.8); /* Dark green, slightly transparent for card backgrounds */
+    --inner-card-bg-color: rgba(0, 0, 0, 0.3); /* Even darker/more transparent for nested cards */
+}
+
+/* Ensure body or main container has a default font-family and line-height for readability */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color-dark); /* Default text color */
+    background-color: #f4f4f4; /* A light background for general pages */
+}
+
+#contact-page {
+    padding: 80px 0;
+    /* Adjust min-height calculation to ensure it takes up available space */
+    min-height: calc(100vh - var(--header-height) - var(--footer-height));
+    display: flex;
+    align-items: center; /* Vertically center content */
+    justify-content: center; /* Horizontally center content */
+    background: url('images/background7.jpg') no-repeat center center/cover;
+    position: relative;
+    z-index: 1;
+}
+
+/* Optional: Add a subtle overlay to the background for better text readability */
+#contact-page::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4); /* Darker overlay to help text stand out */
+    z-index: -1; /* Place behind the contact card */
+}
+
+#contact-page .section-card {
+    max-width: 1200px;
+    margin: 0 auto; /* Center the card horizontally */
+    padding: 40px;
+    border-radius: 15px;
+    background: var(--card-bg-color); /* Use defined variable */
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+    color: var(--text-color-light); /* Ensure main card text is light */
+    width: 90%; /* Use percentage for responsiveness */
+    position: relative;
+    z-index: 2; /* Ensure card is above background overlay */
+}
+
+#contact-page-title {
+    text-align: center;
+    font-size: 2.8em;
+    margin-bottom: 25px;
+    color: var(--primary-color); /* Use defined variable */
+    text-shadow: 0 0 8px rgba(168, 224, 99, 0.5);
+    font-weight: 700; /* Make title bolder */
+}
+
+.contact-intro {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 1.15em;
+    line-height: 1.7;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--text-color-light); /* Light text for intro */
+    opacity: 0.9; /* Slightly reduce opacity for a softer look */
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.contact-info-card {
+    background: var(--inner-card-bg-color); /* Use defined variable */
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    color: var(--text-color-light); /* Ensure text within cards is light */
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.contact-info-card h3 {
+    font-size: 1.8em;
+    color: var(--accent-color); /* Use defined variable */
+    margin-bottom: 20px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.15);
+    padding-bottom: 10px;
+    font-weight: 600; /* Make card headings a bit bolder */
+}
+
+.contact-info-card p,
+.contact-info-card ul {
+    margin-bottom: 15px;
+    line-height: 1.8;
+    color: var(--text-color-light); /* Explicitly set paragraph/list text to light */
+}
+
+.contact-info-card ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 0;
+}
+
+.contact-info-card li {
+    margin-bottom: 12px;
+}
+
+.contact-info-card a {
+    color: var(--link-color); /* Bright link color */
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    white-space: normal; /* Allow text to wrap within the link */
+    word-break: break-word; /* Break long words if necessary */
+}
+
+.contact-info-card a:hover {
+    color: var(--primary-color);
+    transform: translateX(5px);
+}
+
+/* Specific styling for links inside info cards to ensure visibility */
+.contact-info-card a.map-link,
+.contact-info-card a.tel-link,
+.contact-info-card a.whatsapp-link,
+.contact-info-card a.email-link {
+    color: var(--link-color); /* Bright color for these specific links */
+}
+
+/* Emoji icons for clarity and styling */
+.contact-info-card a.tel-link::before { content: "📞"; margin-right: 10px; font-size: 1.2em; }
+.contact-info-card a.whatsapp-link::before { content: "💬"; margin-right: 10px; font-size: 1.2em; }
+.contact-info-card a.email-link::before { content: "📧"; margin-right: 10px; font-size: 1.2em; }
+.contact-info-card a.map-link::before { content: "📍"; margin-right: 10px; font-size: 1.2em; }
+
+.contact-map {
+    grid-column: 1 / -1; /* Full width on smaller screens */
+    border-radius: 10px;
+    overflow: hidden; /* Important for border-radius on iframe */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    background: var(--inner-card-bg-color); /* Match inner card background */
+    padding: 0;
+    height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-map iframe {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px; /* Apply border-radius to iframe for consistency */
+    border: none;
+}
+
+/* Social Media Card Styling */
+.contact-info-card.social-card {
+    grid-column: 1 / -1; /* Spans full width by default */
+    text-align: center;
+    padding: 30px;
+    margin-top: 0;
+    background: var(--inner-card-bg-color); /* Match other info cards */
+}
+
+.contact-info-card.social-card h3 {
+    margin-bottom: 25px;
+    border-bottom: none; /* Remove border from social media heading */
+    padding-bottom: 0;
+}
+
+.social-btns-contact-page {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.social-btns-contact-page img {
+    width: 65px;
+    height: 65px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));
+}
+
+.social-btns-contact-page img:hover {
+    transform: scale(1.15);
+    filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.6));
+}
+
+/* Responsive adjustments for contact page */
+@media (min-width: 768px) {
+    .contact-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+    .contact-info-card.social-card {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (min-width: 1024px) {
+    .contact-grid {
+        /* Define areas explicitly for clearer layout control */
+        grid-template-areas:
+            "address phone email map"
+            "social social social map";
+        grid-template-columns: 1fr 1fr 1fr 1.5fr; /* Custom column widths */
+        gap: 35px;
+    }
+
+    /* Assign grid areas to specific cards */
+    .contact-info-card:nth-of-type(1) { grid-area: address; }
+    .contact-info-card:nth-of-type(2) { grid-area: phone; }
+    .contact-info-card:nth-of-type(3) { grid-area: email; }
+    .contact-info-card.social-card {
+        grid-area: social;
+        padding-top: 30px;
+        margin-top: 0;
+        /* Ensure social card spans across its defined grid area */
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* Center content vertically within the card */
+    }
+    .contact-map {
+        grid-area: map; /* Assign grid area */
+        height: auto; /* Allow map to take full height of its grid area */
+        padding: 0;
+        background: transparent;
+        box-shadow: none;
+        display: block; /* Ensure it behaves like a block element in the grid */
+    }
+    .contact-map iframe {
+        height: 100%;
+        border-radius: 15px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    }
+}
+
+@media (max-width: 767px) {
+    #contact-page .section-card {
+        padding: 25px;
+        width: 95%;
+    }
+    #contact-page-title {
+        font-size: 2.2em;
+        margin-bottom: 20px;
+    }
+    .contact-intro {
+        margin-bottom: 30px;
+        font-size: 1em;
+    }
+    .contact-grid {
+        gap: 25px;
+        grid-template-columns: 1fr;
+    }
+    .contact-info-card {
+        padding: 25px;
+    }
+    .contact-info-card h3 {
+        font-size: 1.5em;
+        margin-bottom: 15px;
+    }
+    .social-btns-contact-page {
+        gap: 20px;
+    }
+    .social-btns-contact-page img {
+        width: 55px;
+        height: 55px;
+    }
+    .contact-map {
+        height: 350px;
+    }
+}

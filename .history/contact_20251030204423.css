@@ -1,0 +1,227 @@
+/* ======================== */
+/* Contact Page Specific Styles - UPDATED */
+/* ======================== */
+
+#contact-page {
+    padding: 80px 0;
+    min-height: calc(100vh - var(--header-height, 80px) - var(--footer-height, 60px));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#contact-page .section-card {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px;
+    border-radius: 15px;
+    /* --- FIX: Increased opacity for better readability on a dark background --- */
+    background: rgba(40, 60, 50, 0.85); /* Darker, slightly green background with higher opacity */
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    color: var(--text-color-light, #f0f0f0); /* Use a light color for main text on this darker card */
+    width: 90%;
+}
+
+#contact-page-title {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: var(--primary-color, #a8e063); /* Assuming primary is a light green */
+}
+
+.contact-intro {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 1.1em;
+    line-height: 1.6;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--text-color-light, #d0d0d0); /* Ensure intro text is light */
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.contact-info-card {
+    /* --- FIX: Increased opacity for readability within cards --- */
+    background: rgba(255, 255, 255, 0.1); /* Slightly more opaque white for cards */
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Align content to the top */
+}
+
+.contact-info-card h3 {
+    font-size: 1.6em;
+    color: var(--accent-color, #c8e6c9); /* Light accent color for headings */
+    margin-bottom: 20px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2); /* More visible separator */
+    padding-bottom: 10px;
+}
+
+.contact-info-card p,
+.contact-info-card ul {
+    margin-bottom: 15px;
+    line-height: 1.8;
+    color: var(--text-color-light, #f0f0f0); /* Ensure all text within cards is light */
+}
+
+.contact-info-card ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 0;
+}
+
+.contact-info-card li {
+    margin-bottom: 10px;
+}
+
+.contact-info-card a {
+    color: var(--link-color, #8dc63f); /* Define a bright link color */
+    text-decoration: none;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.contact-info-card a:hover {
+    color: var(--primary-color, #a8e063); /* Brighter hover color */
+}
+
+/* Emoji icons - if you decide to use them by adding classes to your HTML */
+.contact-info-card a.tel-link::before { content: "📞"; margin-right: 8px; font-size: 1.1em; }
+.contact-info-card a.whatsapp-link::before { content: "💬"; margin-right: 8px; font-size: 1.1em; }
+.contact-info-card a.email-link::before { content: "📧"; margin-right: 8px; font-size: 1.1em; }
+.contact-info-card a.map-link::before { content: "📍"; margin-right: 8px; font-size: 1.1em; }
+
+.contact-map {
+    grid-column: 1 / -1;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    /* --- FIX: Darker background for map container for contrast --- */
+    background: rgba(0, 0, 0, 0.3); /* Darker background for the map container */
+    padding: 10px; /* Reduced padding for cleaner look around map */
+    height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-map iframe {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    border: none;
+}
+
+
+/* --- FIX: Styling for social section to be part of the card, not separate --- */
+.contact-social-section {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.contact-social-section h3 {
+    font-size: 1.6em;
+    color: var(--accent-color, #c8e6c9);
+    margin-bottom: 25px;
+}
+
+.social-btns-contact-page {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-btns-contact-page img {
+    /* --- FIX: Smaller icons for better integration and less dominance --- */
+    width: 40px; /* Reduced icon size */
+    height: 40px;
+    transition: transform 0.3s ease;
+}
+
+.social-btns-contact-page img:hover {
+    transform: scale(1.1);
+}
+
+/* Responsive adjustments for contact page */
+@media (min-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .contact-map {
+        grid-column: span 2;
+    }
+}
+
+@media (min-width: 1024px) {
+    .contact-grid {
+        grid-template-columns: 1.2fr 1.2fr 1.6fr;
+    }
+    .contact-map {
+        grid-column: 3 / -1;
+        grid-row: 1 / span 2;
+        height: auto;
+        padding: 0;
+        background: transparent;
+        box-shadow: none;
+    }
+    .contact-map iframe {
+        height: 100%;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+    .contact-info-card:first-child {
+        grid-row: 1;
+        grid-column: 1;
+    }
+    .contact-info-card:nth-child(2) {
+        grid-row: 2;
+        grid-column: 1;
+    }
+}
+
+@media (max-width: 767px) {
+    #contact-page .section-card {
+        padding: 25px;
+        width: 95%;
+    }
+    #contact-page-title {
+        font-size: 2em;
+    }
+    .contact-intro {
+        margin-bottom: 30px;
+        font-size: 1em;
+    }
+    .contact-grid {
+        gap: 20px;
+    }
+    .contact-info-card {
+        padding: 20px;
+    }
+    .contact-info-card h3 {
+        font-size: 1.4em;
+        margin-bottom: 15px;
+    }
+    .social-btns-contact-page img {
+        width: 35px; /* Slightly smaller on mobile */
+        height: 35px;
+    }
+    .contact-map {
+        height: 300px;
+        padding: 10px;
+    }
+}

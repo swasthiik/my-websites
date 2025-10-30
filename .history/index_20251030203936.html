@@ -19,12 +19,11 @@
   <!-- HEADER -->
   <header>
     <div class="logo-area">
-      <a href="index.html" aria-label="Harpal Acupressure Home">
-        <img src="images/logo.jpg" alt="Harpal Acupressure Logo" class="logo">
-        <h1 class="site-title">Harpal Acupressure</h1>
-      </a>
+      <img src="images/logo.jpg" alt="Harpal Acupressure Logo" class="logo">
+      <h1 class="site-title">Harpal Acupressure</h1>
     </div>
 
+    <!-- Mobile Menu Button -->
     <button class="mobile-menu-button" id="menu-button" aria-label="Open Menu" aria-expanded="false">
         <div class="dot"></div>
         <div class="dot"></div>
@@ -33,11 +32,11 @@
 
     <nav class="nav-menu" id="nav-menu" aria-label="Main navigation">
       <ul>
-        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html" class="active">Home</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="#services">Services</a></li>
+        <li><a href="#services">Services</a></li> <!-- Link to section on this page -->
         <li><a href="feedback.html">Feedback</a></li>
-        <li><a href="contact.html">Contact</a></li> <!-- Link changed to internal #contact-section-home -->
+        <li><a href="contact.html">Contact</a></li> <!-- Link to dedicated contact page -->
       </ul>
     </nav>
   </header>
@@ -62,8 +61,7 @@
           and well-being. Our approach is rooted in ancient wisdom, providing a serene environment for healing and rejuvenation.
         </p>
         <div class="about-image-wrapper">
-          <!-- Placeholder for the about summary image (e.g., a serene herbal image or the bookshelf image) -->
-          <!-- Consider adding an actual image here for visual appeal, e.g., <img src="images/dr-patel-profile.jpg" alt="Dr. Dipali Patel"> -->
+          <!-- Add an image here for the About Summary section, e.g., <img src="images/about-summary.jpg" alt="Acupressure tools"> -->
         </div>
       </div>
       <a href="about.html" class="btn">Read More →</a>
@@ -182,51 +180,23 @@
     </div>
   </section>
 
-  <!-- CONTACT (Integrated Section - note the ID change for linking) -->
-  <section id="contact-section-home" class="glass-section" aria-labelledby="contact-title">
+  <!-- CONTACT (Simplified for homepage, links to full contact page) -->
+  <section id="contact" class="glass-section" aria-labelledby="contact-home-title">
     <div class="section-card" id="contact-card">
-      <h2 id="contact-title"><strong>Get In Touch</strong></h2>
-      <div class="inner">
-        <div class="contact-left">
-          <h3>Connect on Social</h3>
-          <div class="social-btns">
+      <h2 id="contact-home-title"><strong>Connect With Us</strong></h2>
+      <p class="contact-home-intro">Have questions or ready to book an appointment? We'd love to hear from you!</p>
+      
+      <div class="contact-social-home">
+        <h3>Follow Us on Social Media</h3>
+        <div class="social-btns">
             <a href="https://www.instagram.com/harpal_acupressure/" target="_blank" rel="noopener"><img src="images/instagram.png" alt="Instagram"></a>
             <a href="https://m.facebook.com/share/1GioYfoyAg/" target="_blank" rel="noopener"><img src="images/facebook.png" alt="Facebook"></a>
-          </div>
-
-          <p class="email-line">Email: <a href="mailto:info@harpalaccupressure.com">info@harpalaccupressure.com</a></p>
-
-          <div class="btn-area">
-            <a class="btn btn-call" href="tel:+919173952555">📞 Call</a>
-            <a class="btn btn-wa" href="https://wa.me/919173952555" target="_blank" rel="noopener">WhatsApp</a>
-          </div>
         </div>
+      </div>
 
-        <div class="contact-center">
-          <h3>Visit Us</h3>
-          <p><strong>Clinic Address:</strong><br>
-            Shop No. 3, Samanvay North Park,<br>
-            Opp Darshanam King Square,<br>
-            Ankodiya, Vadodara, Gujarat - 390016
-          </p>
-
-          <p><strong>Residence Address:</strong><br>
-            401, Suryadarshan Apartment,<br>
-            Opposite Navrachana School,<br>
-            Akota, Vadodara, Gujarat - 390020
-          </p>
-
-          <p><a href="https://maps.app.goo.gl/6wJNQphf7XSe5wKk8" target="_blank" rel="noopener">📍 Open in Google Maps</a></p>
-        </div>
-
-        <div class="quick-links">
-          <h4>Quick Links</h4>
-          <a href="index.html">🏠 Home</a>
-          <a href="about.html">ℹ About</a>
-          <a href="#services">💆 Services</a>
-          <a href="feedback.html">💬 Feedback</a>
-          <a href="contact.html">📞 Contact</a>
-        </div>
+      <div class="text-center mt-30">
+        <p>For detailed contact information, address, phone numbers, and a map, please visit our dedicated contact page:</p>
+        <a class="btn" href="contact.html">Go to Contact Page →</a>
       </div>
 
       <div class="final-line">A PLACE OF HEALING, RELAXATION &amp; HOLISTIC WELLNESS</div>
@@ -235,7 +205,16 @@
 
   <footer>© 2025 Harpal Acupressure. All Rights Reserved.</footer>
 
-  <!-- Link to the NEW main.js script -->
-  <script src="main.js"></script>
+  <!-- NEW: JavaScript for the Mobile Menu -->
+  <script>
+    const menuButton = document.getElementById('menu-button');
+    const navMenu = document.getElementById('nav-menu');
+
+    menuButton.addEventListener('click', () => {
+      const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
+      menuButton.setAttribute('aria-expanded', !isExpanded);
+      navMenu.classList.toggle('active');
+    });
+  </script>
 </body>
 </html>

@@ -13,35 +13,6 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="about.css">
-  <link rel="stylesheet" href="style.css"> <!-- Added global style.css -->
-  <style>
-    /* This inline style block can be removed if moved to about.css */
-    .about-images-container {
-      display: flex;
-      flex-direction: column; /* Stacks images on small screens */
-      gap: 20px; /* Space between images */
-      align-items: center;
-      margin-bottom: 20px; /* Space below the images */
-    }
-
-    .about-images-container .about-img img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-
-    @media (min-width: 768px) {
-      .about-images-container {
-        flex-direction: row; /* Side-by-side on larger screens */
-        justify-content: center;
-      }
-      .about-images-container .about-img {
-        flex: 1; /* Allows images to share space */
-        max-width: 48%; /* Adjust as needed */
-      }
-    }
-  </style>
 </head>
 
 <body>
@@ -51,18 +22,13 @@
       <img src="images/logo.jpg" alt="Harpal Acupressure Logo" class="logo">
       <h1 class="site-title">Harpal Acupressure</h1>
     </div>
-    <button class="mobile-menu-button" id="menu-button" aria-label="Open navigation menu" aria-expanded="false">
-        <div class="dot"></div>
-        <div class="dot"></div>
-        <div class="dot"></div>
-    </button>
-    <nav class="nav-menu" id="nav-menu" aria-label="Main navigation">
+    <nav class="nav-menu">
       <ul>
         <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="index.html#services">Services</a></li> <!-- Corrected to point to index.html#services -->
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="index.html#services">Services</a></li>
         <li><a href="feedback.html">Feedback</a></li>
-        <li><a href="contact.html">Contact</a></li> <!-- Corrected to point to contact.html -->
+        <li><a href="index.html#contact">Contact</a></li>
       </ul>
     </nav>
   </header>
@@ -75,13 +41,8 @@
         <h2><strong>About Harpal Acupressure</strong></h2>
 
         <div class="about-content">
-          <div class="about-images-container">
-            <div class="about-img">
-              <img src="images/photo1.png" alt="Dr. Dipali Premalkumar Patel">
-            </div>
-            <div class="about-img">
-              <img src="images/photo2.png" alt="25 Years of Excellence">
-            </div>
+          <div class="about-img">
+            <img src="images/photo1.png" alt="Dr. Dipali Premalkumar Patel">
           </div>
 
           <div class="about-text">
@@ -104,7 +65,7 @@
               Our goal is to help individuals achieve wellness of mind, body, and spirit — leading to a happier, healthier life.
             </p>
 
-            <a href="contact.html" class="btn-primary">📞 Book an Appointment</a> <!-- Corrected to point to contact.html -->
+            <a href="index.html#contact" class="btn-primary">📞 Book an Appointment</a>
           </div>
         </div>
       </div>
@@ -160,7 +121,7 @@
       </div>
     </section>
 
-    <!-- ===== ACHIEVEMENTS SECTION ===== -->
+    <!-- ===== CERTIFICATES SECTION ===== -->
     <section id="achievements" class="achievements-section content-glass-bg">
       <div class="inner">
         <h2>Our Trophies & Certificates</h2>
@@ -176,7 +137,6 @@
           <div class="trophy-card"><img src="images/crt7.jpg" alt="Certificate of Achievement 7"></div>
           <div class="trophy-card"><img src="images/crt8.jpg" alt="Certificate of Achievement 8"></div>
           <div class="trophy-card"><img src="images/crt9.jpg" alt="Certificate of Achievement 9"></div>
-          <div class="trophy-card"><img src="images/crt10.jpg" alt="Certificate of Achievement 10"></div>
           <div class="trophy-card"><img src="images/crt11.jpg" alt="Certificate of Achievement 10"></div>
           <div class="trophy-card"><img src="images/crt12.jpg" alt="Certificate of Achievement 10"></div>
           <div class="trophy-card"><img src="images/crt13.jpg" alt="Certificate of Achievement 10"></div>
@@ -186,13 +146,6 @@
           <div class="trophy-card"><img src="images/crt18.jpg" alt="Certificate of Achievement 10"></div>
           <div class="trophy-card"><img src="images/crt19.jpg" alt="Certificate of Achievement 10"></div>
           <div class="trophy-card"><img src="images/crt20.jpg" alt="Certificate of Achievement 10"></div>
-          <div class="trophy-card"><img src="images/crt21.jpg" alt="Certificate of Achievement 10"></div>
-          <div class="trophy-card"><img src="images/crt22.jpg" alt="Certificate of Achievement 10"></div>
-          <div class="trophy-card"><img src="images/crt23.jpg" alt="Certificate of Achievement 10"></div>
-          <div class="trophy-card"><img src="images/crt24.jpg" alt="Certificate of Achievement 10"></div>
-          <div class="trophy-card"><img src="images/crt25.jpg" alt="Certificate of Achievement 10"></div>
-          <div class="trophy-card"><img src="images/crt26.jpg" alt="Certificate of Achievement 10"></div>
-          <div class="trophy-card"><img src="images/crt27.jpg" alt="Certificate of Achievement 10"></div>
         </div>
       </div>
     </section>
@@ -203,7 +156,5 @@
     © 2025 Harpal Acupressure. All Rights Reserved.
   </footer>
 
-  <!-- Link to the NEW main.js script -->
-  <script src="main.js"></script>
 </body>
 </html>

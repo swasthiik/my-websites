@@ -1,0 +1,250 @@
+/* ======================== */
+/* Contact Page Specific Styles - ONE BY ONE STACKED DESIGN */
+/* ======================== */
+
+/* Root variables (ensure these are in your style.css or here for quick testing) */
+:root {
+    --primary-color: #8dc63f; /* A vibrant green for accents */
+    --accent-color: #c8e6c9;  /* A lighter green for subtle highlights */
+    --link-color: #8dc63f;    /* Bright green for links */
+    --text-color-dark: #333;
+    --text-color-light: #f0f0f0; /* Default light text for dark backgrounds */
+    --header-height: 80px;
+    --footer-height: 60px;
+    --dark-bg-color: #1e2d28; /* A deep dark green for main backgrounds */
+    --card-bg-color: rgba(30, 45, 40, 0.8); /* Dark green, slightly transparent for card backgrounds */
+    --inner-card-bg-color: rgba(0, 0, 0, 0.3); /* Even darker/more transparent for nested cards */
+}
+
+/* Ensure body or main container has a default font-family and line-height for readability */
+body {
+    font-family: 'Poppins', sans-serif; /* Using Poppins as defined in index.html */
+    line-height: 1.6;
+    color: var(--text-color-dark); /* Default text color */
+    background-color: #f4f4f4; /* A light background for general pages */
+}
+
+#contact-page {
+    padding: 80px 0;
+    min-height: calc(100vh - var(--header-height) - var(--footer-height));
+    display: flex;
+    align-items: flex-start; /* Align content to the top */
+    justify-content: center;
+    background: url('images/background7.jpg') no-repeat center center/cover;
+    position: relative;
+    z-index: 1;
+}
+
+#contact-page::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: -1;
+}
+
+#contact-page .section-card {
+    max-width: 900px; /* Slightly narrower for a more focused stacked look */
+    margin: 40px auto; /* Add margin top/bottom to section card */
+    padding: 40px;
+    border-radius: 15px;
+    background: var(--card-bg-color);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+    color: var(--text-color-light);
+    width: 90%;
+    position: relative;
+    z-index: 2;
+    display: flex; /* Use flexbox to stack internal content */
+    flex-direction: column;
+    gap: 30px; /* Spacing between the stacked contact blocks */
+}
+
+#contact-page-title {
+    text-align: center;
+    font-size: 2.8em;
+    margin-bottom: 25px;
+    color: var(--primary-color);
+    text-shadow: 0 0 8px rgba(168, 224, 99, 0.5);
+    font-weight: 700;
+}
+
+.contact-intro {
+    text-align: center;
+    margin-bottom: 40px; /* Slightly more space below intro for first block */
+    font-size: 1.15em;
+    line-height: 1.7;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--text-color-light);
+    opacity: 0.9;
+}
+
+/* Remove contact-grid as we are going for stacked blocks directly within section-card */
+/* .contact-grid { display: none; } /* or remove this block entirely from HTML */
+
+
+/* Styles for individual contact blocks (formerly contact-info-card) */
+/* Re-purposing contact-info-card to be the individual stacked blocks */
+.contact-info-card {
+    background: var(--inner-card-bg-color);
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    color: var(--text-color-light);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    /* No flex-direction here, as these will naturally stack */
+}
+
+.contact-info-card h3 {
+    font-size: 1.8em;
+    color: var(--accent-color);
+    margin-bottom: 20px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.15);
+    padding-bottom: 10px;
+    font-weight: 600;
+}
+
+.contact-info-card p,
+.contact-info-card ul {
+    margin-bottom: 15px;
+    line-height: 1.8;
+    color: var(--text-color-light);
+}
+
+.contact-info-card ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 0;
+}
+
+.contact-info-card li {
+    margin-bottom: 12px;
+}
+
+.contact-info-card a {
+    color: var(--link-color);
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    white-space: normal;
+    word-break: break-word;
+}
+
+.contact-info-card a:hover {
+    color: var(--primary-color);
+    transform: translateX(5px);
+}
+
+/* Emoji icons for clarity and styling */
+.contact-info-card a.tel-link::before { content: "📞"; margin-right: 10px; font-size: 1.2em; }
+.contact-info-card a.whatsapp-link::before { content: "💬"; margin-right: 10px; font-size: 1.2em; }
+.contact-info-card a.email-link::before { content: "📧"; margin-right: 10px; font-size: 1.2em; }
+.contact-info-card a.map-link::before { content: "📍"; margin-right: 10px; font-size: 1.2em; }
+
+/* Map specific styling - now it's just another stacked block */
+.contact-map {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    background: var(--inner-card-bg-color);
+    padding: 0;
+    height: 400px; /* Consistent height for the map block */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%; /* Ensure it takes full width of its parent */
+}
+
+.contact-map iframe {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    border: none;
+}
+
+/* Social Media Card Styling - now it's just another stacked block */
+.contact-info-card.social-card {
+    text-align: center;
+    padding: 30px;
+    background: var(--inner-card-bg-color);
+}
+
+.contact-info-card.social-card h3 {
+    margin-bottom: 25px;
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.social-btns-contact-page {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.social-btns-contact-page img {
+    width: 65px;
+    height: 65px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));
+}
+
+.social-btns-contact-page img:hover {
+    transform: scale(1.15);
+    filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.6));
+}
+
+
+/* Responsive adjustments - simplified as the layout is already stacked */
+@media (max-width: 767px) {
+    #contact-page .section-card {
+        padding: 25px;
+        width: 95%;
+        margin: 20px auto; /* Adjust margin for smaller screens */
+        gap: 20px; /* Smaller gap between blocks on mobile */
+    }
+    #contact-page-title {
+        font-size: 2.2em;
+        margin-bottom: 20px;
+    }
+    .contact-intro {
+        margin-bottom: 30px;
+        font-size: 1em;
+    }
+    .contact-info-card {
+        padding: 25px;
+    }
+    .contact-info-card h3 {
+        font-size: 1.5em;
+        margin-bottom: 15px;
+    }
+    .social-btns-contact-page {
+        gap: 20px;
+    }
+    .social-btns-contact-page img {
+        width: 55px;
+        height: 55px;
+    }
+    .contact-map {
+        height: 300px; /* Adjusted map height for mobile */
+    }
+}
+
+/* No specific desktop grid rules needed anymore as content stacks */
+@media (min-width: 768px) {
+    /* Adjustments for tablets/larger screens if necessary, but layout remains stacked */
+    .contact-info-card {
+        /* No specific grid properties here, they will just follow the column flow */
+    }
+    .contact-map {
+        height: 450px; /* Larger map on bigger screens */
+    }
+}

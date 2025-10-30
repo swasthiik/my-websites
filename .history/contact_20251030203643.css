@@ -1,0 +1,242 @@
+/* ======================== */
+/* Contact Page Specific Styles */
+/* ======================== */
+
+#contact-page {
+    padding: 80px 0; /* Adjust padding as needed */
+    /* Ensures the section takes up vertical space, considering header/footer height */
+    min-height: calc(100vh - var(--header-height, 80px) - var(--footer-height, 60px));
+    display: flex; /* Use flexbox to center content vertically */
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+}
+
+#contact-page .section-card {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.08); /* Semi-transparent white for glass effect */
+    backdrop-filter: blur(10px); /* Glass blur */
+    border: 1px solid rgba(255, 255, 255, 0.18); /* Subtle border */
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); /* Shadow for depth */
+    color: var(--text-color); /* Inherit text color from main theme */
+    width: 90%; /* Occupy most of the width */
+}
+
+#contact-page-title {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: var(--primary-color); /* Use your theme's primary color */
+}
+
+.contact-intro {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 1.1em;
+    line-height: 1.6;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--text-color-light); /* Lighter text for intro paragraph */
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Flexible columns for cards */
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.contact-info-card {
+    background: rgba(255, 255, 255, 0.05); /* Slightly darker glass for cards */
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distribute content evenly */
+}
+
+.contact-info-card h3 {
+    font-size: 1.6em;
+    color: var(--accent-color); /* Use your theme's accent color for headings */
+    margin-bottom: 20px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1); /* Subtle separator */
+    padding-bottom: 10px;
+}
+
+.contact-info-card p,
+.contact-info-card ul {
+    margin-bottom: 15px;
+    line-height: 1.8;
+}
+
+.contact-info-card ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 0;
+}
+
+.contact-info-card li {
+    margin-bottom: 10px;
+}
+
+.contact-info-card a {
+    color: var(--link-color, #8dc63f); /* Define a link color, fallback if not set */
+    text-decoration: none;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.contact-info-card a:hover {
+    color: var(--primary-color); /* Hover effect for links */
+}
+
+/* Optional: If you want small icons next to phone/email links */
+.contact-info-card a.tel-link::before {
+    content: "📞"; /* Phone emoji */
+    margin-right: 8px;
+    font-size: 1.1em;
+}
+.contact-info-card a.whatsapp-link::before {
+    content: "💬"; /* WhatsApp emoji */
+    margin-right: 8px;
+    font-size: 1.1em;
+}
+.contact-info-card a.email-link::before {
+    content: "📧"; /* Email emoji */
+    margin-right: 8px;
+    font-size: 1.1em;
+}
+.contact-info-card a.map-link::before {
+    content: "📍"; /* Map pin emoji */
+    margin-right: 8px;
+    font-size: 1.1em;
+}
+
+
+.contact-map {
+    grid-column: 1 / -1; /* Make map span full width by default on smaller screens */
+    border-radius: 10px;
+    overflow: hidden; /* Ensures iframe corners are rounded */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.05); /* Background for map container */
+    padding: 15px; /* Padding around iframe */
+    height: 450px; /* Fixed height for the map for consistency */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-map iframe {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px; /* Match container border-radius inside padding */
+    border: none; /* Remove default iframe border */
+}
+
+
+.contact-social-section {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Separator line */
+}
+
+.contact-social-section h3 {
+    font-size: 1.6em;
+    color: var(--accent-color);
+    margin-bottom: 25px;
+}
+
+.social-btns-contact-page {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-btns-contact-page img {
+    width: 45px; /* Larger social icons for standalone page */
+    height: 45px;
+    transition: transform 0.3s ease;
+}
+
+.social-btns-contact-page img:hover {
+    transform: scale(1.1); /* Subtle hover effect */
+}
+
+/* Responsive adjustments for contact page */
+@media (min-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr 1fr; /* Two columns for info cards on medium screens */
+    }
+
+    .contact-map {
+        grid-column: span 2; /* Map still spans two columns below 1024px */
+    }
+}
+
+@media (min-width: 1024px) {
+    .contact-grid {
+        /* Three columns: Address, Phone/Email, Map */
+        grid-template-columns: 1.2fr 1.2fr 1.6fr;
+    }
+    .contact-map {
+        grid-column: 3 / -1; /* Map occupies the last column */
+        grid-row: 1 / span 2; /* Map spans two rows vertically */
+        height: auto; /* Allow map to take full height of its grid area */
+        padding: 0; /* Remove padding here, iframe will fill */
+        background: transparent; /* No background for map container, iframe will cover */
+        box-shadow: none; /* No extra shadow here */
+    }
+    .contact-map iframe {
+        height: 100%; /* Make iframe fill container height */
+        border-radius: 15px; /* Match main card border radius */
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Apply shadow directly to iframe */
+    }
+    /* Ensure info cards align with the map visually */
+    .contact-info-card:first-child { /* Address card */
+        grid-row: 1;
+        grid-column: 1;
+    }
+    .contact-info-card:nth-child(2) { /* Phone/Email card */
+        grid-row: 2;
+        grid-column: 1;
+    }
+}
+
+
+@media (max-width: 767px) {
+    #contact-page .section-card {
+        padding: 25px;
+        width: 95%;
+    }
+    #contact-page-title {
+        font-size: 2em;
+    }
+    .contact-intro {
+        margin-bottom: 30px;
+        font-size: 1em;
+    }
+    .contact-grid {
+        gap: 20px;
+    }
+    .contact-info-card {
+        padding: 20px;
+    }
+    .contact-info-card h3 {
+        font-size: 1.4em;
+        margin-bottom: 15px;
+    }
+    .social-btns-contact-page img {
+        width: 40px;
+        height: 40px;
+    }
+    .contact-map {
+        height: 300px; /* Smaller map on mobile */
+        padding: 10px;
+    }
+}

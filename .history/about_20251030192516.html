@@ -13,9 +13,8 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="about.css">
-  <link rel="stylesheet" href="style.css"> <!-- Added global style.css -->
   <style>
-    /* This inline style block can be removed if moved to about.css */
+    /* Added inline style for demonstration, ideally this would go into about.css */
     .about-images-container {
       display: flex;
       flex-direction: column; /* Stacks images on small screens */
@@ -51,18 +50,13 @@
       <img src="images/logo.jpg" alt="Harpal Acupressure Logo" class="logo">
       <h1 class="site-title">Harpal Acupressure</h1>
     </div>
-    <button class="mobile-menu-button" id="menu-button" aria-label="Open navigation menu" aria-expanded="false">
-        <div class="dot"></div>
-        <div class="dot"></div>
-        <div class="dot"></div>
-    </button>
-    <nav class="nav-menu" id="nav-menu" aria-label="Main navigation">
+    <nav class="nav-menu">
       <ul>
         <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="index.html#services">Services</a></li> <!-- Corrected to point to index.html#services -->
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="index.html#services">Services</a></li>
         <li><a href="feedback.html">Feedback</a></li>
-        <li><a href="contact.html">Contact</a></li> <!-- Corrected to point to contact.html -->
+        <li><a href="index.html#contact">Contact</a></li>
       </ul>
     </nav>
   </header>
@@ -80,7 +74,7 @@
               <img src="images/photo1.png" alt="Dr. Dipali Premalkumar Patel">
             </div>
             <div class="about-img">
-              <img src="images/photo2.png" alt="25 Years of Excellence">
+              <img src="images/photo2.jpg" alt="25 Years of Excellence">
             </div>
           </div>
 
@@ -104,7 +98,7 @@
               Our goal is to help individuals achieve wellness of mind, body, and spirit — leading to a happier, healthier life.
             </p>
 
-            <a href="contact.html" class="btn-primary">📞 Book an Appointment</a> <!-- Corrected to point to contact.html -->
+            <a href="index.html#contact" class="btn-primary">📞 Book an Appointment</a>
           </div>
         </div>
       </div>
@@ -160,7 +154,7 @@
       </div>
     </section>
 
-    <!-- ===== ACHIEVEMENTS SECTION ===== -->
+    <!-- ===== CERTIFICATES SECTION ===== -->
     <section id="achievements" class="achievements-section content-glass-bg">
       <div class="inner">
         <h2>Our Trophies & Certificates</h2>
@@ -203,7 +197,5 @@
     © 2025 Harpal Acupressure. All Rights Reserved.
   </footer>
 
-  <!-- Link to the NEW main.js script -->
-  <script src="main.js"></script>
 </body>
 </html>

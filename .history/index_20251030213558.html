@@ -19,12 +19,12 @@
   <!-- HEADER -->
   <header>
     <div class="logo-area">
-      <a href="index.html" aria-label="Harpal Acupressure Home">
-        <img src="images/logo.jpg" alt="Harpal Acupressure Logo" class="logo">
-        <h1 class="site-title">Harpal Acupressure</h1>
-      </a>
+      <!-- Ensure logo.png is in your images folder -->
+      <img src="images/logo.jpg" alt="Harpal Acupressure Logo" class="logo">
+      <h1 class="site-title">Harpal Acupressure</h1>
     </div>
 
+    <!-- NEW: Mobile Menu Button -->
     <button class="mobile-menu-button" id="menu-button" aria-label="Open Menu" aria-expanded="false">
         <div class="dot"></div>
         <div class="dot"></div>
@@ -33,11 +33,11 @@
 
     <nav class="nav-menu" id="nav-menu" aria-label="Main navigation">
       <ul>
-        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html" class="active">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="feedback.html">Feedback</a></li>
-        <li><a href="contact.html">Contact</a></li> <!-- Link changed to internal #contact-section-home -->
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
   </header>
@@ -63,7 +63,6 @@
         </p>
         <div class="about-image-wrapper">
           <!-- Placeholder for the about summary image (e.g., a serene herbal image or the bookshelf image) -->
-          <!-- Consider adding an actual image here for visual appeal, e.g., <img src="images/dr-patel-profile.jpg" alt="Dr. Dipali Patel"> -->
         </div>
       </div>
       <a href="about.html" class="btn">Read More →</a>
@@ -182,10 +181,10 @@
     </div>
   </section>
 
-  <!-- CONTACT (Integrated Section - note the ID change for linking) -->
-  <section id="contact-section-home" class="glass-section" aria-labelledby="contact-title">
+  <!-- CONTACT -->
+  <section id="contact" class="glass-section" aria-labelledby="contact-title">
     <div class="section-card" id="contact-card">
-      <h2 id="contact-title"><strong>Get In Touch</strong></h2>
+      <h2 id="contact-title"><strong>Get In Touch</strong></h2> <!-- Added a main title for consistency -->
       <div class="inner">
         <div class="contact-left">
           <h3>Connect on Social</h3>
@@ -197,8 +196,8 @@
           <p class="email-line">Email: <a href="mailto:info@harpalaccupressure.com">info@harpalaccupressure.com</a></p>
 
           <div class="btn-area">
-            <a class="btn btn-call" href="tel:+919173952555">📞 Call</a>
-            <a class="btn btn-wa" href="https://wa.me/919173952555" target="_blank" rel="noopener">WhatsApp</a>
+            <a class="btn btn-call" href="tel:+9189980455518">📞 Call</a>
+            <a class="btn btn-wa" href="https://wa.me/918866556830" target="_blank" rel="noopener">💬 WhatsApp</a>
           </div>
         </div>
 
@@ -216,6 +215,7 @@
             Akota, Vadodara, Gujarat - 390020
           </p>
 
+          <!-- Google Maps link - already present and correct -->
           <p><a href="https://maps.app.goo.gl/6wJNQphf7XSe5wKk8" target="_blank" rel="noopener">📍 Open in Google Maps</a></p>
         </div>
 
@@ -225,7 +225,7 @@
           <a href="about.html">ℹ About</a>
           <a href="#services">💆 Services</a>
           <a href="feedback.html">💬 Feedback</a>
-          <a href="contact.html">📞 Contact</a>
+          <a href="#contact">📞 Contact</a>
         </div>
       </div>
 
@@ -235,7 +235,16 @@
 
   <footer>© 2025 Harpal Acupressure. All Rights Reserved.</footer>
 
-  <!-- Link to the NEW main.js script -->
-  <script src="main.js"></script>
+  <!-- NEW: JavaScript for the Mobile Menu -->
+  <script>
+    const menuButton = document.getElementById('menu-button');
+    const navMenu = document.getElementById('nav-menu');
+
+    menuButton.addEventListener('click', () => {
+      const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
+      menuButton.setAttribute('aria-expanded', !isExpanded);
+      navMenu.classList.toggle('active');
+    });
+  </script>
 </body>
 </html>
