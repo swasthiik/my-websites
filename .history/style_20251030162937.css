@@ -1,0 +1,476 @@
+/* General Body & Typography */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  /* Removed background-color here, as sections will handle their own backgrounds */
+  color: #333;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  color: #2e4a3d; /* A darker green/teal for headings */
+}
+
+p {
+  margin-bottom: 1em;
+}
+
+a {
+  text-decoration: none;
+  color: #4a7d65; /* A complementary green for links */
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #2e4a3d; /* Darker on hover */
+}
+
+.btn {
+  display: inline-block;
+  background-color: #4a7d65;
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-top: 15px;
+  transition: background-color 0.3s ease;
+  font-weight: 600;
+}
+
+.btn:hover {
+  background-color: #3b6653;
+}
+
+/* Header Styling */
+header {
+  background-color: #2e4a3d; /* Darker green background for header */
+  color: #ffffff;
+  padding: 15px 5%; /* Adjusted padding for better spacing */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: sticky; /* Make header sticky */
+  top: 0;
+  z-index: 1000;
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+}
+
+.logo-area .logo {
+  height: 40px; /* Adjust logo height as needed */
+  width: auto; /* Maintain aspect ratio */
+  margin-right: 10px; /* Space between logo and text */
+  border-radius: 50%; /* If your logo should be circular */
+  object-fit: cover; /* Ensures image covers area without distortion */
+}
+
+.site-title {
+  font-size: 1.8em; /* Adjusted font size for site title */
+  font-weight: 700;
+  margin: 0;
+  color: #ffffff;
+}
+
+.nav-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.nav-menu li {
+  margin-left: 25px; /* Spacing between navigation items */
+}
+
+.nav-menu a {
+  color: #ffffff;
+  font-weight: 400;
+  padding: 5px 0;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+  color: #aed6b9; /* Lighter green on hover/active */
+}
+
+/* Underline effect for active/hover */
+.nav-menu a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  display: block;
+  margin-top: 5px;
+  right: 0;
+  background: #aed6b9;
+  transition: width 0.3s ease;
+  -webkit-transition: width 0.3s ease;
+}
+
+.nav-menu a:hover::after,
+.nav-menu a.active::after {
+  width: 100%;
+  left: 0;
+  background: #aed6b9;
+}
+
+
+/* HERO Section (using background.jpg) */
+#hero {
+  background-image: url('images/background.jpg'); /* Your hero background image */
+  background-size: cover;
+  background-position: center;
+  height: 100vh; /* Make hero section full viewport height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #ffffff;
+  position: relative;
+  overflow: hidden; /* To contain the overlay properly */
+}
+
+.hero-overlay {
+  background: rgba(0, 0, 0, 0.45); /* Slightly darker overlay for better text readability */
+  padding: 50px 20px;
+  border-radius: 10px;
+  max-width: 800px;
+  width: 90%; /* Make overlay responsive */
+}
+
+#hero h1 {
+  font-size: 3em;
+  margin-bottom: 15px;
+  color: #ffffff; /* Ensure hero text is white */
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Add text shadow for better contrast */
+}
+
+#hero p {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+  color: #ffffff;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5); /* Add text shadow for better contrast */
+}
+
+/* General Section Styling */
+section {
+  padding: 60px 5%;
+  /* Removed margin-bottom to avoid extra space between sections with backgrounds */
+  position: relative; /* Needed for background image positioning */
+  background-attachment: fixed; /* Parallax effect */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 400px; /* Ensure sections have some height even if content is short */
+  display: flex; /* Use flexbox to center content vertically */
+  align-items: center; /* Center content vertically */
+  justify-content: center; /* Center content horizontally */
+}
+
+/* Specific Section Backgrounds */
+#about-home {
+  background-image: url('images/background2.jpg'); /* Your About Our Service background */
+}
+
+#services {
+  background-image: url('images/background3.jpg'); /* Your Services background */
+}
+
+#feedback-home { /* New ID for the feedback section */
+  background-image: url('images/background4.jpg'); /* Your Feedback background */
+}
+
+#contact {
+  background-image: url('images/background5.jpg'); /* Assuming a background5.jpg for contact or pick one of the previous */
+}
+
+
+/* Glass Card Styling (for About Summary, Services, Contact) */
+.glass-section .section-card {
+  background: rgba(255, 255, 255, 0.85); /* Slightly less transparent white background */
+  border-radius: 15px;
+  padding: 40px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.15); /* Softer shadow, slightly stronger */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  max-width: 1200px;
+  width: 100%;
+  text-align: center;
+  z-index: 1; /* Ensure card is above any potential background overlays */
+}
+
+/* Added for consistent spacing between content and the card */
+.glass-section > .section-card + .section-card {
+  margin-top: 20px;
+}
+
+
+/* Adjustments for the specific sections */
+#about-home .section-card,
+#services .section-card,
+#feedback-home .section-card, /* Added for new feedback section */
+#contact .section-card {
+    text-align: left; /* Align text left within cards for better readability */
+}
+
+#about-home h2, #services h2, #feedback-home h2, #contact h3 { /* Added feedback-home h2 */
+  text-align: center; /* Keep section titles centered */
+  margin-bottom: 30px;
+}
+
+/* About Content Grid (New for better image/text layout) */
+.about-content-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Default to single column */
+    gap: 30px;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+@media (min-width: 768px) {
+    .about-content-grid {
+        grid-template-columns: 2fr 1fr; /* Text on left, image on right for larger screens */
+    }
+}
+
+.about-image-wrapper {
+    text-align: center;
+}
+
+.about-image-wrapper img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Services Grid */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.service-card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+}
+
+.service-card img {
+  width: 100%;
+  height: 180px; /* Uniform height for service images */
+  object-fit: cover;
+}
+
+.svc-body {
+  padding: 20px;
+}
+
+.svc-title {
+  font-weight: 600;
+  font-size: 1.3em;
+  color: #2e4a3d;
+  margin-bottom: 5px;
+}
+
+.svc-text {
+  font-size: 0.95em;
+  color: #555;
+}
+
+/* Feedback Grid (New for better layout) */
+.feedback-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.feedback-item {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    text-align: center;
+    font-style: italic;
+    color: #555;
+}
+
+.feedback-item p {
+    margin-bottom: 15px;
+}
+
+.feedback-item span {
+    display: block;
+    font-weight: 600;
+    color: #2e4a3d;
+    font-style: normal;
+}
+
+
+/* Contact Section */
+#contact-card .inner {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.contact-left, .contact-center, .quick-links {
+  text-align: center; /* Center align content within contact columns */
+}
+
+.contact-left h3, .contact-center h3, .quick-links h4 {
+  color: #2e4a3d;
+  margin-bottom: 20px;
+}
+
+.social-btns img {
+  height: 30px;
+  width: 30px;
+  margin: 0 10px;
+  transition: transform 0.2s ease;
+}
+
+.social-btns img:hover {
+  transform: scale(1.1);
+}
+
+.email-line {
+  margin-top: 20px;
+}
+
+.btn-area {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.btn-call, .btn-wa {
+  flex: 1;
+  max-width: 150px; /* Limit button width */
+  text-align: center;
+}
+
+.btn-wa {
+  background-color: #25d366; /* WhatsApp green */
+}
+
+.btn-wa:hover {
+  background-color: #1da851;
+}
+
+.quick-links a {
+  display: block; /* Make links stack vertically */
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.final-line {
+  font-style: italic;
+  font-size: 0.9em;
+  color: #777;
+  margin-top: 30px;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  padding-top: 20px;
+  text-align: center; /* Ensure this is centered */
+}
+
+/* Footer */
+footer {
+  background-color: #2e4a3d;
+  color: #ffffff;
+  text-align: center;
+  padding: 20px 5%;
+  font-size: 0.9em;
+  margin-top: 50px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  .about-content-grid {
+    grid-template-columns: 1fr; /* Stack on smaller screens */
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    padding: 15px 20px;
+  }
+
+  .logo-area {
+    margin-bottom: 15px;
+  }
+
+  .nav-menu ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .nav-menu li {
+    margin: 0 10px 10px 10px;
+  }
+
+  #hero {
+      height: 70vh; /* Adjust hero height for smaller screens */
+  }
+
+  #hero h1 {
+    font-size: 2.2em;
+  }
+
+  #hero p {
+    font-size: 1em;
+  }
+
+  .section-card {
+    padding: 30px 20px;
+  }
+
+  .services-grid, .feedback-grid, #contact-card .inner {
+    grid-template-columns: 1fr; /* Stack all grids on small screens */
+  }
+
+  .btn-area {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn-call, .btn-wa {
+    max-width: 200px; /* Adjust button width for stacked layout */
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-title {
+    font-size: 1.5em;
+  }
+
+  #hero h1 {
+      font-size: 1.8em;
+  }
+
+  #hero p {
+      font-size: 0.9em;
+  }
+}

@@ -1,0 +1,292 @@
+/* ==== GLOBAL ==== */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: url("images/bg2.jpg") center/cover fixed no-repeat;
+  color: #fff;
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden; /* Prevent horizontal scroll from table overflow */
+}
+
+/* ==== HEADER ==== */
+header {
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 5%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.logo-area { display: flex; align-items: center; gap: 10px; }
+.logo { width: 55px; height: 55px; border-radius: 50%; object-fit: cover; }
+.site-title { font-weight: 600; font-size: 20px; }
+
+.nav-menu ul { list-style: none; display: flex; gap: 25px; }
+.nav-menu a {
+  color: #fff; text-decoration: none; font-weight: 500; transition: color 0.3s;
+}
+.nav-menu a:hover, .nav-menu a.active { color: #00ff88; }
+
+/* ==== MAIN CONTENT LAYOUT ==== */
+.feedback-page-content {
+  padding: 60px 5%; /* Main padding for the entire page content */
+  display: flex;
+  flex-direction: column; /* Stack sections vertically */
+  gap: 40px; /* Space between sections */
+  backdrop-filter: blur(3px); /* Apply blur to the whole content area over the background */
+  min-height: calc(100vh - 80px); /* Adjust based on header/footer height */
+}
+
+.appointment-feedback-cards {
+  display: flex;
+  flex-wrap: wrap; /* Allows cards to wrap on smaller screens */
+  justify-content: center; /* Center cards horizontally */
+  gap: 40px; /* Space between the two glass cards */
+  width: 100%; /* Take full width of parent */
+}
+
+/* ==== GLASS CARD ==== */
+.glass-card {
+  background: rgba(0,0,0,0.55);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 18px;
+  padding: 40px 30px;
+  max-width: 500px; /* Max width for individual cards */
+  width: 100%;
+  text-align: center;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+  display: flex; /* Use flex for content alignment inside card */
+  flex-direction: column;
+  justify-content: space-between; /* Pushes form/button to top/bottom */
+}
+
+.glass-card h2 { color: #00ff88; margin-bottom: 10px; font-weight: 600; }
+.glass-card p { color: #ddd; font-size: 15px; margin-bottom: 25px; }
+.glass-card .note {
+  font-size: 0.8em;
+  color: #aaa;
+  margin-top: 10px;
+}
+.glass-card .note span {
+    font-style: italic;
+}
+
+/* ==== FORM ==== */
+form { display: flex; flex-direction: column; gap: 15px; flex-grow: 1; } /* Form takes available space */
+
+input, textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border-radius: 10px;
+  border: none;
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+  outline: none;
+  font-family: 'Poppins', sans-serif; /* Ensure consistent font */
+  font-size: 15px;
+}
+input::placeholder, textarea::placeholder { color: #ccc; }
+textarea { min-height: 100px; resize: vertical; /* Allow vertical resize */ }
+
+/* ==== BUTTONS ==== */
+button, .btn {
+  background: #00ff88;
+  color: #000;
+  border: none;
+  border-radius: 30px;
+  padding: 12px 25px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.3s;
+  display: inline-block; /* Ensure .btn acts like a button */
+  margin-top: auto; /* Push button to the bottom of the flex container */
+}
+button:hover, .btn:hover { background: #00cc6a; color: #000; }
+
+.btn.google-btn {
+    background: #4285F4; /* Google Blue */
+    color: #fff;
+}
+.btn.google-btn:hover {
+    background: #357ae8;
+}
+
+/* ==== MESSAGE BOX ==== */
+.msg-box {
+  margin-top: 10px;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 14px;
+  text-align: center;
+  word-break: break-word; /* Prevents overflow with long messages */
+}
+
+/* ==== FEEDBACK TABLE SECTION ==== */
+.feedback-table-section {
+    width: 100%; /* Takes full width of the parent content area */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align content to the top */
+}
+
+.full-width-card {
+    max-width: 1200px; /* Allow table card to be wider */
+    width: 100%;
+    text-align: left; /* Align text within table card to left */
+}
+
+.full-width-card h2, .full-width-card p {
+    text-align: center; /* Center headings and intro text */
+    margin-bottom: 20px;
+}
+
+.table-responsive {
+  overflow-x: auto; /* Makes table scrollable horizontally on small screens */
+  width: 100%;
+  margin-top: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse; /* Removes space between borders */
+  margin-bottom: 20px;
+  font-size: 15px;
+  background: rgba(255,255,255,0.05); /* Slightly lighter background for table */
+  border-radius: 10px;
+  overflow: hidden; /* Hides overflow from rounded corners */
+}
+
+th, td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid rgba(255,255,255,0.1); /* Lighter border */
+}
+
+th {
+  background: rgba(0,0,0,0.7); /* Darker header for contrast */
+  color: #00ff88;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+tr:last-child td {
+  border-bottom: none; /* No border for the last row */
+}
+
+tbody tr:hover {
+  background: rgba(255,255,255,0.08); /* Subtle hover effect on rows */
+}
+
+.table-note {
+    font-size: 0.9em;
+    color: #ccc;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* ==== FOOTER ==== */
+footer {
+  background: rgba(0,0,0,0.8);
+  text-align: center;
+  padding: 15px 0;
+  color: #ccc;
+  font-size: 14px;
+}
+
+/* ==== RESPONSIVE ==== */
+@media (max-width: 992px) {
+    .appointment-feedback-cards {
+        flex-direction: column; /* Stack cards vertically on medium screens */
+        align-items: center; /* Center stacked cards */
+    }
+    .glass-card {
+        max-width: 90%; /* Allow cards to take more width when stacked */
+    }
+    .full-width-card {
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    padding: 10px 20px;
+  }
+  .logo-area { margin-bottom: 10px; }
+  .nav-menu ul { gap: 15px; }
+  .site-title { font-size: 18px; }
+
+  .feedback-page-content {
+    padding: 30px 20px; /* Reduce padding on small screens */
+    gap: 30px;
+  }
+  .glass-card { padding: 25px 20px; }
+  
+  th, td {
+    padding: 10px; /* Smaller padding in table cells */
+    font-size: 14px; /* Smaller font for table content */
+  }
+  th { font-size: 13px; }
+}
+
+@media (max-width: 480px) {
+    .nav-menu ul { flex-wrap: wrap; justify-content: center; }
+    .nav-menu li { margin-bottom: 5px; }
+    .glass-card { max-width: 100%; padding: 20px 15px; } /* Max width for tiny screens */
+    .full-width-card { max-width: 100%; }
+    .btn.google-btn { padding: 10px 15px; font-size: 14px; }
+}
+
+/* Further enhance table responsiveness */
+@media (max-width: 600px) {
+  table, thead, tbody, th, td, tr {
+    display: block; /* Make table elements behave like blocks */
+  }
+
+  thead tr {
+    position: absolute; /* Hide table header visually but keep for screen readers */
+    top: -9999px;
+    left: -9999px;
+  }
+
+  tr {
+    border: 1px solid rgba(255,255,255,0.1);
+    margin-bottom: 15px;
+    display: flex; /* Make row a flex container */
+    flex-direction: column; /* Stack cells vertically */
+    background: rgba(255,255,255,0.05); /* Background for each 'row block' */
+    border-radius: 10px;
+    padding: 10px;
+  }
+
+  td {
+    border: none; /* Remove individual cell borders */
+    position: relative;
+    padding-left: 50%; /* Make space for "label" */
+    text-align: right;
+    white-space: normal; /* Allow text to wrap */
+  }
+
+  td::before {
+    /* Create labels for each cell using data-label attribute (add in HTML if needed) */
+    content: attr(data-label);
+    position: absolute;
+    left: 10px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+    text-align: left;
+    font-weight: 600;
+    color: #00ff88;
+  }
+}

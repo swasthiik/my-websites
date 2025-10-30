@@ -1,0 +1,376 @@
+/* ==== GLOBAL STYLES ==== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: url("images/background3.jpg") no-repeat center center fixed; /* Using background3.jpg for consistency */
+  background-size: cover;
+  color: #fff;
+  line-height: 1.6;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* Global transparent overlay for readability over background */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65); /* Slightly darker overlay for better contrast */
+  z-index: -1;
+}
+
+/* Inner container for consistent width */
+.inner {
+  max-width: 1200px;
+  margin-inline: auto;
+  padding: 0 5%; /* Horizontal padding for content */
+}
+
+/* Generic Button Style (for consistent .btn-primary) */
+.btn-primary {
+  background: #00e676; /* Green for primary action */
+  color: #000;
+  border-radius: 30px;
+  padding: 12px 28px; /* Slightly larger padding */
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+  margin-top: 20px; /* More space above button */
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn-primary:hover {
+  background: #00c853;
+  transform: translateY(-2px); /* Subtle lift on hover */
+}
+
+
+/* ==== HEADER (Consistent with other pages) ==== */
+header {
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 5%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Add subtle shadow */
+}
+
+.logo-area { display: flex; align-items: center; gap: 10px; }
+.logo { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; } /* Slightly adjusted size */
+.site-title { font-weight: 600; font-size: 20px; }
+
+.nav-menu ul { list-style: none; display: flex; gap: 25px; }
+.nav-menu a {
+  color: #fff; text-decoration: none; font-weight: 500; transition: color 0.3s ease;
+  position: relative; /* For underline effect */
+  padding-bottom: 5px; /* Space for underline */
+}
+.nav-menu a:hover, .nav-menu a.active { color: #00ff88; }
+
+/* Underline effect for active/hover */
+.nav-menu a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: #00ff88;
+  bottom: 0;
+  left: 0;
+  transition: width 0.3s ease;
+}
+
+.nav-menu a.active::after,
+.nav-menu a:hover::after {
+  width: 100%;
+}
+
+/* ==== MAIN CONTENT WRAPPER ==== */
+main {
+  padding-top: 40px; /* Space below sticky header */
+  padding-bottom: 40px; /* Space above footer */
+}
+
+/* Shared styling for sections with glassmorphism effect */
+.content-glass-bg {
+    background: rgba(255, 255, 255, 0.08); /* Lighter background for the entire section */
+    border-radius: 20px;
+    margin: 40px auto; /* Margin to separate sections */
+    max-width: 1100px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.4); /* Stronger shadow for depth */
+    backdrop-filter: blur(8px); /* Stronger blur for the section itself */
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.15); /* Subtle border */
+    padding: 60px 40px; /* Consistent internal padding */
+    text-align: center;
+}
+
+/* ==== ABOUT SECTION ==== */
+.about-section {
+  padding-top: 0; /* Adjust padding as the glass-bg class handles it */
+  padding-bottom: 0;
+  margin-top: 0; /* Remove top margin as the main padding handles spacing */
+}
+
+.about-section h2 {
+  font-size: 36px; /* Slightly larger heading */
+  color: #00e676;
+  margin-bottom: 30px; /* More space below heading */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.about-content {
+  display: flex;
+  align-items: center;
+  gap: 50px; /* Increased gap */
+  flex-wrap: wrap;
+  margin-top: 30px; /* Only margin-top for this inner content */
+  /* Remove individual background/shadow/padding as .content-glass-bg handles section bg */
+  background: none; /* Ensure no duplicate background */
+  box-shadow: none; /* Ensure no duplicate shadow */
+  padding: 0; /* Remove duplicate padding */
+}
+
+.about-img {
+    flex-shrink: 0; /* Prevent image from shrinking */
+}
+
+.about-img img {
+  width: 320px; /* Slightly larger image */
+  height: 380px;
+  object-fit: cover;
+  border-radius: 18px; /* Slightly more rounded corners */
+  border: 4px solid #00e676; /* Thicker border */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.4); /* Shadow for image */
+}
+
+.about-text {
+  flex: 1;
+  text-align: left;
+}
+
+.about-text p {
+  margin-bottom: 18px; /* More space between paragraphs */
+  color: #f8f8f8; /* Lighter text for better contrast */
+  font-size: 17px;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8); /* Stronger text shadow */
+}
+
+/* ==== JOURNEY SECTION ==== */
+.journey-section {
+  /* No need for explicit padding/background here due to .content-glass-bg */
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-top: 60px; /* Space from previous section */
+}
+
+.journey-section h2 {
+  font-size: 32px;
+  color: #00e676;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.journey-section h3 {
+    color: #00e676;
+    margin-top: 35px;
+    margin-bottom: 15px;
+    font-size: 24px;
+    text-align: left;
+    border-bottom: 2px solid rgba(0,230,118,0.3); /* Subtle underline */
+    padding-bottom: 5px;
+}
+
+.journey-section ul {
+  list-style: none;
+  text-align: left;
+  max-width: 900px; /* Keep max width */
+  margin: 0 auto 30px auto; /* More space below lists */
+  padding-left: 0; /* Ensure no default padding from ul */
+}
+
+.journey-section li {
+  margin-bottom: 12px;
+  border-left: 4px solid #00e676; /* Thicker border */
+  padding-left: 15px; /* More padding */
+  color: #f3f3f3;
+  font-size: 16px;
+  position: relative;
+}
+
+.journey-section li strong {
+    color: #fff; /* Ensure strong text stands out */
+}
+
+/* ==== ACHIEVEMENTS SECTION ==== */
+.achievements-section {
+  /* No need for explicit padding/background here due to .content-glass-bg */
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-top: 60px; /* Space from previous section */
+}
+
+.achievements-section h2 {
+  font-size: 36px;
+  color: #00e676;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.achievements-section p {
+  color: #ddd;
+  margin-top: 10px;
+  font-size: 17px;
+  margin-bottom: 40px; /* More space before grid */
+}
+
+.trophy-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Keep current grid */
+  gap: 30px; /* Increased gap */
+  margin-top: 40px;
+}
+
+.trophy-card {
+  background: rgba(255, 255, 255, 0.12); /* Slightly less transparent */
+  border-radius: 18px; /* More rounded */
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4); /* Stronger shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border */
+}
+
+.trophy-card:hover {
+  transform: translateY(-8px) scale(1.03); /* More pronounced lift and slight scale */
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5); /* Stronger hover shadow */
+}
+
+.trophy-card img {
+  width: 100%;
+  height: 200px; /* Taller images */
+  object-fit: cover;
+  display: block; /* Remove extra space below image */
+}
+
+/* ==== FOOTER (Consistent with other pages) ==== */
+footer {
+  background: rgba(0,0,0,0.8);
+  color: #ccc;
+  text-align: center;
+  padding: 20px 5%; /* Consistent padding */
+  font-size: 0.9em;
+  margin-top: 60px; /* Ensure space above footer */
+  border-top: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 -2px 5px rgba(0,0,0,0.2);
+}
+
+/* ==== RESPONSIVE ==== */
+@media (max-width: 992px) {
+  .about-content {
+    flex-direction: column;
+    gap: 30px; /* Adjusted gap */
+  }
+
+  .about-img {
+    margin-bottom: 20px;
+  }
+
+  .about-text {
+    text-align: center;
+  }
+
+  .content-glass-bg {
+    padding: 50px 30px; /* Adjust padding for medium screens */
+  }
+  .about-section h2, .journey-section h2, .achievements-section h2 {
+      font-size: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    padding: 10px 20px;
+  }
+  .logo-area { margin-bottom: 10px; }
+  .nav-menu ul { gap: 15px; }
+  .site-title { font-size: 18px; }
+
+  main {
+      padding-top: 20px;
+      padding-bottom: 20px;
+  }
+
+  .content-glass-bg {
+      margin: 30px auto;
+      padding: 40px 25px; /* Further reduce padding */
+  }
+
+  .about-img img {
+    width: 250px;
+    height: 300px;
+    border-radius: 15px;
+  }
+  .about-section h2, .journey-section h2, .achievements-section h2 {
+      font-size: 28px;
+  }
+  .about-text p {
+      font-size: 16px;
+  }
+  .journey-section li {
+      font-size: 15px;
+  }
+  .trophy-card img {
+    height: 160px;
+  }
+}
+
+@media (max-width: 480px) {
+    .nav-menu ul { flex-wrap: wrap; justify-content: center; }
+    .nav-menu li { margin-bottom: 5px; }
+    .site-title { font-size: 16px; }
+
+    .content-glass-bg {
+        padding: 30px 15px; /* Max reduction for padding */
+        margin: 20px auto;
+    }
+
+    .about-img img {
+        width: 100%; /* Full width on tiny screens */
+        height: 250px;
+    }
+    .about-section h2, .journey-section h2, .achievements-section h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+    .about-text p {
+        font-size: 15px;
+    }
+    .journey-section h3 {
+        font-size: 20px;
+    }
+    .trophy-grid {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); /* Smaller grid items */
+        gap: 20px;
+    }
+    .trophy-card img {
+        height: 140px;
+    }
+    .btn-primary {
+        padding: 10px 20px;
+        font-size: 15px;
+    }
+}

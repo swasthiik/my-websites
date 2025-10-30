@@ -1,0 +1,115 @@
+/* ==== GLOBAL ==== */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: url("images/bg2.jpg") center/cover fixed no-repeat;
+  color: #fff;
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ==== HEADER ==== */
+header {
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 5%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.logo-area { display: flex; align-items: center; gap: 10px; }
+.logo { width: 55px; height: 55px; border-radius: 50%; object-fit: cover; }
+.site-title { font-weight: 600; font-size: 20px; }
+
+.nav-menu ul { list-style: none; display: flex; gap: 25px; }
+.nav-menu a {
+  color: #fff; text-decoration: none; font-weight: 500; transition: color 0.3s;
+}
+.nav-menu a:hover, .nav-menu a.active { color: #00ff88; }
+
+/* ==== MAIN ==== */
+.feedback-section {
+  min-height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  padding: 60px 5%;
+  backdrop-filter: blur(3px);
+}
+
+.glass-card {
+  background: rgba(0,0,0,0.55);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 18px;
+  padding: 40px 30px;
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+.glass-card h2 { color: #00ff88; margin-bottom: 10px; font-weight: 600; }
+.glass-card p { color: #ddd; font-size: 15px; margin-bottom: 25px; }
+
+/* ==== FORM ==== */
+form { display: flex; flex-direction: column; gap: 15px; }
+
+input, textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border-radius: 10px;
+  border: none;
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+  outline: none;
+}
+input::placeholder, textarea::placeholder { color: #ccc; }
+textarea { min-height: 100px; resize: none; }
+
+/* ==== BUTTONS ==== */
+button, .btn {
+  background: #00ff88;
+  color: #000;
+  border: none;
+  border-radius: 30px;
+  padding: 12px 25px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.3s;
+}
+button:hover, .btn:hover { background: #00cc6a; color: #000; }
+
+/* ==== MESSAGE ==== */
+.msg-box {
+  margin-top: 10px;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* ==== FOOTER ==== */
+footer {
+  background: rgba(0,0,0,0.8);
+  text-align: center;
+  padding: 15px 0;
+  color: #ccc;
+  font-size: 14px;
+}
+
+/* ==== RESPONSIVE ==== */
+@media (max-width: 768px) {
+  .glass-card { padding: 25px 20px; }
+  .site-title { font-size: 18px; }
+}

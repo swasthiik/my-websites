@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Feedback & Appointment — Harpal Acupressure</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="images/logo.jpg">
+  <link rel="stylesheet" href="feedback.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: url('images/bg2.jpg') center/cover fixed no-repeat;
+      color: #fff;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.8);
+      padding: 12px 5%;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .logo-area { display: flex; align-items: center; }
+    .logo { height: 45px; width: 45px; border-radius: 50%; margin-right: 10px; }
+    .site-title { font-weight: 700; font-size: 20px; color: #fff; }
+
+    .nav-menu ul {
+      list-style: none; margin: 0; padding: 0; display: flex;
+    }
+    .nav-menu li { margin-left: 25px; }
+    .nav-menu a {
+      color: #fff; text-decoration: none; font-weight: 500; transition: 0.3s;
+    }
+    .nav-menu a:hover, .nav-menu .active { color: #00ff88; }
+
+    /* Main Feedback Section */
+    .feedback-section {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 60px 20px;
+      backdrop-filter: blur(3px);
+    }
+
+    .glass-card {
+      background: rgba(0, 0, 0, 0.55);
+      border-radius: 18px;
+      padding: 30px;
+      margin: 20px;
+      width: 100%;
+      max-width: 500px;
+      text-align: center;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+
+    .glass-card h2 { margin-bottom: 10px; font-weight: 600; color: #fff; }
+
+    .glass-card p { color: #ddd; font-size: 14px; margin-bottom: 25px; }
+
+    .btn {
+      background: #00ff88;
+      color: #000;
+      padding: 12px 22px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+      display: inline-block;
+    }
+    .btn:hover { background: #00cc6a; }
+
+    /* Form */
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      text-align: left;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px 15px;
+      border-radius: 10px;
+      border: none;
+      outline: none;
+      font-family: inherit;
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+    }
+    input::placeholder, textarea::placeholder { color: #ccc; }
+
+    textarea { min-height: 100px; resize: none; }
+
+    button {
+      background: #00ff88;
+      border: none;
+      color: #000;
+      font-weight: 600;
+      padding: 12px;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover { background: #00cc6a; }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: rgba(0,0,0,0.8);
+      font-size: 14px;
+      color: #ccc;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo-area">
+      <img src="images/logo.jpg" alt="Harpal Acupressure Logo" class="logo">
+      <h1 class="site-title">Harpal Acupressure</h1>
+    </div>
+    <nav class="nav-menu">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="feedback.html" class="active">Feedback</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- MAIN SECTION -->
+  <section class="feedback-section">
+    <div class="glass-card">
+      <h2>Book an Appointment</h2>
+      <p>Fill out the form below to book your appointment with <strong>Dr. Dipali Patel</strong>.</p>
+
+      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <input type="text" name="name" placeholder="Full Name" required>
+        <input type="tel" name="phone" placeholder="Phone Number" required>
+        <input type="text" name="service" placeholder="Service Required" required>
+        <textarea name="message" placeholder="Your Message..." required></textarea>
+        <button type="submit">📩 Send Appointment Request</button>
+      </form>
+    </div>
+
+    <div class="glass-card">
+      <h2>Share Your Feedback</h2>
+      <p>We truly value your experience at <strong>Harpal Acupressure</strong>.<br>
+      Please take a moment to share your feedback on Google — it helps us grow and serve you better!</p>
+      <a href="https://g.co/kgs/BCXoPME" target="_blank" class="btn">⭐ Leave Feedback on Google</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2025 Harpal Acupressure. All Rights Reserved.
+  </footer>
+</body>
+</html>
