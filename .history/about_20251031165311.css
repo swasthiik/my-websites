@@ -2,7 +2,7 @@
 
 /* This body style sets a unique background specifically for the about page */
 body.about-page {
-  background: url("images/background7.jpg") no-repeat center center fixed;
+  background: url("images/background3.jpg") no-repeat center center fixed;
   background-size: cover;
   position: relative;
 }
@@ -22,35 +22,33 @@ main {
   padding-bottom: 60px;
 }
 
-/* ================================================= */
-/* ==== FIX: APPLYING THE CORRECT LIGHT THEME CARD ==== */
-/* ================================================= */
-
 /* Shared styling for the main glassmorphism content boxes */
 .content-glass-bg {
-  background: var(--glass-card-bg); /* USES THE CORRECT light glass effect */
+  background: var(--glass-card-bg); /* Light glass effect */
   border-radius: 18px;
   margin: 40px auto;
   max-width: 1200px;
   width: 95%;
-  box-shadow: 0 8px 32px 0 var(--glass-card-shadow); /* Correct soft shadow */
+  box-shadow: 0 8px 32px 0 var(--glass-card-shadow);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid var(--glass-card-border); /* Correct light border */
+  border: 1px solid var(--glass-card-border);
   padding: 40px;
-  color: var(--text-color-dark); /* Ensures all text inside is dark */
 }
 
 .content-glass-bg h2 {
   font-size: 2.8em;
-  color: var(--primary-color); /* Correct heading color */
+  color: var(--primary-color);
   margin-bottom: 40px;
   text-align: center;
 }
 
 /* ========================================= */
-/* ==== ABOUT SECTION LAYOUT STYLES ==== */
+/* ==== FINAL ABOUT SECTION STYLES ==== */
 /* ========================================= */
+
+/* ⭐ FIX: The old, dark background style for #about has been REMOVED. */
+/* The section will now correctly use the light .content-glass-bg style above. */
 
 .about-content {
   display: flex;
@@ -71,6 +69,7 @@ main {
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0 5px 20px rgba(0,0,0,0.1); /* Softer shadow for light theme */
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 .about-img img {
@@ -88,7 +87,7 @@ main {
   margin-bottom: 1.2em;
   font-size: 1.1em;
   line-height: 1.7;
-  color: var(--text-color-dark); /* Correct dark text color */
+  color: var(--text-color-dark); /* Dark text for light theme */
 }
 
 .about-text .btn {

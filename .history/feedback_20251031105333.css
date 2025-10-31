@@ -1,5 +1,18 @@
+/* feedback.css */
+
 /* ==== GLOBAL ==== */
 * { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+    /* Define these in style.css for global use, using fallbacks here */
+    --header-height: 75px; /* Example value, adjust as per your header height */
+    --footer-height: 50px; /* Example value, adjust as per your footer height */
+    --accent-color: #00ff88;
+    --text-color-light: #f8f8f8;
+    --glass-card-border: rgba(255, 255, 255, 0.2);
+    --glass-card-shadow: rgba(0, 0, 0, 0.37);
+    --glass-card-bg-dark-opacity: rgba(0, 0, 0, 0.4);
+}
 
 body {
   font-family: 'Poppins', sans-serif;
@@ -22,17 +35,42 @@ header {
   top: 0;
   z-index: 1000;
   border-bottom: 1px solid rgba(255,255,255,0.1);
+  height: var(--header-height); /* Set header height using variable */
 }
 
 .logo-area { display: flex; align-items: center; gap: 10px; }
-.logo { width: 55px; height: 55px; border-radius: 50%; object-fit: cover; }
-.site-title { font-weight: 600; font-size: 20px; }
+.logo-area a { text-decoration: none; display: flex; align-items: center; color: inherit; }
+.logo { 
+    width: 55px; 
+    height: 55px; 
+    border-radius: 50%; 
+    object-fit: cover; 
+    flex-shrink: 0; /* Prevent logo from shrinking */
+}
+.site-title { font-weight: 600; font-size: 20px; white-space: nowrap; }
+
+/* Mobile menu button */
+.mobile-menu-button {
+    display: none; /* Hidden by default on desktop */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1001; /* Ensure it's above other elements */
+}
+.mobile-menu-button .dot {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
 
 .nav-menu ul { list-style: none; display: flex; gap: 25px; }
 .nav-menu a {
   color: #fff; text-decoration: none; font-weight: 500; transition: color 0.3s;
 }
-.nav-menu a:hover, .nav-menu a.active { color: #00ff88; }
+.nav-menu a:hover, .nav-menu a.active { color: var(--accent-color); } /* Use var */
 
 /* ==== MAIN CONTENT LAYOUT ==== */
 .feedback-page-content {
@@ -41,7 +79,7 @@ header {
   flex-direction: column; /* Stack sections vertically */
   gap: 40px; /* Space between sections */
   backdrop-filter: blur(3px); /* Apply blur to the whole content area over the background */
-  min-height: calc(100vh - 80px); /* Adjust based on header/footer height */
+  min-height: calc(100vh - var(--header-height) - var(--footer-height)); /* Adjust based on header/footer height */
 }
 
 .appointment-feedback-cards {
@@ -55,20 +93,21 @@ header {
 /* ==== GLASS CARD ==== */
 .glass-card {
   background: rgba(0,0,0,0.55);
-  border: 1px solid rgba(255,255,255,0.15);
+  border: 1px solid var(--glass-card-border); /* Use var */
   border-radius: 18px;
   padding: 40px 30px;
   max-width: 500px; /* Max width for individual cards */
   width: 100%;
   text-align: center;
   backdrop-filter: blur(6px);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+  box-shadow: 0 8px 25px var(--glass-card-shadow); /* Use var */
   display: flex; /* Use flex for content alignment inside card */
   flex-direction: column;
   justify-content: space-between; /* Pushes form/button to top/bottom */
+  color: var(--text-color-light); /* Use var */
 }
 
-.glass-card h2 { color: #00ff88; margin-bottom: 10px; font-weight: 600; }
+.glass-card h2 { color: var(--accent-color); margin-bottom: 10px; font-weight: 600; } /* Use var */
 .glass-card p { color: #ddd; font-size: 15px; margin-bottom: 25px; }
 .glass-card .note {
   font-size: 0.8em;
@@ -98,7 +137,7 @@ textarea { min-height: 100px; resize: vertical; /* Allow vertical resize */ }
 
 /* ==== BUTTONS ==== */
 button, .btn {
-  background: #00ff88;
+  background: var(--accent-color); /* Use var */
   color: #000;
   border: none;
   border-radius: 30px;
@@ -173,7 +212,7 @@ th, td {
 
 th {
   background: rgba(0,0,0,0.7); /* Darker header for contrast */
-  color: #00ff88;
+  color: var(--accent-color); /* Use var */
   font-weight: 600;
   text-transform: uppercase;
   font-size: 14px;
@@ -205,6 +244,39 @@ footer {
 
 /* ==== RESPONSIVE ==== */
 @media (max-width: 992px) {
+    /* Mobile Menu for smaller screens */
+    .mobile-menu-button {
+        display: block; /* Show menu button on smaller screens */
+    }
+    .nav-menu {
+        position: absolute;
+        top: var(--header-height); /* Position below header */
+        left: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.95);
+        flex-direction: column;
+        height: 0; /* Initially hidden */
+        overflow: hidden;
+        transition: height 0.3s ease-in-out;
+        z-index: 999;
+    }
+    .nav-menu.active {
+        height: auto; /* Show menu when active */
+        max-height: 300px; /* Limit max height to prevent overflow on very long menus */
+    }
+    .nav-menu ul {
+        flex-direction: column;
+        padding: 20px;
+        gap: 15px;
+        align-items: center; /* Center menu items */
+    }
+    .nav-menu a {
+        font-size: 1.1em;
+        padding: 8px 0;
+        width: 100%;
+        text-align: center;
+    }
+
     .appointment-feedback-cards {
         flex-direction: column; /* Stack cards vertically on medium screens */
         align-items: center; /* Center stacked cards */
@@ -219,11 +291,11 @@ footer {
 
 @media (max-width: 768px) {
   header {
-    flex-direction: column;
+    /* flex-direction: column; Removed to allow button next to logo for small screens */
     padding: 10px 20px;
   }
-  .logo-area { margin-bottom: 10px; }
-  .nav-menu ul { gap: 15px; }
+  /* .logo-area { margin-bottom: 10px; } Removed due to header layout change */
+  /* .nav-menu ul { gap: 15px; } Managed by new mobile menu styles */
   .site-title { font-size: 18px; }
 
   .feedback-page-content {
@@ -240,14 +312,14 @@ footer {
 }
 
 @media (max-width: 480px) {
-    .nav-menu ul { flex-wrap: wrap; justify-content: center; }
-    .nav-menu li { margin-bottom: 5px; }
+    /* .nav-menu ul { flex-wrap: wrap; justify-content: center; } Handled by mobile menu */
+    /* .nav-menu li { margin-bottom: 5px; } Handled by mobile menu */
     .glass-card { max-width: 100%; padding: 20px 15px; } /* Max width for tiny screens */
     .full-width-card { max-width: 100%; }
     .btn.google-btn { padding: 10px 15px; font-size: 14px; }
 }
 
-/* Further enhance table responsiveness */
+/* Further enhance table responsiveness for very small screens */
 @media (max-width: 600px) {
   table, thead, tbody, th, td, tr {
     display: block; /* Make table elements behave like blocks */
@@ -257,6 +329,7 @@ footer {
     position: absolute; /* Hide table header visually but keep for screen readers */
     top: -9999px;
     left: -9999px;
+    visibility: hidden; /* Ensure it's hidden */
   }
 
   tr {
@@ -275,6 +348,11 @@ footer {
     padding-left: 50%; /* Make space for "label" */
     text-align: right;
     white-space: normal; /* Allow text to wrap */
+    border-bottom: 1px dashed rgba(255,255,255,0.05); /* Subtle separator for mobile cells */
+  }
+
+  td:last-child {
+      border-bottom: none; /* No border for the last cell in a mobile row */
   }
 
   td::before {
@@ -287,6 +365,6 @@ footer {
     white-space: nowrap;
     text-align: left;
     font-weight: 600;
-    color: #00ff88;
+    color: var(--accent-color); /* Use var */
   }
 }

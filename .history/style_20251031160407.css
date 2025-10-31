@@ -1,7 +1,7 @@
 /* style.css */
 
 /* ========================================= */
-/* ==== LIGHT THEME COLOR PALETTE ==== */
+/* ==== NEW LIGHT THEME COLOR PALETTE ==== */
 /* ========================================= */
 :root {
     --primary-color: #2A6F5B; /* A professional, muted Sage Green */
@@ -10,9 +10,12 @@
     --text-color-dark: #333333; /* The main dark text color for readability */
     --text-color-light: #FFFFFF; /* White text for buttons, header, and footer */
     --bg-color: #F8F9FA; /* A clean, very light grey background */
-    --glass-card-bg: rgba(255, 255, 255, 0.75);
+    
+    /* New "Glass" effect for the light theme */
+    --glass-card-bg: rgba(255, 255, 255, 0.75); /* A semi-transparent white for cards */
     --glass-card-border: rgba(0, 0, 0, 0.1);
-    --glass-card-shadow: rgba(0, 0, 0, 0.08);
+    --glass-card-shadow: rgba(0, 0, 0, 0.08); /* A much softer shadow */
+
     --header-height: 80px;
     --footer-height: 60px;
 }
@@ -23,9 +26,9 @@
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
-    color: var(--text-color-dark);
+    color: var(--text-color-dark); /* Changed to dark text */
     line-height: 1.6;
-    background-color: var(--bg-color);
+    background-color: var(--bg-color); /* Changed to light background */
     overflow-x: hidden;
     scroll-behavior: smooth;
     padding-top: var(--header-height);
@@ -35,13 +38,38 @@ body {
 body.menu-open { overflow: hidden; }
 body.menu-open::after { content: ''; position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.5); z-index: 1004; transition: opacity 0.4s ease; }
 
-h1, h2, h3, h4, h5, h6 { font-weight: 700; margin-top: 0; margin-bottom: 0.5em; color: var(--text-color-dark); line-height: 1.2; }
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    color: var(--text-color-dark); /* Changed to dark text */
+    line-height: 1.2;
+}
+
 p { margin-bottom: 1em; }
 a { text-decoration: none; color: var(--primary-color); transition: color 0.3s ease; }
 a:hover { color: var(--secondary-color); }
 
-.btn { display: inline-block; background-color: var(--primary-color); color: var(--text-color-light); padding: 12px 25px; border-radius: 30px; margin-top: 15px; transition: all 0.3s ease; font-weight: 600; border: none; text-align: center; cursor: pointer; font-size: 1rem; }
-.btn:hover { background-color: var(--secondary-color); transform: translateY(-2px); box-shadow: 0 4px 15px rgba(0,0,0,0.15); }
+.btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--text-color-light);
+    padding: 12px 25px;
+    border-radius: 30px;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.btn:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
 
 /* ============================ */
 /* ==== HEADER & FOOTER ==== */
@@ -51,7 +79,7 @@ header {
     color: var(--text-color-light);
     padding: 15px 5%;
     display: flex;
-    justify-content: flex-end; /* This pushes all content to the right on desktop */
+    justify-content: flex-end;
     align-items: center;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     position: fixed;
@@ -63,29 +91,10 @@ header {
     box-sizing: border-box;
 }
 
-.nav-menu {
-    display: flex; /* Makes the nav visible on desktop */
-}
-
 .nav-menu ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 25px; }
 .nav-menu a { color: var(--text-color-light); font-weight: 400; padding: 8px 12px; position: relative; transition: all 0.3s ease; border-radius: 5px; }
 .nav-menu a:hover,
 .nav-menu a.active { background-color: rgba(255, 255, 255, 0.15); }
-
-/* ⭐ FIX: Mobile Menu Button is HIDDEN by default on desktop */
-.mobile-menu-button {
-    display: none;
-    flex-direction: column;
-    justify-content: space-around;
-    width: 30px;
-    height: 25px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    z-index: 1010;
-}
-.mobile-menu-button .dot { width: 25px; height: 3px; background-color: var(--text-color-light); border-radius: 2px; transition: all 0.3s ease; }
 
 footer {
     background-color: var(--secondary-color);
@@ -98,51 +107,140 @@ footer {
 /* ============================ */
 /* ==== HERO SECTION ==== */
 /* ============================ */
-#hero { background-image: url('images/background.jpg'); background-size: cover; background-position: center; height: calc(100vh - var(--header-height)); display: flex; justify-content: center; align-items: center; text-align: center; color: var(--text-color-light); position: relative; overflow: hidden; }
-#hero::before { content: ''; position: absolute; inset: 0; background-color: rgba(0, 0, 0, 0.6); z-index: 0; }
+#hero {
+    background-image: url('images/background.jpg');
+    background-size: cover;
+    background-position: center;
+    height: calc(100vh - var(--header-height));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--text-color-light);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Dark overlay is KEPT for the hero section for text readability */
+#hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 0;
+}
+
+/* Hero content is placed above the overlay */
 .hero-overlay { z-index: 1; } 
-.hero-logo { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 4px solid var(--primary-color); margin-bottom: 25px; box-shadow: 0 6px 20px rgba(0,0,0,0.5); }
+
+.hero-logo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--primary-color);
+    margin-bottom: 25px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+}
+
 #hero h1 { font-size: 3.5em; color: var(--text-color-light); text-shadow: 1px 1px 4px rgba(0,0,0,0.7); }
 #hero p { font-size: 1.3em; color: #f0f0f0; text-shadow: 1px 1px 3px rgba(0,0,0,0.7); }
 
 /* ============================ */
 /* ==== GENERAL SECTION STYLING ==== */
 /* ============================ */
-section { padding: 80px 5%; position: relative; background-attachment: fixed; background-size: cover; background-position: center; min-height: 500px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+section {
+    padding: 80px 5%;
+    position: relative;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* SECTION BACKGROUNDS (These are preserved) */
 #about-home { background-image: url('images/background2.jpg'); }
 #services { background-image: url('images/background3.jpg'); }
 #contact-section-home { background-image: url('images/background5.jpg'); }
 #contact-page { background-image: url('images/background5.jpg'); }
-section::before { content: ''; position: absolute; inset: 0; background-color: rgba(255, 255, 255, 0.6); z-index: 0; }
-.glass-section .section-card { background: var(--glass-card-bg); border-radius: 18px; padding: 40px; box-shadow: 0 8px 32px 0 var(--glass-card-shadow); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid var(--glass-card-border); max-width: 1200px; width: 100%; z-index: 1; color: var(--text-color-dark); text-align: center; box-sizing: border-box; }
-.glass-section h2 { font-size: 2.8em; margin-bottom: 30px; color: var(--primary-color); text-shadow: none; }
+
+/* ⭐ UPDATED: This creates a LIGHT overlay for all sections EXCEPT the hero */
+section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgba(255, 255, 255, 0.6); /* White, semi-transparent overlay */
+    z-index: 0;
+}
+
+.glass-section .section-card {
+    background: var(--glass-card-bg);
+    border-radius: 18px;
+    padding: 40px;
+    box-shadow: 0 8px 32px 0 var(--glass-card-shadow);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-card-border);
+    max-width: 1200px;
+    width: 100%;
+    z-index: 1;
+    color: var(--text-color-dark); /* Dark text for cards */
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.glass-section h2 {
+    font-size: 2.8em;
+    margin-bottom: 30px;
+    color: var(--primary-color); /* Changed to primary color */
+    text-shadow: none;
+}
 
 /* ============================ */
 /* ==== SERVICES & CONTACT ==== */
 /* ============================ */
-.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 40px; }
-.service-card { background: rgba(255, 255, 255, 0.85); border-radius: 12px; overflow: hidden; box-shadow: 0 6px 20px 0 var(--glass-card-shadow); border: 1px solid var(--glass-card-border); transition: transform 0.3s ease, box-shadow 0.3s ease; text-align: left; display: flex; flex-direction: column; }
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.service-card {
+    background: rgba(255, 255, 255, 0.85); /* Slightly more opaque inner cards */
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px 0 var(--glass-card-shadow);
+    border: 1px solid var(--glass-card-border);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+
 .service-card:hover { transform: translateY(-8px); box-shadow: 0 12px 40px 0 var(--glass-card-shadow); }
 .service-card img { width: 100%; height: 200px; object-fit: cover; display: block; border-bottom: 1px solid rgba(0, 0, 0, 0.05); }
 .service-card .svc-body { padding: 20px; flex-grow: 1; }
 .service-card .svc-title { font-size: 1.4em; font-weight: 600; color: var(--secondary-color); margin-bottom: 10px; }
 .service-card .svc-text { font-size: 0.95em; color: #555555; line-height: 1.5; }
+
+/* Contact Section Updates */
 .contact-left h3, .contact-center h3, .quick-links h4 { color: var(--text-color-dark); }
 .quick-links a { color: #555; }
 .final-line { color: var(--primary-color); border-top: 1px solid rgba(0,0,0,0.1); }
-#contact-section-home .social-btns img { width: 60px; height: 60px; transition: transform 0.3s ease; border-radius: 12px; }
-#contact-section-home .social-btns img:hover { transform: scale(1.1); }
 
 /* ============================ */
 /* ==== MOBILE & RESPONSIVE ==== */
 /* ============================ */
 @media (max-width: 992px) {
     header { justify-content: space-between; }
-    /* ⭐ FIX: The mobile menu button now APPEARS on smaller screens */
     .mobile-menu-button { display: flex; }
-    /* ⭐ FIX: The desktop navigation is HIDDEN and becomes a slide-out panel */
-    .nav-menu { display: none; /* Hidden by default, JS will show it */ flex-direction: column; position: fixed; top: var(--header-height); left: 0; width: 100%; height: calc(100vh - var(--header-height)); background-color: var(--primary-color); transform: translateX(100%); transition: transform 0.4s ease-in-out; z-index: 1005; overflow-y: auto; }
-    .nav-menu[aria-hidden="false"] { display: flex; transform: translateX(0); }
+    .nav-menu { display: flex; flex-direction: column; position: fixed; top: var(--header-height); left: 0; width: 100%; height: calc(100vh - var(--header-height)); background-color: var(--primary-color); transform: translateX(100%); transition: transform 0.4s ease-in-out; z-index: 1005; overflow-y: auto; }
+    .nav-menu[aria-hidden="false"] { transform: translateX(0); }
     .nav-menu ul { flex-direction: column; align-items: center; padding: 20px 0; }
     .nav-menu ul li { margin: 10px 0; width: 100%; text-align: center; }
     .nav-menu ul li a { display: block; padding: 15px 20px; font-size: 1.2em; border-bottom: 1px solid rgba(255, 255, 255, 0.1); color: white; }

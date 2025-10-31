@@ -45,7 +45,9 @@
           We'd love to hear from you! Reach out with any questions, comments, or to book an appointment.
         </p>
 
+        <!-- ⭐ NEW: Consolidated Contact Info Grid ⭐ -->
         <div class="contact-info-grid">
+            <!-- Left Column: Address & Contact Details -->
             <div class="contact-info-card">
               <h3>Our Locations</h3>
               <p><strong>Clinic Address:</strong><br>
@@ -60,6 +62,7 @@
               </p>
             </div>
 
+            <!-- Right Column: Social Media -->
             <div class="contact-info-card social-card">
                 <h3>Connect With Us</h3>
                 <ul>
@@ -72,18 +75,26 @@
                     <a href="https://m.facebook.com/share/1GioYfoyAg/" target="_blank" rel="noopener noreferrer" aria-label="Visit us on Facebook"><img src="images/facebook.png" alt="Facebook Icon"></a>
                 </div>
             </div>
-        </div>
+        </div><!-- End contact-info-grid -->
 
-        <!-- Map Links Block -->
-        <div class="contact-map-links">
-            <h3>Find Us on the Map</h3>
+        <!-- ⭐ NEW: Map Block with Switcher Buttons ⭐ -->
+        <div class="contact-map">
             <div class="map-switcher">
-                <a href="https://maps.app.goo.gl/6wJNQphf7XSe5wKk8" target="_blank" rel="noopener noreferrer">📍 View Clinic Location</a>
-                <!-- ⭐ UPDATED: Correct Residence Google Maps Link ⭐ -->
-                <a href="https://maps.app.goo.gl/GBZ5wSxQcudAjngC8" target="_blank" rel="noopener noreferrer">🏠 View Residence Location</a>
+                <button id="show-clinic-map" class="active">📍 View Clinic Location</button>
+                <button id="show-residence-map">🏠 View Residence Location</button>
             </div>
+            <iframe
+              id="google-map-iframe"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3690.6720849303!2d73.1539158752945!3d22.3283282796677!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395fc631a2c13d41%3A0x26422526431f7956!2sSamanvay%20North%20park!5e0!3m2!1sen!2sin!4v1730452296541!5m2!1sen!2sin"
+              width="100%"
+              height="450"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Harpal Acupressure Location on Google Maps">
+            </iframe>
         </div>
-        
       </div>
     </section>
   </main>

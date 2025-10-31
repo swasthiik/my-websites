@@ -1,0 +1,516 @@
+/* ==== GLOBAL STYLES (Provided for context, assumes these are in style.css or a global file) ==== */
+/*
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: url("images/background3.jpg") no-repeat center center fixed;
+  background-size: cover;
+  color: #fff;
+  line-height: 1.6;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  z-index: -1;
+}
+
+.inner {
+  max-width: 1200px;
+  margin-inline: auto;
+  padding: 0 5%;
+}
+
+.btn-primary {
+  background: #00e676;
+  color: #000;
+  border-radius: 30px;
+  padding: 12px 28px;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+  margin-top: 20px;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn-primary:hover {
+  background: #00c853;
+  transform: translateY(-2px);
+}
+*/
+
+/* ==== HEADER (Provided for context, assumes these are in style.css or a global file) ==== */
+/*
+header {
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 5%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.logo-area { display: flex; align-items: center; gap: 10px; }
+.logo { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; }
+.site-title { font-weight: 600; font-size: 20px; }
+
+.nav-menu ul { list-style: none; display: flex; gap: 25px; }
+.nav-menu a {
+  color: #fff; text-decoration: none; font-weight: 500; transition: color 0.3s ease;
+  position: relative;
+  padding-bottom: 5px;
+}
+.nav-menu a:hover, .nav-menu a.active { color: #00ff88; }
+
+.nav-menu a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: #00ff88;
+  bottom: 0;
+  left: 0;
+  transition: width 0.3s ease;
+}
+
+.nav-menu a.active::after,
+.nav-menu a:hover::after {
+  width: 100%;
+}
+*/
+
+/* ==== MOBILE MENU BUTTON (Crucial addition for mobile navigation consistency) ==== */
+/* These styles should ideally be in style.css if all pages use them.
+   Including them here for completeness based on the request for updated about.css */
+.mobile-menu-button {
+    display: none; /* Hidden by default on desktop */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin-left: auto; /* Pushes button to the right in the header */
+    position: relative;
+    z-index: 1100; /* Ensure it's above other elements when active */
+}
+
+.mobile-menu-button .dot {
+    width: 25px;
+    height: 3px;
+    background-color: #00e676; /* Green dots for the menu icon */
+    margin: 5px 0;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+/* Transform dots into an 'X' when menu is open */
+.mobile-menu-button[aria-expanded="true"] .dot:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+.mobile-menu-button[aria-expanded="true"] .dot:nth-child(2) {
+    opacity: 0; /* Hide middle dot */
+}
+.mobile-menu-button[aria-expanded="true"] .dot:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* ==== MAIN CONTENT WRAPPER ==== */
+main {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+/* Shared styling for sections with glassmorphism effect */
+.content-glass-bg {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    margin: 40px auto;
+    max-width: 1100px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 60px 40px;
+    text-align: center;
+}
+
+/* ==== ABOUT SECTION ==== */
+.about-section {
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-top: 0;
+}
+
+.about-section h2 {
+  font-size: 36px;
+  color: #00e676;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.about-content {
+  display: flex;
+  align-items: flex-start; /* Align items to the start of the cross axis for better flow */
+  gap: 50px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  background: none;
+  box-shadow: none;
+  padding: 0;
+}
+
+/* Container for the two images */
+.about-images-container {
+  display: flex;
+  flex-direction: column; /* Stack images on small screens */
+  gap: 20px;
+  align-items: center; /* Center images horizontally when stacked */
+  margin-bottom: 20px; /* Space below images before text starts on smaller screens */
+  flex-shrink: 0; /* Prevent container from shrinking */
+  max-width: 100%; /* Ensure it doesn't overflow */
+}
+
+.about-img {
+  flex-shrink: 0;
+  /* Resetting individual image container flex properties if needed */
+}
+
+.about-img img {
+  width: 320px;
+  height: 380px;
+  object-fit: cover;
+  border-radius: 18px;
+  border: 4px solid #00e676;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+  max-width: 100%; /* Ensure images are responsive within their container */
+}
+
+.about-text {
+  flex: 1; /* Allows text to take up remaining space */
+  text-align: left;
+}
+
+.about-text p {
+  margin-bottom: 18px;
+  color: #f8f8f8;
+  font-size: 17px;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* ==== JOURNEY SECTION ==== */
+.journey-section {
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-top: 60px;
+}
+
+.journey-section h2 {
+  font-size: 32px;
+  color: #00e676;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.journey-section h3 {
+    color: #00e676;
+    margin-top: 35px;
+    margin-bottom: 15px;
+    font-size: 24px;
+    text-align: left;
+    border-bottom: 2px solid rgba(0,230,118,0.3);
+    padding-bottom: 5px;
+}
+
+.journey-section ul {
+  list-style: none;
+  text-align: left;
+  max-width: 900px;
+  margin: 0 auto 30px auto;
+  padding-left: 0;
+}
+
+.journey-section li {
+  margin-bottom: 12px;
+  border-left: 4px solid #00e676;
+  padding-left: 15px;
+  color: #f3f3f3;
+  font-size: 16px;
+  position: relative;
+}
+
+.journey-section li strong {
+    color: #fff;
+}
+
+/* ==== ACHIEVEMENTS SECTION ==== */
+.achievements-section {
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-top: 60px;
+}
+
+.achievements-section h2 {
+  font-size: 36px;
+  color: #00e676;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.achievements-section p {
+  color: #ddd;
+  margin-top: 10px;
+  font-size: 17px;
+  margin-bottom: 40px;
+}
+
+.trophy-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.trophy-card {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.trophy-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5);
+}
+
+.trophy-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+/* ==== FOOTER (Provided for context, assumes these are in style.css or a global file) ==== */
+/*
+footer {
+  background: rgba(0,0,0,0.8);
+  color: #ccc;
+  text-align: center;
+  padding: 20px 5%;
+  font-size: 0.9em;
+  margin-top: 60px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 -2px 5px rgba(0,0,0,0.2);
+}
+*/
+
+/* ==== RESPONSIVE ==== */
+@media (min-width: 992px) {
+    /* On larger screens, arrange images side-by-side */
+    .about-images-container {
+        flex-direction: row;
+        justify-content: center; /* Center the pair of images */
+        align-self: flex-start; /* Align this container to the top of about-content */
+        margin-bottom: 0; /* No bottom margin needed when side-by-side */
+    }
+    .about-images-container .about-img {
+        /* Distribute space, allowing images to scale */
+        flex: 1;
+        max-width: 48%; /* Each image takes up to 48% of the container width */
+        display: flex; /* Use flex to center image inside its div */
+        justify-content: center;
+    }
+    .about-images-container .about-img img {
+        width: 100%; /* Image takes full width of its flex item */
+        height: auto; /* Maintain aspect ratio when width changes */
+        max-height: 380px; /* Cap the height */
+    }
+}
+
+
+@media (max-width: 991px) { /* Tablet and smaller */
+  /* Mobile menu button appears */
+  .mobile-menu-button {
+      display: block;
+  }
+
+  /* Mobile navigation menu styling */
+  .nav-menu {
+      position: fixed;
+      top: 0;
+      left: -100%; /* Hidden off-screen */
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.95); /* Dark overlay */
+      padding-top: 80px; /* Space for header */
+      transition: left 0.4s ease-in-out;
+      z-index: 999;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+  }
+
+  .nav-menu.active {
+      left: 0; /* Slide in */
+  }
+
+  .nav-menu ul {
+      flex-direction: column;
+      text-align: center;
+      width: 100%;
+      gap: 25px; /* Space out links */
+  }
+
+  .nav-menu li {
+      margin: 10px 0;
+  }
+
+  .nav-menu a {
+      font-size: 24px; /* Larger links for touch */
+      padding: 10px 0;
+      display: block;
+  }
+  .nav-menu a::after {
+      width: 0; /* Hide underline by default in mobile menu */
+  }
+  .nav-menu a.active::after,
+  .nav-menu a:hover::after {
+      width: 50%; /* Smaller underline for active/hover */
+      left: 25%; /* Center it */
+  }
+
+  .about-content {
+    flex-direction: column;
+    gap: 30px;
+    align-items: center; /* Center content when stacked */
+  }
+
+  .about-images-container {
+    margin-bottom: 30px; /* More space below image container when stacked */
+  }
+
+  .about-img {
+    margin-bottom: 0; /* Removed this, as gap on container handles spacing */
+  }
+
+  .about-text {
+    text-align: center;
+  }
+
+  .content-glass-bg {
+    padding: 50px 30px;
+  }
+  .about-section h2, .journey-section h2, .achievements-section h2 {
+      font-size: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    /* Keep this for specific header adjustments, but ensure mobile menu button display rules are applied */
+    flex-direction: row; /* Keep logo and button on one row */
+    justify-content: space-between;
+    padding: 10px 20px;
+  }
+  .logo-area { margin-bottom: 0; }
+  /* .nav-menu ul { gap: 15px; } -- This is handled by the mobile nav styles above */
+  .site-title { font-size: 18px; }
+
+  main {
+      padding-top: 20px;
+      padding-bottom: 20px;
+  }
+
+  .content-glass-bg {
+      margin: 30px auto;
+      padding: 40px 25px;
+  }
+
+  .about-img img {
+    width: 250px;
+    height: 300px;
+    border-radius: 15px;
+  }
+  .about-section h2, .journey-section h2, .achievements-section h2 {
+      font-size: 28px;
+  }
+  .about-text p {
+      font-size: 16px;
+  }
+  .journey-section li {
+      font-size: 15px;
+  }
+  .trophy-card img {
+    height: 160px;
+  }
+
+  /* Ensure images in the container are still responsive */
+  .about-images-container .about-img img {
+    width: 100%; /* Take full width of its parent flex item */
+    height: auto; /* Adjust height automatically */
+    max-width: 280px; /* Cap max width on smaller screens if desired */
+    max-height: 300px; /* Cap max height on smaller screens if desired */
+  }
+}
+
+@media (max-width: 480px) {
+    /* .nav-menu ul { flex-wrap: wrap; justify-content: center; } -- Handled by mobile nav styles above */
+    /* .nav-menu li { margin-bottom: 5px; } -- Handled by mobile nav styles above */
+    .site-title { font-size: 16px; }
+
+    .content-glass-bg {
+        padding: 30px 15px;
+        margin: 20px auto;
+    }
+
+    .about-img img {
+        width: 100%;
+        height: 250px;
+    }
+    .about-section h2, .journey-section h2, .achievements-section h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+    .about-text p {
+        font-size: 15px;
+    }
+    .journey-section h3 {
+        font-size: 20px;
+    }
+    .trophy-grid {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 20px;
+    }
+    .trophy-card img {
+        height: 140px;
+    }
+    .btn-primary {
+        padding: 10px 20px;
+        font-size: 15px;
+    }
+
+    /* Adjust image sizes for very small screens */
+    .about-images-container .about-img img {
+      max-width: 200px; /* Further restrict max width */
+      max-height: 250px; /* Further restrict max height */
+    }
+}

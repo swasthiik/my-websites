@@ -2,26 +2,21 @@
 
 /* Page-specific background for the contact page */
 #contact-page {
-    background-image: url('images/background7.jpg'); /* This image is kept as requested */
+    background-image: url('images/background7.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
 }
 
-/* =================================== */
-/* ==== NEW LIGHT THEME STYLES ==== */
-/* =================================== */
-
 /* Main glass card on the contact page */
 #contact-page .section-card {
     max-width: 1100px;
     padding: 40px;
-    background: var(--glass-card-bg); /* Uses the new light glass variable */
+    background: rgba(0, 0, 0, 0.55);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border: 1px solid var(--glass-card-border);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 18px;
-    box-shadow: 0 8px 32px 0 var(--glass-card-shadow); /* New softer shadow */
     display: flex;
     flex-direction: column;
     gap: 40px;
@@ -29,8 +24,8 @@
 
 #contact-page-title {
     font-size: 2.8em;
-    color: var(--primary-color); /* Updated to new primary color */
-    text-shadow: none; /* Removed glow effect */
+    color: var(--accent-color);
+    text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
     text-align: center;
     margin-bottom: 0;
 }
@@ -40,7 +35,7 @@
     font-size: 1.15em;
     max-width: 700px;
     margin: -20px auto 0 auto;
-    color: var(--text-color-dark); /* Updated to dark text */
+    color: #f4f4f4;
     opacity: 0.9;
 }
 
@@ -52,27 +47,25 @@
 }
 
 .contact-info-card {
-    background: rgba(255, 255, 255, 0.6); /* Slightly more opaque inner cards */
+    background: rgba(255, 255, 255, 0.1);
     border-radius: 15px;
     padding: 30px;
     text-align: left;
-    border: 1px solid rgba(255, 255, 255, 0.8);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
 .contact-info-card h3 {
     font-size: 1.8em;
-    color: var(--secondary-color); /* Updated to darker secondary color */
+    color: #ffffff;
     margin-top: 0;
     margin-bottom: 20px;
-    border-bottom: 1px solid var(--primary-color); /* Updated border color */
+    border-bottom: 1px solid var(--accent-color);
     padding-bottom: 10px;
 }
 
 .contact-info-card p {
     margin-bottom: 1.5em;
     line-height: 1.7;
-    color: var(--text-color-dark); /* Updated to dark text */
+    color: #e0e0e0;
 }
 
 .contact-info-card ul {
@@ -86,7 +79,7 @@
 }
 
 .contact-info-card a {
-    color: var(--primary-color); /* Updated to primary color */
+    color: var(--accent-color);
     text-decoration: none;
     transition: color 0.3s ease;
     display: flex;
@@ -95,7 +88,7 @@
 }
 
 .contact-info-card a:hover {
-    color: var(--secondary-color);
+    color: #ffffff;
 }
 
 .contact-info-card a::before {
@@ -120,24 +113,24 @@ a.email-link::before { content: '📧'; }
     width: 60px;
     height: 60px;
     transition: transform 0.3s ease;
-    border-radius: 12px; /* Add soft radius to icons */
 }
 .social-btns-contact-page img:hover {
     transform: scale(1.1);
 }
 
-/* Map Links Styles */
+/* =================================== */
+/* ==== UPDATED: Map Links Styles ==== */
+/* =================================== */
 .contact-map-links {
-    background: rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.1);
     border-radius: 15px;
     padding: 30px;
     text-align: center;
-    border: 1px solid rgba(255, 255, 255, 0.8);
 }
 
 .contact-map-links h3 {
     font-size: 1.8em;
-    color: var(--secondary-color); /* Updated color */
+    color: #ffffff;
     margin-top: 0;
     margin-bottom: 25px;
 }
@@ -149,10 +142,11 @@ a.email-link::before { content: '📧'; }
     flex-wrap: wrap;
 }
 
+/* Styling the <a> tags to look like buttons */
 .map-switcher a {
     background-color: transparent;
-    border: 2px solid var(--primary-color);
-    color: var(--primary-color);
+    border: 2px solid var(--accent-color);
+    color: var(--accent-color);
     padding: 12px 25px;
     border-radius: 30px;
     font-weight: 600;
@@ -162,18 +156,19 @@ a.email-link::before { content: '📧'; }
     transition: all 0.3s ease;
 }
 
+/* Active/Hover state for the first button */
+.map-switcher a:first-child {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    box-shadow: 0 0 15px rgba(0, 255, 136, 0.5);
+}
+
 .map-switcher a:hover {
-    background-color: var(--primary-color);
-    color: var(--text-color-light); /* Light text on hover */
+    background-color: var(--accent-color);
+    color: var(--primary-color);
     transform: translateY(-2px);
 }
 
-/* Style for the first "active" button */
-.map-switcher a:first-child {
-    background-color: var(--primary-color);
-    color: var(--text-color-light);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
 
 /* Responsive adjustments */
 @media (max-width: 768px) {

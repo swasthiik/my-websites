@@ -3,14 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Harpal Acupressure — Healing & Wellness: Your path to holistic well-being with Dr. Dipali Patel in Vadodara, offering acupressure, acupuncture, aura cleansing, and more." />
   <title>Harpal Acupressure — Healing & Wellness</title>
 
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <!-- Favicon -->
-  <link rel="icon" href="images/logo.jpg" type="image/jpeg">
+  <link rel="icon" href="images/logo.jpg">
 
   <!-- Main stylesheet -->
   <link rel="stylesheet" href="style.css">
@@ -19,29 +18,36 @@
 <body>
   <!-- HEADER -->
   <header>
+    <div class="logo-area">
+      <a href="#index.html" aria-label="Harpal Acupressure Home">
+        <img src="images/logo.jpg" alt="Harpal Acupressure Logo" class="logo">
+        <h1 class="site-title">Harpal Acupressure</h1>
+      </a>
+    </div>
+
     <button class="mobile-menu-button" id="menu-button" aria-label="Open Menu" aria-expanded="false">
-        <span class="dot" aria-hidden="true"></span>
-        <span class="dot" aria-hidden="true"></span>
-        <span class="dot" aria-hidden="true"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
     </button>
 
     <nav class="nav-menu" id="nav-menu" aria-label="Main navigation">
       <ul>
-        <li><a href="#hero">Home</a></li>
-        <li><a href="about.html">About</a></li>
+        <li><a href="#index.html">Home</a></li>
+        <li><a href="#about.html">About</a></li>
         <li><a href="#services">Services</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="#feedback.html">Feedback</a></li>
+        <li><a href="#contact.html">Contact</a></li> <!-- Link changed to internal #contact-section-home -->
       </ul>
     </nav>
   </header>
 
   <!-- HERO -->
-  <section id="hero" role="region" aria-label="Hero Introduction">
+  <section id="hero" role="region" aria-label="Hero">
     <div class="hero-overlay">
-      <img src="images/logo.jpg" alt="Harpal Acupressure Logo" class="hero-logo">
-      <h1>Harpal Acupressure</h1>
+      <h1>Welcome to Harpal Acupressure</h1>
       <p>Healing through touch, energy &amp; balance — a path to holistic wellness guided by <strong>Dr. Dipali Patel</strong>.</p>
-      <a href="#about-home" class="btn">Explore More →</a>
+      <a href="about.html" class="btn">Explore More →</a>
     </div>
   </section>
 
@@ -55,8 +61,12 @@
           under <strong>Dr. Dipali Premalkumar Patel</strong>. We combine traditional techniques with modern care to restore balance
           and well-being. Our approach is rooted in ancient wisdom, providing a serene environment for healing and rejuvenation.
         </p>
+        <div class="about-image-wrapper">
+          <!-- Placeholder for the about summary image (e.g., a serene herbal image or the bookshelf image) -->
+          <!-- Consider adding an actual image here for visual appeal, e.g., <img src="images/dr-patel-profile.jpg" alt="Dr. Dipali Patel"> -->
+        </div>
       </div>
-      <a href="about.html" class="btn" target="_blank" rel="noopener noreferrer">Read More →</a>
+      <a href="about.html" class="btn">Read More →</a>
     </div>
   </section>
 
@@ -64,10 +74,11 @@
   <section id="services" class="glass-section" aria-labelledby="services-title">
     <div class="section-card">
       <h2 id="services-title"><strong>Our Services</strong></h2>
+
       <div class="services-grid">
         <!-- Service 1 -->
         <div class="service-card">
-          <img src="images/service1.jpg" alt="Person receiving acupressure therapy" loading="lazy">
+          <img src="images/service1.jpg" alt="Acupressure Therapy">
           <div class="svc-body">
             <div class="svc-title">Acupressure Therapy</div>
             <div class="svc-text">Targeted pressure point healing for pain and balance.</div>
@@ -75,7 +86,7 @@
         </div>
         <!-- Service 2 -->
         <div class="service-card">
-          <img src="images/service2.jpg" alt="Acupuncture needles on skin" loading="lazy">
+          <img src="images/service2.jpg" alt="Acupuncture">
           <div class="svc-body">
             <div class="svc-title">Acupuncture</div>
             <div class="svc-text">Stimulates body healing and relieves chronic symptoms.</div>
@@ -83,7 +94,7 @@
         </div>
         <!-- Service 3 -->
         <div class="service-card">
-          <img src="images/service3.jpg" alt="Meditating figure with glowing aura" loading="lazy">
+          <img src="images/service3.jpg" alt="Aura Cleansing">
           <div class="svc-body">
             <div class="svc-title">Aura Cleansing</div>
             <div class="svc-text">Removes negativity, recharges your energy and aura field.</div>
@@ -91,7 +102,7 @@
         </div>
         <!-- Service 4 -->
         <div class="service-card">
-          <img src="images/service4.jpg" alt="Cupping therapy on a person's back" loading="lazy">
+          <img src="images/service4.jpg" alt="Cupping Therapy">
           <div class="svc-body">
             <div class="svc-title">Cupping Therapy</div>
             <div class="svc-text">Boost circulation, detox body & ease muscle tension.</div>
@@ -99,7 +110,7 @@
         </div>
         <!-- Service 5 -->
         <div class="service-card">
-          <img src="images/service5.jpg" alt="Spine alignment diagram" loading="lazy">
+          <img src="images/service5.jpg" alt="Casa Therapy">
           <div class="svc-body">
             <div class="svc-title">Casa Therapy</div>
             <div class="svc-text">Balances posture, structure, and natural body alignment.</div>
@@ -107,7 +118,7 @@
         </div>
         <!-- Service 6 -->
         <div class="service-card">
-          <img src="images/service6.jpg" alt="Hands holding magnets for therapy" loading="lazy">
+          <img src="images/service6.jpg" alt="Magnetic Therapy">
           <div class="svc-body">
             <div class="svc-title">Magnetic Therapy</div>
             <div class="svc-text">Uses magnetic energy to stimulate healing and vitality.</div>
@@ -115,7 +126,7 @@
         </div>
         <!-- Service 7 -->
         <div class="service-card">
-          <img src="images/service7.jpg" alt="Numerology chart with numbers" loading="lazy">
+          <img src="images/service7.jpg" alt="Numerology Guidance">
           <div class="svc-body">
             <div class="svc-title">Numerology Guidance</div>
             <div class="svc-text">Unlock insights from your life numbers for clarity. Discover your path and purpose through personalized readings.</div>
@@ -123,7 +134,7 @@
         </div>
         <!-- Service 8 -->
         <div class="service-card">
-          <img src="images/service8.jpg" alt="Hands glowing with Reiki energy" loading="lazy">
+          <img src="images/service8.jpg" alt="Reiki Healing">
           <div class="svc-body">
             <div class="svc-title">Reiki Healing</div>
             <div class="svc-text">Channel universal life force energy for deep relaxation. Promote emotional and physical well-being.</div>
@@ -131,7 +142,7 @@
         </div>
         <!-- Service 9 -->
         <div class="service-card">
-          <img src="images/service9.jpg" alt="Hand with Su-Jok therapy rings" loading="lazy">
+          <img src="images/service9.jpg" alt="Su-Jok Therapy">
           <div class="svc-body">
             <div class="svc-title">Su-Jok Therapy</div>
             <div class="svc-text">An effective therapy using hands and feet as treatment points. It helps in balancing the body's energy flow for healing.</div>
@@ -139,7 +150,7 @@
         </div>
         <!-- Service 10 -->
         <div class="service-card">
-          <img src="images/service10.jpg" alt="Architectural drawing with Vastu compass" loading="lazy">
+          <img src="images/service10.jpg" alt="Vastu Consultation">
           <div class="svc-body">
             <div class="svc-title">Vastu Consultation</div>
             <div class="svc-text">Harmonize your living and work spaces with ancient principles. Enhance positivity, health, and prosperity in your environment.</div>
@@ -149,7 +160,29 @@
     </div>
   </section>
 
-  <!-- CONTACT -->
+  <!-- FEEDBACK (New section based on your previous request for background4.jpg) -->
+  <section id="feedback-home" class="glass-section" aria-labelledby="feedback-title">
+    <div class="section-card">
+      <h2 id="feedback-title"><strong>What Our Clients Say</strong></h2>
+      <div class="feedback-grid">
+        <div class="feedback-item">
+          <p>"Dr. Patel's acupressure therapy has significantly reduced my chronic back pain. I feel more energetic and balanced!"</p>
+          <span>— A satisfied client</span>
+        </div>
+        <div class="feedback-item">
+          <p>"The aura cleansing session left me feeling incredibly refreshed and positive. A truly unique experience."</p>
+          <span>— R. Sharma</span>
+        </div>
+        <div class="feedback-item">
+          <p>"I was skeptical at first, but Su-Jok therapy worked wonders for my joint issues. Highly recommend Harpal Acupressure!"</p>
+          <span>— P. Singh</span>
+        </div>
+      </div>
+      <a href="feedback.html" class="btn">Read All Feedback →</a>
+    </div>
+  </section>
+
+  <!-- CONTACT (Integrated Section - note the ID change for linking) -->
   <section id="contact-section-home" class="glass-section" aria-labelledby="contact-title">
     <div class="section-card" id="contact-card">
       <h2 id="contact-title"><strong>Get In Touch</strong></h2>
@@ -157,15 +190,18 @@
         <div class="contact-left">
           <h3>Connect on Social</h3>
           <div class="social-btns">
-            <a href="https://www.instagram.com/harpal_acupressure/" target="_blank" rel="noopener noreferrer" aria-label="Visit Harpal Acupressure on Instagram"><img src="images/instagram.png" alt="Instagram logo"></a>
-            <a href="https://m.facebook.com/share/1GioYfoyAg/" target="_blank" rel="noopener noreferrer" aria-label="Visit Harpal Acupressure on Facebook"><img src="images/facebook.png" alt="Facebook logo"></a>
+            <a href="https://www.instagram.com/harpal_acupressure/" target="_blank" rel="noopener"><img src="images/instagram.png" alt="Instagram"></a>
+            <a href="https://m.facebook.com/share/1GioYfoyAg/" target="_blank" rel="noopener"><img src="images/facebook.png" alt="Facebook"></a>
           </div>
+
           <p class="email-line">Email: <a href="mailto:info@harpalaccupressure.com">info@harpalaccupressure.com</a></p>
+
           <div class="btn-area">
             <a class="btn btn-call" href="tel:+919173952555">📞 Call</a>
-            <a class="btn btn-wa" href="https://wa.me/919173952555" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+            <a class="btn btn-wa" href="https://wa.me/919173952555" target="_blank" rel="noopener">WhatsApp</a>
           </div>
         </div>
+
         <div class="contact-center">
           <h3>Visit Us</h3>
           <p><strong>Clinic Address:</strong><br>
@@ -173,30 +209,67 @@
             Opp Darshanam King Square,<br>
             Ankodiya, Vadodara, Gujarat - 390016
           </p>
+
           <p><strong>Residence Address:</strong><br>
             401, Suryadarshan Apartment,<br>
             Opposite Navrachana School,<br>
             Akota, Vadodara, Gujarat - 390020
           </p>
-          <p><a href="https://maps.app.goo.gl/6wJNQphf7XSe5wKk8" target="_blank" rel="noopener noreferrer">📍 Open Clinic in Google Maps</a></p>
+
+          <p><a href="https://maps.app.goo.gl/6wJNQphf7XSe5wKk8" target="_blank" rel="noopener">📍 Open in Google Maps</a></p>
         </div>
+
         <div class="quick-links">
           <h4>Quick Links</h4>
-          <a href="#hero">🏠 Home</a>
+          <a href="index.html">🏠 Home</a>
           <a href="about.html">ℹ About</a>
           <a href="#services">💆 Services</a>
+          <a href="feedback.html">💬 Feedback</a>
           <a href="contact.html">📞 Contact</a>
         </div>
       </div>
+
       <div class="final-line">A PLACE OF HEALING, RELAXATION &amp; HOLISTIC WELLNESS</div>
-      <a href="contact.html" class="btn" target="_blank" rel="noopener noreferrer" style="margin-top: 20px;">Go to Contact Page →</a>
     </div>
   </section>
 
-  <footer>
-    <p>&copy; <span id="current-year"></span> Harpal Acupressure. All Rights Reserved.</p>
-  </footer>
+  <footer>© 2025 Harpal Acupressure. All Rights Reserved.</footer>
 
+  <!-- Link to the NEW main.js script -->
   <script src="main.js"></script>
 </body>
 </html>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mainNav = document.getElementById('main-nav');
+        const navLinks = mainNav.querySelectorAll('a');
+
+        if (mobileMenuBtn && mainNav) {
+            mobileMenuBtn.addEventListener('click', function() {
+                const isExpanded = this.getAttribute('aria-expanded') === 'true' || false;
+                this.setAttribute('aria-expanded', !isExpanded);
+                mainNav.classList.toggle('active');
+            });
+
+            // Close menu when a link is clicked (for single-page navigation)
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    if (mainNav.classList.contains('active')) {
+                        mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                        mainNav.classList.remove('active');
+                    }
+                });
+            });
+
+            // Close menu if window is resized past mobile breakpoint
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 992 && mainNav.classList.contains('active')) {
+                    mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                    mainNav.classList.remove('active');
+                }
+            });
+        }
+    });
+</script>

@@ -19,6 +19,13 @@
 <body>
   <!-- HEADER -->
   <header>
+    <div class="logo-area">
+      <a href="#hero" aria-label="Harpal Acupressure Home">
+        <img src="images/logo.jpg" alt="Harpal Acupressure Logo" class="logo">
+        <h1 class="site-title">Harpal Acupressure</h1>
+      </a>
+    </div>
+
     <button class="mobile-menu-button" id="menu-button" aria-label="Open Menu" aria-expanded="false">
         <span class="dot" aria-hidden="true"></span>
         <span class="dot" aria-hidden="true"></span>
@@ -28,9 +35,9 @@
     <nav class="nav-menu" id="nav-menu" aria-label="Main navigation">
       <ul>
         <li><a href="#hero">Home</a></li>
-        <li><a href="about.html">About</a></li>
+        <li><a href="about.html">About</a></li> <!-- Direct link to about.html -->
         <li><a href="#services">Services</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="contact.html">Contact</a></li> <!-- Direct link to contact.html -->
       </ul>
     </nav>
   </header>
@@ -38,8 +45,7 @@
   <!-- HERO -->
   <section id="hero" role="region" aria-label="Hero Introduction">
     <div class="hero-overlay">
-      <img src="images/logo.jpg" alt="Harpal Acupressure Logo" class="hero-logo">
-      <h1>Harpal Acupressure</h1>
+      <h1>Welcome to Harpal Acupressure</h1>
       <p>Healing through touch, energy &amp; balance — a path to holistic wellness guided by <strong>Dr. Dipali Patel</strong>.</p>
       <a href="#about-home" class="btn">Explore More →</a>
     </div>
@@ -56,6 +62,8 @@
           and well-being. Our approach is rooted in ancient wisdom, providing a serene environment for healing and rejuvenation.
         </p>
       </div>
+    </div>
+      <!-- "Read More" button for About section -->
       <a href="about.html" class="btn" target="_blank" rel="noopener noreferrer">Read More →</a>
     </div>
   </section>
@@ -64,6 +72,7 @@
   <section id="services" class="glass-section" aria-labelledby="services-title">
     <div class="section-card">
       <h2 id="services-title"><strong>Our Services</strong></h2>
+
       <div class="services-grid">
         <!-- Service 1 -->
         <div class="service-card">
@@ -146,6 +155,8 @@
           </div>
         </div>
       </div>
+      <!-- Add a "View All Services" button here if you create a services.html page -->
+      <!-- <a href="services.html" class="btn" target="_blank" rel="noopener noreferrer">View All Services →</a> -->
     </div>
   </section>
 
@@ -160,12 +171,15 @@
             <a href="https://www.instagram.com/harpal_acupressure/" target="_blank" rel="noopener noreferrer" aria-label="Visit Harpal Acupressure on Instagram"><img src="images/instagram.png" alt="Instagram logo"></a>
             <a href="https://m.facebook.com/share/1GioYfoyAg/" target="_blank" rel="noopener noreferrer" aria-label="Visit Harpal Acupressure on Facebook"><img src="images/facebook.png" alt="Facebook logo"></a>
           </div>
+
           <p class="email-line">Email: <a href="mailto:info@harpalaccupressure.com">info@harpalaccupressure.com</a></p>
+
           <div class="btn-area">
             <a class="btn btn-call" href="tel:+919173952555">📞 Call</a>
             <a class="btn btn-wa" href="https://wa.me/919173952555" target="_blank" rel="noopener noreferrer">WhatsApp</a>
           </div>
         </div>
+
         <div class="contact-center">
           <h3>Visit Us</h3>
           <p><strong>Clinic Address:</strong><br>
@@ -173,22 +187,27 @@
             Opp Darshanam King Square,<br>
             Ankodiya, Vadodara, Gujarat - 390016
           </p>
+
           <p><strong>Residence Address:</strong><br>
             401, Suryadarshan Apartment,<br>
             Opposite Navrachana School,<br>
             Akota, Vadodara, Gujarat - 390020
           </p>
+
           <p><a href="https://maps.app.goo.gl/6wJNQphf7XSe5wKk8" target="_blank" rel="noopener noreferrer">📍 Open Clinic in Google Maps</a></p>
         </div>
+
         <div class="quick-links">
           <h4>Quick Links</h4>
           <a href="#hero">🏠 Home</a>
-          <a href="about.html">ℹ About</a>
+          <a href="about.html">ℹ About</a>      <!-- Direct link to about.html -->
           <a href="#services">💆 Services</a>
-          <a href="contact.html">📞 Contact</a>
+          <a href="contact.html">📞 Contact</a>   <!-- Direct link to contact.html -->
         </div>
       </div>
+
       <div class="final-line">A PLACE OF HEALING, RELAXATION &amp; HOLISTIC WELLNESS</div>
+      <!-- "Go to Contact Page" button for Contact section -->
       <a href="contact.html" class="btn" target="_blank" rel="noopener noreferrer" style="margin-top: 20px;">Go to Contact Page →</a>
     </div>
   </section>
@@ -197,6 +216,7 @@
     <p>&copy; <span id="current-year"></span> Harpal Acupressure. All Rights Reserved.</p>
   </footer>
 
+  <!-- Link to the main.js script -->
   <script src="main.js"></script>
 </body>
 </html>

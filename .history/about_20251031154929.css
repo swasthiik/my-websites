@@ -2,17 +2,17 @@
 
 /* This body style sets a unique background specifically for the about page */
 body.about-page {
-  background: url("images/background7.jpg") no-repeat center center fixed;
+  background: url("images/background3.jpg") no-repeat center center fixed;
   background-size: cover;
   position: relative;
 }
 
-/* Adds the light overlay, consistent with the rest of the site */
+/* Adds the dark overlay, consistent with the rest of the site */
 body.about-page::before {
   content: "";
   position: fixed;
   inset: 0;
-  background: rgba(255, 255, 255, 0.6); /* Light overlay */
+  background: rgba(0, 0, 0, 0.65);
   z-index: -1;
 }
 
@@ -22,34 +22,29 @@ main {
   padding-bottom: 60px;
 }
 
-/* ================================================= */
-/* ==== FIX: APPLYING THE CORRECT LIGHT THEME CARD ==== */
-/* ================================================= */
-
 /* Shared styling for the main glassmorphism content boxes */
 .content-glass-bg {
-  background: var(--glass-card-bg); /* USES THE CORRECT light glass effect */
+  background: rgba(0, 0, 0, 0.55);
   border-radius: 18px;
   margin: 40px auto;
   max-width: 1200px;
   width: 95%;
-  box-shadow: 0 8px 32px 0 var(--glass-card-shadow); /* Correct soft shadow */
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid var(--glass-card-border); /* Correct light border */
+  border: 1px solid rgba(255, 255, 255, 0.15);
   padding: 40px;
-  color: var(--text-color-dark); /* Ensures all text inside is dark */
 }
 
 .content-glass-bg h2 {
   font-size: 2.8em;
-  color: var(--primary-color); /* Correct heading color */
+  color: var(--accent-color);
   margin-bottom: 40px;
   text-align: center;
 }
 
 /* ========================================= */
-/* ==== ABOUT SECTION LAYOUT STYLES ==== */
+/* ==== FINAL ABOUT SECTION STYLES ==== */
 /* ========================================= */
 
 .about-content {
@@ -61,7 +56,7 @@ main {
 
 .about-images-container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr; /* Two equal columns for the images */
   gap: 20px;
   width: 100%;
   max-width: 450px;
@@ -70,7 +65,9 @@ main {
 .about-img {
   border-radius: 15px;
   overflow: hidden;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.1); /* Softer shadow for light theme */
+  border: 3px solid var(--accent-color);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+  background-color: rgba(255, 255, 255, 0.05);
 }
 
 .about-img img {
@@ -88,7 +85,7 @@ main {
   margin-bottom: 1.2em;
   font-size: 1.1em;
   line-height: 1.7;
-  color: var(--text-color-dark); /* Correct dark text color */
+  color: #f4f4f4;
 }
 
 .about-text .btn {
@@ -99,14 +96,14 @@ main {
 /* ==== OTHER SECTIONS (Unchanged) ==== */
 /* =================================== */
 .journey-section .content-box { text-align: left; }
-.journey-section h3 { color: var(--primary-color); margin-top: 25px; margin-bottom: 15px; font-size: 1.5em; border-bottom: 1px solid rgba(42, 111, 91, 0.3); padding-bottom: 8px; }
+.journey-section h3 { color: var(--accent-color); margin-top: 25px; margin-bottom: 15px; font-size: 1.5em; border-bottom: 1px solid rgba(0, 255, 136, 0.3); padding-bottom: 8px; }
 .journey-section ul { list-style-type: none; padding-left: 0; }
 .journey-section li { margin-bottom: 10px; padding-left: 20px; position: relative; }
-.journey-section li::before { content: '✓'; color: var(--primary-color); position: absolute; left: 0; font-weight: bold; }
+.journey-section li::before { content: '✓'; color: var(--accent-color); position: absolute; left: 0; font-weight: bold; }
 .achievements-section p { text-align: center; margin-bottom: 40px; font-size: 1.1em; }
 .trophy-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 25px; }
 .trophy-card { border-radius: 12px; overflow: hidden; transition: transform 0.3s ease, box-shadow 0.3s ease; }
-.trophy-card:hover { transform: scale(1.05); box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); }
+.trophy-card:hover { transform: scale(1.05); box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4); }
 .trophy-card img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
 /* =================================== */

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Share your feedback or book an appointment with Harpal Acupressure in Vadodara, Gujarat. View client testimonials." />
+  <title>Feedback & Appointment — Harpal Acupressure</title>
+  <link rel="icon" href="images/logo.jpg">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"> <!-- Link to global style.css -->
+  <link rel="stylesheet" href="feedback.css">
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo-area">
+      <a href="index.html" aria-label="Harpal Acupressure Home"> <!-- Added aria-label -->
+        <img src="images/logo.jpg" alt="Harpal Acupressure Logo" class="logo">
+        <h1 class="site-title">Harpal Acupressure</h1>
+      </a>
+    </div>
+
+    <!-- Mobile Menu Button - Added for consistency -->
+    <button class="mobile-menu-button" id="menu-button" aria-label="Open navigation menu" aria-expanded="false">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+    </button>
+
+    <nav class="nav-menu" id="nav-menu" aria-label="Main navigation"> <!-- Added id for JS -->
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="feedback.html" class="active">Feedback</a></li>
+        <li><a href="contact.html">Contact</a></li> <!-- Corrected link to contact.html -->
+      </ul>
+    </nav>
+  </header>
+
+  <!-- MAIN SECTION - Contains Appointment Form, Google Feedback Link, and Feedback Table -->
+  <main class="feedback-page-content">
+    <section class="appointment-feedback-cards" aria-labelledby="appointment-form-title">
+      <!-- Appointment Form -->
+      <div class="glass-card appointment-form-card">
+        <h2 id="appointment-form-title">Book an Appointment</h2>
+        <p>Fill out the form below to book your appointment with <strong>Dr. Dipali Patel</strong>.</p>
+
+        <!-- IMPORTANT: Replace the 'action' URL with your actual Formspree endpoint after setting it up! -->
+        <form action="https://formspree.io/f/your-formspree-id" method="POST"> 
+          <input type="text" name="name" placeholder="Full Name" aria-label="Full Name" required>
+          <input type="tel" name="phone" placeholder="Phone Number" aria-label="Phone Number" required>
+          <input type="text" name="service" placeholder="Service Required (e.g., Acupressure)" aria-label="Service Required" required>
+          <textarea name="message" placeholder="Briefly describe your condition or what you hope to achieve..." aria-label="Your Message" required></textarea>
+          <button type="submit">📩 Send Appointment Request</button>
+          <div id="form-msg" class="msg-box" role="status" aria-live="polite"></div>
+        </form>
+        <p class="note"><span>(Please configure your Formspree endpoint in the form's 'action' attribute)</span></p>
+      </div>
+
+      <!-- Google Feedback Card -->
+      <div class="glass-card google-feedback-card" aria-labelledby="google-feedback-title">
+        <h2 id="google-feedback-title">Share Your Experience</h2>
+        <p>We truly value your experience at <strong>Harpal Acupressure</strong>.<br>
+           Please take a moment to share your feedback on Google — it helps us grow and serve you better!</p>
+
+        <!-- IMPORTANT: Replace 'ChIJx_y6g_0wzzAR4y8M_e_q_gQ' with your actual Google Place ID -->
+        <a href="https://search.google.com/local/writereview?placeid=YOUR_GOOGLE_PLACE_ID" 
+           target="_blank" rel="noopener noreferrer" class="btn google-btn" aria-label="Leave Feedback on Google (opens in new tab)">⭐ Leave Feedback on Google</a>
+        <p class="note"><span>(Remember to replace `YOUR_GOOGLE_PLACE_ID` in the link above with your actual Google Place ID!)</span></p>
+      </div>
+    </section>
+
+    <!-- Feedback Table Section -->
+    <section class="feedback-table-section" aria-labelledby="testimonials-title">
+      <div class="glass-card full-width-card">
+        <h2 id="testimonials-title">Client Testimonials</h2>
+        <p>See what our valued clients have to say about their healing journey with us.</p>
+        
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>Client Name</th>
+                <th>Service Received</th>
+                <th>Feedback</th>
+                <th>Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-label="Client Name">R. Sharma</td>
+                <td data-label="Service Received">Acupressure Therapy</td>
+                <td data-label="Feedback">"Excellent service! My chronic back pain has significantly improved. Dr. Patel is very knowledgeable and caring."</td>
+                <td data-label="Date">2024-03-10</td>
+              </tr>
+              <tr>
+                <td data-label="Client Name">P. Singh</td>
+                <td data-label="Service Received">Aura Cleansing</td>
+                <td data-label="Feedback">"Felt a profound sense of peace and clarity after the aura cleansing. Highly recommend for stress relief."</td>
+                <td data-label="Date">2024-03-05</td>
+              </tr>
+              <tr>
+                <td data-label="Client Name">A. Kumar</td>
+                <td data-label="Service Received">Su-Jok Therapy</td>
+                <td data-label="Feedback">"Never thought tiny magnets could do so much! My knee pain is almost gone. Thank you, Harpal Acupressure!"</td>
+                <td data-label="Date">2024-02-28</td>
+              </tr>
+              <tr>
+                <td data-label="Client Name">S. Patel</td>
+                <td data-label="Service Received">Magnetic Therapy</td>
+                <td data-label="Feedback">"I've struggled with fatigue for years. After a few sessions, I feel much more energetic and focused."</td>
+                <td data-label="Date">2024-02-20</td>
+              </tr>
+              <tr>
+                <td data-label="Client Name">J. Mehta</td>
+                <td data-label="Service Received">Cupping Therapy</td>
+                <td data-label="Feedback">"Cupping therapy helped release a lot of tension in my shoulders. A bit intense, but very effective for muscle knots."</td>
+                <td data-label="Date">2024-02-15</td>
+              </tr>
+              <!-- Add more feedback rows here -->
+            </tbody>
+          </table>
+        </div>
+        <p class="table-note">These are select testimonials. For more, please visit our Google Business page.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2025 Harpal Acupressure. All Rights Reserved.
+  </footer>
+
+  <!-- JavaScript for Mobile Menu and Form Submission -->
+  <script>
+    // Mobile Menu Toggle
+    const menuButton = document.getElementById('menu-button');
+    const navMenu = document.getElementById('nav-menu');
+
+    menuButton.addEventListener('click', () => {
+      const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
+      menuButton.setAttribute('aria-expanded', !isExpanded);
+      navMenu.classList.toggle('active');
+    });
+
+    // Optional: Close menu when a link is clicked
+    document.querySelectorAll('#nav-menu a').forEach(item => {
+        item.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+            menuButton.setAttribute('aria-expanded', 'false');
+        });
+    });
+
+    // Optional: Close menu if user clicks outside of it
+    document.addEventListener('click', (event) => {
+        if (!navMenu.contains(event.target) && !menuButton.contains(event.target) && navMenu.classList.contains('active')) {
+            navMenu.classList.remove('active');
+            menuButton.setAttribute('aria-expanded', 'false');
+        }
+    });
+
+    // Form Submission Logic
+    const form = document.querySelector(".appointment-form-card form");
+    const msgBox = document.getElementById("form-msg");
+
+    if (form) {
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const formData = new FormData(form);
+        msgBox.textContent = "⏳ Sending...";
+        msgBox.style.background = "rgba(255,255,255,0.1)";
+        msgBox.style.color = "#ccc";
+
+        try {
+            const response = await fetch(form.action, {
+              method: form.method,
+              body: formData,
+              headers: { 'Accept': 'application/json' }
+            });
+
+            if (response.ok) {
+              msgBox.innerHTML = "✅ <b>Appointment request sent successfully!</b><br>We’ll contact you soon.";
+              msgBox.style.background = "rgba(0,255,136,0.2)";
+              msgBox.style.color = "#00ff88";
+              form.reset();
+            } else {
+              // Attempt to read error message from Formspree if available
+              const errorData = await response.json();
+              const errorMessage = errorData.error || "Something went wrong.";
+              msgBox.innerHTML = `❌ Oops! ${errorMessage} Please try again later.`;
+              msgBox.style.background = "rgba(255,0,0,0.2)";
+              msgBox.style.color = "#ff4444";
+            }
+        } catch (error) {
+            msgBox.innerHTML = "❌ Network error. Could not connect to the server. Please check your internet connection and try again.";
+            msgBox.style.background = "rgba(255,0,0,0.2)";
+            msgBox.style.color = "#ff4444";
+            console.error("Form submission error:", error);
+        }
+      });
+    }
+  </script>
+</body>
+</html>
