@@ -1,0 +1,163 @@
+/* about.css */
+
+/* This body style sets a unique background specifically for the about page */
+body.about-page {
+  background: url("images/background3.jpg") no-repeat center center fixed;
+  background-size: cover;
+  position: relative;
+}
+
+/* Adds the light overlay, which is crucial for text readability */
+body.about-page::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.65); /* A light, semi-transparent overlay */
+  z-index: -1;
+}
+
+/* Main content area padding */
+main {
+  padding-top: 40px;
+  padding-bottom: 60px;
+}
+
+/* ==================================================================== */
+/* ==== FIX: REMOVED CONFLICTING STYLES & APPLIED CORRECT ONES ==== */
+/* ==================================================================== */
+
+/*
+* The old, blurry .content-glass-bg style has been REMOVED from this file.
+* Now, this section will correctly use the beautiful frosted-glass style
+* from your main style.css file, just like your Contact page.
+*/
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.about-images-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  width: 100%;
+  max-width: 450px;
+}
+
+.about-img {
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1); /* A soft, professional shadow */
+  background-color: #ffffff; /* A solid white background for the images */
+}
+
+.about-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.about-text {
+  text-align: center;
+}
+
+.about-text p {
+  margin-bottom: 1.2em;
+  font-size: 1.1em;
+  line-height: 1.7;
+  /* This will now correctly inherit the dark text color from the body */
+}
+
+.about-text .btn {
+  margin-top: 20px;
+}
+
+/* =================================== */
+/* ==== JOURNEY & ACHIEVEMENTS SECTION ==== */
+/* =================================== */
+.journey-section .content-box {
+  text-align: left;
+}
+.journey-section h3 {
+  color: var(--primary-color);
+  margin-top: 25px;
+  margin-bottom: 15px;
+  font-size: 1.5em;
+  border-bottom: 1px solid rgba(42, 111, 91, 0.3);
+  padding-bottom: 8px;
+}
+.journey-section ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+.journey-section li {
+  margin-bottom: 10px;
+  padding-left: 20px;
+  position: relative;
+}
+.journey-section li::before {
+  content: '✓';
+  color: var(--primary-color);
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+/* =================================== */
+/* ==== CERTIFICATES & AWARDS SECTION ==== */
+/* =================================== */
+.achievements-section p {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 1.1em;
+}
+.trophy-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 25px;
+}
+.trophy-card {
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+.trophy-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+.trophy-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* =================================== */
+/* ==== RESPONSIVE DESIGN ==== */
+/* =================================== */
+@media (min-width: 900px) {
+  .about-content {
+    flex-direction: row;
+    align-items: center;
+    gap: 50px;
+  }
+  .about-images-container {
+    flex: 0 0 40%;
+    max-width: 500px;
+  }
+  .about-text {
+    flex: 1;
+    text-align: left;
+  }
+}
+
+@media (max-width: 480px) {
+  .content-glass-bg { padding: 25px; }
+  .about-text p { font-size: 1em; }
+  .trophy-grid { grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 15px; }
+}
