@@ -1,31 +1,24 @@
-/* about.css - Final version with transparent background fix */
+/* about.css - Updated with Background Image and Transparent Sections */
 
 /* =================================== */
-/* ==== 1. THE FIX FOR THE BLACK BOX ==== */
+/* ==== 1. PAGE SETUP & BACKGROUND ==== */
 /* =================================== */
 
-/* This new rule overrides the dark overlay from style.css for sections ON THIS PAGE */
-.about-page section::before {
-    background-color: transparent;
-}
-
-/* =================================== */
-/* ==== 2. PAGE SETUP & BACKGROUND ==== */
-/* =================================== */
-
+/* MODIFIED: Added the background image */
 body.about-page {
-  background-image: url('images/background3.jpg');
+  background-image: url('images/background2.jpg');
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
+  background-attachment: fixed; /* Keeps the background still when scrolling */
 }
 
 main {
+  /* Adds space between the header and the start of the content */
   padding-top: 100px;
 }
 
 /* =================================== */
-/* ==== 3. GENERAL SECTION STYLES ==== */
+/* ==== 2. GENERAL SECTION STYLES ==== */
 /* =================================== */
 
 .about-content-section {
@@ -34,31 +27,30 @@ main {
   padding: 0 20px;
 }
 
-/* MODIFIED: Changed title color back to the brand color for readability */
 .section-title {
   text-align: center;
   font-size: 2.6em;
   font-weight: 600;
-  color: var(--primary-color); /* Using your main green color */
-  text-shadow: 1px 1px 3px rgba(255,255,255,0.7); /* Light shadow for contrast */
+  color: var(--text-color-light); /* Changed to light for better visibility */
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.7); /* Added shadow for readability */
   margin-bottom: 40px;
 }
 
-/* MODIFIED: Changed subtitle color to a dark grey */
 .section-subtitle {
   text-align: center;
   font-size: 1.1em;
-  color: #333; /* Dark grey color */
-  text-shadow: 1px 1px 3px rgba(255,255,255,0.7); /* Light shadow for contrast */
+  color: var(--text-color-light); /* Changed to light for better visibility */
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.7); /* Added shadow for readability */
   max-width: 700px;
   margin: -20px auto 40px auto;
 }
 
 
 /* =================================== */
-/* ==== 4. FOUNDER SECTION ==== */
+/* ==== 3. FOUNDER SECTION ==== */
 /* =================================== */
 
+/* MODIFIED: Changed background to semi-transparent */
 .founder-card {
   display: flex;
   align-items: center;
@@ -79,13 +71,14 @@ main {
   height: 100%;
   object-fit: cover;
   border-radius: 50%;
-  border: 4px solid white;
+  border: 4px solid white; /* Added a white border */
 }
 
 .founder-details {
   flex: 1;
 }
 
+/* MODIFIED: Changed text color to black for readability */
 .founder-details h3 {
   font-size: 2em;
   font-weight: 600;
@@ -93,6 +86,7 @@ main {
   margin: 0 0 15px 0;
 }
 
+/* MODIFIED: Changed text color to black for readability */
 .founder-details p {
   font-size: 1.1em;
   line-height: 1.7;
@@ -100,7 +94,7 @@ main {
 }
 
 /* ======================================================= */
-/* ==== 5. HISTORY & JOURNEY ==== */
+/* ==== 4. HISTORY & JOURNEY ==== */
 /* ======================================================= */
 
 .history-grid {
@@ -109,6 +103,7 @@ main {
   gap: 30px;
 }
 
+/* MODIFIED: Changed background to semi-transparent */
 .history-box {
   background-color: rgba(255, 255, 255, 0.85); /* Semi-transparent white */
   padding: 30px;
@@ -116,6 +111,7 @@ main {
   box-shadow: 0 5px 20px rgba(0,0,0,0.1);
 }
 
+/* MODIFIED: Changed text color to black for readability */
 .history-box h4 {
   font-size: 1.4em;
   font-weight: 600;
@@ -130,6 +126,7 @@ main {
   padding-left: 0;
 }
 
+/* MODIFIED: Changed text color to black for readability */
 .history-box li {
   margin-bottom: 15px;
   font-size: 1em;
@@ -138,7 +135,7 @@ main {
 }
 
 /* =================================== */
-/* ==== 6. CERTIFICATES SECTION ==== */
+/* ==== 5. CERTIFICATES SECTION ==== */
 /* =================================== */
 
 .trophy-grid {
@@ -167,7 +164,7 @@ main {
 
 
 /* =================================== */
-/* ==== 7. RESPONSIVE DESIGN ==== */
+/* ==== 6. RESPONSIVE DESIGN ==== */
 /* =================================== */
 
 @media (max-width: 768px) {

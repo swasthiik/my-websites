@@ -1,0 +1,195 @@
+/* about.css - Updated for Full Background Image Layout */
+
+/* =================================== */
+/* ==== 1. PAGE SETUP & BACKGROUND ==== */
+/* =================================== */
+
+body.about-page-body {
+  /* This sets your custom background image */
+  background-image: url('images/background2.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  background-color: #333; /* Dark fallback color */
+}
+
+/* Add a dark, semi-transparent overlay to the whole page to help text stand out */
+body.about-page-body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+
+/* This is the main container for all content */
+#about-main-content {
+  max-width: 1100px; /* Limits the width of the text and images */
+  margin: 0 auto; /* Centers the content on the page */
+  padding: 120px 40px 60px 40px; /* Adds spacing: Top, Sides, Bottom */
+}
+
+
+/* =================================== */
+/* ==== 2. TEXT & CONTENT STYLING ==== */
+/* =================================== */
+
+/* Make ALL text white and add a shadow for readability */
+h2, h3, p, li {
+  color: #ffffff !important;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+}
+
+strong {
+  color: #f0f0f0 !important;
+}
+
+
+/* =================================== */
+/* ==== 3. TOP SECTION (Portrait & Intro) ==== */
+/* =================================== */
+
+.top-section {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  padding-bottom: 50px;
+  margin-bottom: 50px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* Light separator line */
+}
+
+.about-portrait-container {
+  display: flex;
+  gap: 20px; /* Space between the two photos */
+  flex: 0 0 40%; /* Sets width for the image container */
+}
+
+.about-portrait-container img {
+  width: 50%; /* Each image takes up half the container */
+  border-radius: 12px;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+}
+
+.about-text-container {
+  flex: 1;
+}
+
+.about-text-container h2 {
+  font-size: 3em;
+  color: #ffffff !important;
+}
+
+/* =================================== */
+/* ==== 4. JOURNEY SECTION ==== */
+/* =================================== */
+
+.journey-section {
+  padding-bottom: 50px;
+  margin-bottom: 50px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* Light separator line */
+  text-align: center;
+}
+
+.journey-section h2 {
+  font-size: 2.4em;
+  margin-bottom: 40px;
+}
+
+.journey-content-box {
+  display: inline-block; /* Allows the box to center properly */
+  text-align: left; /* Aligns the list items to the left */
+}
+
+.journey-section h3 {
+  font-size: 1.5em;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.journey-section ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.journey-section li {
+  padding-left: 30px;
+  position: relative;
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+
+.journey-section li::before {
+  content: '✓';
+  color: #a7f5de; /* Light accent color */
+  position: absolute;
+  left: 0;
+}
+
+
+/* =================================== */
+/* ==== 5. CERTIFICATES SECTION ==== */
+/* =================================== */
+
+.achievements-section {
+  text-align: center;
+}
+
+.achievements-section p {
+  max-width: 700px;
+  margin: 0 auto 40px auto;
+}
+
+.trophy-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 20px;
+}
+
+.trophy-card {
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.trophy-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+}
+
+.trophy-card img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+
+/* =================================== */
+/* ==== 6. RESPONSIVE DESIGN ==== */
+/* =================================== */
+
+@media (max-width: 992px) {
+  .top-section {
+    flex-direction: column;
+    text-align: center;
+  }
+  .about-portrait-container {
+    width: 80%;
+    max-width: 500px;
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  #about-main-content {
+    padding: 90px 20px 40px 20px;
+  }
+  .about-text-container h2 {
+    font-size: 2.2em;
+  }
+}

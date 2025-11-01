@@ -1,0 +1,198 @@
+/* contact.css */
+
+/* =================================== */
+/* ==== PAGE SETUP & BACKGROUND ==== */
+/* =================================== */
+
+body.contact-page {
+  /* This sets a clean, light background for the entire page. NO dark theme. */
+  background-color: #f8f9fa; 
+}
+
+/* =================================== */
+/* ==== MAIN CONTACT CONTAINER ==== */
+/* =================================== */
+
+#contact-page-section {
+  /* This positions the main content area on the page */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 5%; /* Adds space on the top, bottom, and sides */
+  box-sizing: border-box;
+}
+
+/* This is the main container that holds all the contact info */
+.contact-container {
+  width: 100%;
+  max-width: 1100px;
+  background-color: #ffffff; /* A clean white card background */
+  color: var(--text-color-dark); /* All text will be dark and readable */
+  text-align: center;
+  z-index: 1;
+  padding: 50px;
+  border-radius: 24px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08); /* A soft, professional shadow */
+}
+
+.contact-container h1 {
+  font-size: 3.2em;
+  color: var(--primary-color);
+  margin-bottom: 15px;
+}
+
+.contact-subtitle {
+  font-size: 1.2em;
+  max-width: 600px;
+  margin: 0 auto 50px auto;
+  color: #555; /* Soft dark color for the subtitle */
+  line-height: 1.6;
+}
+
+/* =================================== */
+/* ==== GRID LAYOUT FOR DETAILS ==== */
+/* =================================== */
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Creates two equal columns */
+  gap: 50px;
+  text-align: left;
+}
+
+.contact-info h3,
+.contact-methods h3 {
+  font-size: 1.8em;
+  margin-bottom: 25px;
+  color: var(--secondary-color);
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--primary-color);
+}
+
+/* Column 1: Address Cards */
+.address-card {
+  background-color: #f8f9fa; /* A very light grey to stand out inside the card */
+  border: 1px solid #eef0f2;
+  padding: 25px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+}
+
+.address-card h4 {
+  font-size: 1.3em;
+  color: var(--primary-color);
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.address-card p {
+  margin: 0;
+  line-height: 1.7;
+  color: #444;
+}
+
+.map-link {
+  display: inline-block;
+  margin-top: 15px;
+  color: var(--primary-color);
+  font-weight: 600;
+}
+.map-link:hover {
+  text-decoration: underline;
+}
+
+/* Column 2: Buttons & Social Links */
+.contact-button {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 1.1em;
+  font-weight: 600;
+  color: #ffffff;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.contact-button:hover {
+  transform: translateY(-3px);
+  filter: brightness(1.1);
+}
+
+.call-btn { background-color: #2A6F5B; }
+.wa-btn   { background-color: #25D366; }
+.email-btn{ background-color: #555555; }
+
+
+/* ================================================== */
+/* ==== FIXED SOCIAL ICONS & 3-DOT BUTTON REMOVAL ==== */
+/* ================================================== */
+.social-links {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.social-links a {
+  display: inline-block;
+  margin: 0 15px;
+}
+
+/* THIS FIXES THE HUGE ICON PROBLEM */
+.social-links img {
+  width: 60px;  /* Set a small, fixed size */
+  height: 60px; /* Set a small, fixed size */
+  transition: transform 0.3s ease;
+  border-radius: 12px;
+}
+
+.social-links img:hover {
+  transform: scale(1.1);
+}
+
+/* THIS FIXES THE 3-DOT BUTTON PROBLEM (It should be in style.css, but this will work here too) */
+/* Hides the mobile button on screens larger than 992px */
+@media (min-width: 993px) {
+    header .mobile-menu-button {
+        display: none;
+    }
+}
+
+
+/* =================================== */
+/* ==== RESPONSIVE DESIGN ==== */
+/* =================================== */
+
+@media (max-width: 992px) {
+  /* Stack the columns on top of each other on smaller screens */
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .contact-methods {
+      margin-top: 40px;
+  }
+  /* Show the mobile button only on screens 992px or smaller */
+  header .mobile-menu-button {
+      display: flex;
+  }
+}
+
+@media (max-width: 768px) {
+    #contact-page-section {
+        padding: 60px 20px;
+    }
+    .contact-container {
+        padding: 40px 25px;
+    }
+}
+
+@media (max-width: 480px) {
+  .contact-container h1 {
+    font-size: 2.5em;
+  }
+  .contact-subtitle {
+    font-size: 1.1em;
+  }
+}

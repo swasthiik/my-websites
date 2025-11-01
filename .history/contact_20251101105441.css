@@ -1,0 +1,214 @@
+/* about.css */
+
+/* =================================== */
+/* ==== PAGE SETUP & BACKGROUND ==== */
+/* =================================== */
+
+body.about-page {
+  /* A clean, light background. NO dark theme. */
+  background-color: #f8f9fa; 
+}
+
+main {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* ======================================================= */
+/* ==== 1. ABOUT PRACTICE SECTION (TOP SECTION) ==== */
+/* ======================================================= */
+
+.about-section {
+  padding: 80px 5%;
+}
+
+.about-content-new {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-portrait img {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.1);
+}
+
+.about-text-container {
+  flex: 1;
+  position: relative;
+  z-index: 1;
+}
+
+.about-text-container h2 {
+  font-size: 3em;
+  color: var(--primary-color);
+  margin-bottom: 25px;
+}
+
+.about-text-container p {
+  font-size: 1.1em;
+  line-height: 1.8;
+  color: #333;
+  margin-bottom: 1.5em;
+}
+
+.excellence-watermark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 320px;
+  opacity: 0.05;
+  z-index: -1;
+}
+
+/* ========================================================== */
+/* ==== 2. JOURNEY & ACHIEVEMENTS SECTION (FIXED LAYOUT) ==== */
+/* ========================================================== */
+
+.journey-section {
+  padding: 60px 5%;
+  max-width: 900px; /* Making this section a bit narrower for readability */
+  margin: 0 auto; /* Centering it */
+}
+
+/* Title is now on top and centered */
+.journey-section h2 {
+  text-align: center;
+  font-size: 2.6em;
+  color: var(--primary-color);
+  margin-bottom: 50px;
+}
+
+/* This is the content box with the lists */
+.journey-section .content-box {
+  /* This ensures the content box takes the full width */
+  width: 100%; 
+}
+
+.journey-section h3 {
+  color: var(--secondary-color);
+  margin-top: 30px;
+  margin-bottom: 20px;
+  font-size: 1.6em;
+  border-bottom: 2px solid var(--accent-color);
+  padding-bottom: 10px;
+}
+
+.journey-section ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.journey-section li {
+  margin-bottom: 15px;
+  padding-left: 30px;
+  position: relative;
+  font-size: 1.1em;
+  color: #444;
+  line-height: 1.6;
+}
+
+.journey-section li::before {
+  content: '✓';
+  color: var(--primary-color);
+  position: absolute;
+  left: 0;
+  font-size: 1.2em;
+  font-weight: 900;
+}
+
+/* =================================== */
+/* ==== 3. CERTIFICATES SECTION ==== */
+/* =================================== */
+
+.achievements-section {
+  padding: 60px 5%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.achievements-section h2 {
+  text-align: center;
+  font-size: 2.6em;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+}
+
+.achievements-section p {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 50px auto;
+  font-size: 1.1em;
+  color: #555;
+  line-height: 1.7;
+}
+
+.trophy-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 25px;
+}
+
+.trophy-card {
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #e0e0e0;
+}
+
+.trophy-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.trophy-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* =================================== */
+/* ==== RESPONSIVE DESIGN ==== */
+/* =================================== */
+
+@media (max-width: 992px) {
+  .about-content-new {
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+  }
+  .about-portrait {
+    width: 60%;
+    max-width: 350px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-section,
+  .journey-section,
+  .achievements-section {
+    padding: 60px 25px;
+  }
+  .about-text-container h2,
+  .journey-section h2,
+  .achievements-section h2 {
+    font-size: 2.2em;
+  }
+  .trophy-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .trophy-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+}

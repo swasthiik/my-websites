@@ -1,0 +1,222 @@
+/* about.css */
+
+/* =================================== */
+/* ==== PAGE SETUP & BACKGROUND ==== */
+/* =================================== */
+
+/* We use a very light, soft background for a clean and professional feel */
+body.about-page {
+  background-color: #f8f9fa;
+}
+
+/* The main container for all the content on the page */
+main {
+  width: 100%;
+  overflow-x: hidden; /* Prevents unwanted horizontal scrolling */
+}
+
+
+/* ======================================================= */
+/* ==== 1. ABOUT PRACTICE SECTION (MAIN TOP SECTION) ==== */
+/* ======================================================= */
+
+.about-section {
+  /* This adds space above and below the content */
+  padding: 80px 5%; 
+}
+
+/* This is the inner container that holds the image and text */
+.about-content-new {
+  display: flex;
+  align-items: center;
+  gap: 60px; /* Space between the image and the text */
+  max-width: 1200px; /* This limits the width of the content */
+  margin: 0 auto; /* This centers the content on the page */
+}
+
+/* Dr. Patel's Portrait Image Styling */
+.about-portrait {
+  flex: 0 0 40%; /* Takes up 40% of the container width */
+  max-width: 420px;
+}
+
+.about-portrait img {
+  width: 100%;
+  height: auto;
+  border-radius: 20px; /* Softer, more modern rounded corners */
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.1); /* A clean, subtle shadow */
+}
+
+/* Main Text Content Styling */
+.about-text-container {
+  flex: 1; /* Takes up the remaining space */
+  position: relative; /* Needed for the watermark positioning */
+  z-index: 1;
+}
+
+.about-text-container h2 {
+  font-size: 3em; /* Larger, more impactful heading */
+  color: var(--primary-color);
+  margin-bottom: 25px;
+  line-height: 1.2;
+}
+
+.about-text-container p {
+  font-size: 1.1em;
+  line-height: 1.8;
+  color: #333; /* Darker text for better readability */
+  margin-bottom: 1.5em;
+}
+
+/* The "25 Years of Excellence" Watermark Image */
+.excellence-watermark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 320px;
+  opacity: 0.05; /* Kept very subtle to not distract from text */
+  z-index: -1;
+}
+
+
+/* ========================================================== */
+/* ==== 2 & 3. JOURNEY & CERTIFICATES (CLEAN LAYOUT) ==== */
+/* ========================================================== */
+
+/* These sections will sit directly on the page background */
+.journey-section,
+.achievements-section {
+  padding: 60px 5%; /* Vertical and horizontal spacing */
+  max-width: 1100px;
+  margin: 0 auto; /* Center the content blocks */
+}
+
+/* Section Headings */
+.journey-section h2,
+.achievements-section h2 {
+  text-align: center;
+  font-size: 2.6em;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+}
+
+/* Sub-heading for the achievements section */
+.achievements-section p {
+  text-align: center;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
+  font-size: 1.1em;
+  color: #555;
+  line-height: 1.7;
+}
+
+/* Journey Section Sub-headings (e.g., "Educational Milestones") */
+.journey-section h3 {
+  color: var(--secondary-color);
+  margin-top: 30px;
+  margin-bottom: 20px;
+  font-size: 1.6em;
+  border-bottom: 2px solid var(--accent-color);
+  padding-bottom: 10px;
+}
+
+.journey-section ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.journey-section li {
+  margin-bottom: 15px;
+  padding-left: 30px;
+  position: relative;
+  font-size: 1.1em;
+  color: #444;
+  line-height: 1.6;
+}
+
+/* Custom icon for list items */
+.journey-section li::before {
+  content: '✓';
+  color: var(--primary-color);
+  position: absolute;
+  left: 0;
+  font-size: 1.2em;
+  font-weight: 900;
+}
+
+/* Certificate Gallery Grid */
+.trophy-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 25px;
+}
+
+.trophy-card {
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #e0e0e0; /* A very light border to define the images */
+}
+
+.trophy-card:hover {
+  transform: translateY(-8px); /* Lifts the card up slightly */
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08); /* A soft shadow on hover */
+}
+
+.trophy-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+
+/* =================================== */
+/* ==== RESPONSIVE DESIGN ==== */
+/* =================================== */
+
+@media (max-width: 992px) {
+  /* Stack the image and text on top of each other */
+  .about-content-new {
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+  }
+  .about-portrait {
+    width: 60%;
+    max-width: 350px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Reduce padding for smaller screens */
+  .about-section,
+  .journey-section,
+  .achievements-section {
+    padding: 60px 25px;
+  }
+
+  /* Adjust font sizes */
+  .about-text-container h2,
+  .journey-section h2,
+  .achievements-section h2 {
+    font-size: 2.2em;
+  }
+  .trophy-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .trophy-grid {
+    grid-template-columns: repeat(2, 1fr); /* Always shows 2 columns on mobile */
+    gap: 15px;
+  }
+  .about-text-container p, .journey-section li, .achievements-section p {
+    font-size: 1em; /* Make text slightly smaller for readability on small devices */
+  }
+}

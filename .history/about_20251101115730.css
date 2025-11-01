@@ -1,0 +1,219 @@
+/* about.css - Updated for "Elegant & Structured" Design (Option 2) */
+
+/* =================================== */
+/* ==== 1. PAGE SETUP & BACKGROUND ==== */
+/* =================================== */
+
+body.about-page-body {
+  /* This sets your custom background image */
+  background-image: url('images/background2.jpg');
+  background-size: cover; /* Ensures the image covers the whole page */
+  background-position: center center; /* Centers the image */
+  background-attachment: fixed; /* Makes the background stay in place on scroll */
+  background-color: #f1f1f1; /* Fallback color if the image is missing */
+}
+
+/* =================================== */
+/* ==== 2. MAIN CONTENT CONTAINER ==== */
+/* =================================== */
+
+/* This is the main white "card" that holds all the page content */
+#about-main-container {
+  max-width: 1100px; /* Sets the maximum width of the content area */
+  margin: 120px auto 60px auto; /* Top margin pushes it below the header, auto centers it */
+  background-color: #ffffff; /* Clean white background */
+  padding: 50px 60px; /* Inner spacing */
+  border-radius: 16px; /* Soft rounded corners */
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1); /* Professional shadow */
+}
+
+/* =================================== */
+/* ==== 3. TOP SECTION (Portrait & Intro) ==== */
+/* =================================== */
+
+.top-section {
+  display: flex;
+  align-items: center;
+  gap: 50px; /* Space between the image and the text */
+  padding-bottom: 40px;
+  border-bottom: 1px solid #e9e9e9; /* A faint line to separate sections */
+}
+
+.about-portrait {
+  flex: 0 0 300px; /* Sets a fixed width for the image container */
+}
+
+.about-portrait img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px; /* Rounded corners for the image */
+}
+
+.about-text-container h2 {
+  font-size: 2.8em;
+  color: #2A6F5B; /* Your brand's primary green color */
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.about-text-container p {
+  font-size: 1.1em;
+  line-height: 1.8;
+  color: #333; /* Dark, readable text */
+  margin-bottom: 20px;
+}
+
+/* Styles for the "Book an Appointment" button */
+.about-text-container .btn {
+  display: inline-block;
+  background-color: #2A6F5B;
+  color: #fff;
+  padding: 12px 25px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+.about-text-container .btn:hover {
+  background-color: #215a49;
+}
+
+
+/* =================================== */
+/* ==== 4. JOURNEY SECTION (Light Grey Box) ==== */
+/* =================================== */
+
+.journey-section {
+  /* This creates the subtle light grey background */
+  background-color: #f8f9fa;
+  padding: 40px;
+  margin: 40px -60px; /* Negative margin makes it stretch to the edges of the white card */
+  border-top: 1px solid #e9e9e9;
+  border-bottom: 1px solid #e9e9e9;
+}
+
+.journey-section h2 {
+  text-align: center;
+  font-size: 2.4em;
+  color: #2A6F5B;
+  margin-top: 0;
+  margin-bottom: 40px;
+}
+
+.journey-section h3 {
+  color: #333;
+  font-size: 1.5em;
+  border-bottom: 2px solid #2A6F5B;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.journey-section ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.journey-section li {
+  margin-bottom: 15px;
+  padding-left: 30px;
+  position: relative;
+  font-size: 1.1em;
+  color: #444;
+  line-height: 1.6;
+}
+
+.journey-section li::before {
+  content: '✓'; /* Checkmark icon */
+  color: #2A6F5B; /* Your brand's green */
+  position: absolute;
+  left: 0;
+  font-size: 1.2em;
+  font-weight: 900;
+}
+
+
+/* =================================== */
+/* ==== 5. CERTIFICATES SECTION ==== */
+/* =================================== */
+
+.achievements-section {
+  padding-top: 40px;
+}
+
+.achievements-section h2 {
+  text-align: center;
+  font-size: 2.4em;
+  color: #2A6F5B;
+  margin-bottom: 15px;
+}
+
+.achievements-section p {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 40px auto;
+  font-size: 1.1em;
+  color: #555;
+}
+
+.trophy-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns for certificates */
+  gap: 20px;
+}
+
+.trophy-card {
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #e0e0e0;
+}
+
+.trophy-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.trophy-card img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+
+/* =================================== */
+/* ==== 6. RESPONSIVE DESIGN ==== */
+/* =================================== */
+
+/* For Tablets */
+@media (max-width: 992px) {
+  .top-section {
+    flex-direction: column; /* Stack image on top of text */
+    text-align: center;
+  }
+  .about-portrait {
+    flex-basis: auto; /* Allow image to resize */
+    width: 60%;
+    max-width: 300px;
+  }
+  .trophy-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
+  }
+  .journey-section {
+    margin: 40px -30px; /* Adjust negative margin for smaller padding */
+  }
+}
+
+/* For Mobile Phones */
+@media (max-width: 768px) {
+  #about-main-container {
+    margin: 90px auto 40px auto; /* Reduce top margin */
+    padding: 30px; /* Reduce inner padding */
+    border-radius: 0; /* Remove rounded corners on mobile for more space */
+  }
+  .about-text-container h2 {
+    font-size: 2.2em;
+  }
+  .journey-section h2, .achievements-section h2 {
+    font-size: 2em;
+  }
+}

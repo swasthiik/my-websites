@@ -1,0 +1,231 @@
+/* about.css - New Professional Design (No Frames or Cards) */
+
+/* =================================== */
+/* ==== 1. PAGE SETUP & BACKGROUND ==== */
+/* =================================== */
+
+body.about-page {
+  /* A clean, light, and professional background color */
+  background-color: #f7f7f7;
+}
+
+main {
+  /* Adds space between the header and the start of the content */
+  padding-top: 100px;
+}
+
+/* =================================== */
+/* ==== 2. GENERAL SECTION STYLES ==== */
+/* =================================== */
+
+/* These styles apply to ALL sections for a consistent look */
+.about-section,
+.journey-section,
+.achievements-section {
+  max-width: 1100px; /* Limits the width of the content */
+  margin: 0 auto 60px auto; /* Centers the content and adds space below each section */
+  padding: 0 40px; /* Adds space on the left and right */
+}
+
+
+/* =================================== */
+/* ==== 3. TOP 'ABOUT' SECTION ==== */
+/* =================================== */
+
+.about-section {
+  display: flex;
+  align-items: center;
+  gap: 60px; /* Space between the photo and the text */
+}
+
+.about-portrait {
+  flex: 0 0 40%; /* Sets the width of the image container */
+  max-width: 420px;
+}
+
+.about-portrait img {
+  width: 100%;
+  height: auto;
+  border-radius: 16px; /* Softly rounded corners for the photo */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.about-text-container {
+  flex: 1; /* Allows the text container to take up the remaining space */
+  position: relative; /* Needed for the watermark */
+}
+
+.about-text-container h2 {
+  font-size: 3em;
+  color: #2A6F5B; /* Your primary brand color */
+  margin-bottom: 20px;
+}
+
+.about-text-container p {
+  font-size: 1.1em;
+  line-height: 1.8;
+  color: #333; /* Dark, readable text */
+  margin-bottom: 1.5em;
+}
+
+.excellence-watermark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 300px;
+  opacity: 0.05; /* Very subtle watermark */
+  z-index: -1;
+}
+
+.btn {
+  display: inline-block;
+  background-color: #2A6F5B;
+  color: #fff;
+  padding: 12px 28px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #215a49;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(42, 111, 91, 0.3);
+}
+
+/* =================================== */
+/* ==== 4. JOURNEY SECTION ==== */
+/* =================================== */
+
+.journey-section {
+  text-align: center;
+  padding-top: 40px;
+  border-top: 1px solid #e0e0e0; /* Adds a clean separator line */
+}
+
+.journey-section h2 {
+  font-size: 2.5em;
+  color: #2A6F5B;
+  margin-bottom: 40px;
+}
+
+.content-box {
+  display: inline-block; /* Allows the box to center while keeping text left-aligned */
+  text-align: left;
+}
+
+.journey-section h3 {
+  color: #333;
+  font-size: 1.5em;
+  border-bottom: 2px solid #2A6F5B;
+  padding-bottom: 10px;
+  margin-top: 25px;
+  margin-bottom: 20px;
+}
+
+.journey-section ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.journey-section li {
+  margin-bottom: 15px;
+  padding-left: 25px;
+  position: relative;
+  font-size: 1.1em;
+  color: #444;
+}
+
+.journey-section li::before {
+  content: '✓';
+  color: #2A6F5B;
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+
+/* =================================== */
+/* ==== 5. CERTIFICATES SECTION ==== */
+/* =================================== */
+
+.achievements-section {
+  text-align: center;
+  padding-top: 40px;
+  border-top: 1px solid #e0e0e0; /* Adds a clean separator line */
+}
+
+.achievements-section h2 {
+  font-size: 2.5em;
+  color: #2A6F5B;
+  margin-bottom: 15px;
+}
+
+.achievements-section p {
+  margin-bottom: 40px;
+  font-size: 1.1em;
+  color: #555;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.trophy-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 25px;
+}
+
+.trophy-card {
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #e5e5e5;
+}
+
+.trophy-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.trophy-card img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+
+/* =================================== */
+/* ==== 6. RESPONSIVE DESIGN ==== */
+/* =================================== */
+
+@media (max-width: 900px) {
+  .about-section {
+    flex-direction: column; /* Stack the image on top of the text */
+    text-align: center;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-section,
+  .journey-section,
+  .achievements-section {
+    padding: 0 20px; /* Reduce side padding on smaller screens */
+    margin-bottom: 40px;
+  }
+
+  .about-text-container h2 {
+    font-size: 2.5em;
+  }
+}
+
+@media (max-width: 480px) {
+  .trophy-grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
+  }
+}

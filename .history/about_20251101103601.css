@@ -1,0 +1,215 @@
+/* about.css */
+
+/* This body style sets a unique background specifically for the about page */
+body.about-page {
+  background: url("images/background3.jpg") no-repeat center center fixed;
+  background-size: cover;
+  position: relative;
+}
+
+/* MODIFIED: Changed the light overlay to a dark one for text readability */
+body.about-page::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7); /* Was rgba(255, 255, 255, 0.7) */
+  z-index: -1;
+}
+
+/* Main content area padding */
+main {
+  padding-top: 40px;
+  padding-bottom: 60px;
+}
+
+/* ================================================= */
+/* ==== NEW & PROFESSIONAL ABOUT SECTION DESIGN ==== */
+/* ================================================= */
+
+/* MODIFIED: Removed glass card styles */
+.about-section {
+  background: transparent; /* Was var(--glass-card-bg) */
+  border-radius: 0;
+  max-width: 1100px;
+  width: 95%;
+  box-shadow: none; /* Was 0 10px 40px var(--glass-card-shadow) */
+  border: none; /* Was 1px solid var(--glass-card-border) */
+  padding: 40px; /* Added padding for spacing */
+  overflow: hidden;
+}
+
+.about-content-new {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Portrait Image styling */
+.about-portrait {
+  width: 100%;
+  max-height: 400px;
+  border-radius: 12px; /* Added a radius to the image */
+  overflow: hidden;
+}
+
+.about-portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+/* Text Container with Watermark */
+.about-text-container {
+  padding: 40px 0; /* Adjusted padding */
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5); /* Added for readability */
+}
+
+/* MODIFIED: Changed text color to be light */
+.about-text-container h2 {
+  font-size: 2.8em;
+  color: var(--text-color-light); /* Was var(--primary-color) */
+  margin-bottom: 30px;
+}
+
+.about-text-container p {
+  font-size: 1.1em;
+  line-height: 1.8;
+  color: var(--text-color-light); /* Was var(--text-color-dark) */
+  margin-bottom: 1.5em;
+}
+
+/* The Watermark Image */
+.excellence-watermark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 300px;
+  opacity: 0.15; /* Increased opacity slightly */
+  z-index: -1;
+  /* Consider using a white version of your watermark image for better visibility */
+  /* filter: invert(1); */
+}
+
+/* =================================== */
+/* ==== JOURNEY & ACHIEVEMENTS SECTION ==== */
+/* =================================== */
+
+/* MODIFIED: Removed glass card styles */
+.journey-section {
+  background: transparent; /* Was var(--glass-card-bg) */
+  border-radius: 0;
+  max-width: 1100px;
+  width: 95%;
+  box-shadow: none; /* Was 0 8px 32px 0 var(--glass-card-shadow) */
+  border: none; /* Was 1px solid var(--glass-card-border) */
+  padding: 40px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.4); /* Added for readability */
+}
+
+/* MODIFIED: Changed text colors to be light */
+.journey-section h2 {
+    font-size: 2.5em;
+    color: var(--text-color-light); /* Was var(--primary-color) */
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.journey-section .content-box { text-align: left; }
+.journey-section h3 { color: var(--text-color-light); margin-top: 25px; margin-bottom: 15px; font-size: 1.5em; border-bottom: 1px solid rgba(255, 255, 255, 0.3); padding-bottom: 8px; }
+.journey-section ul { list-style-type: none; padding-left: 0; }
+.journey-section li { margin-bottom: 10px; padding-left: 20px; position: relative; color: #e0e0e0; }
+.journey-section li::before { content: '✓'; color: var(--accent-color); position: absolute; left: 0; font-weight: bold; }
+
+/* ================================================ */
+/* ==== ⭐ CERTIFICATES & AWARDS SECTION STYLES ⭐ ==== */
+/* ================================================ */
+/* MODIFIED: Removed glass card styles */
+.achievements-section {
+  background: transparent; /* Was var(--glass-card-bg) */
+  border-radius: 0;
+  max-width: 1100px;
+  width: 95%;
+  box-shadow: none; /* Was 0 8px 32px 0 var(--glass-card-shadow) */
+  border: none; /* Was 1px solid var(--glass-card-border) */
+  padding: 40px;
+}
+
+/* MODIFIED: Changed text colors to be light */
+.achievements-section h2 {
+  font-size: 2.5em;
+  color: var(--text-color-light); /* Was var(--primary-color) */
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.achievements-section p {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 1.1em;
+  color: var(--text-color-light); /* Was var(--text-color-dark) */
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.4); /* Added for readability */
+}
+
+.trophy-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 25px;
+}
+
+/* MODIFIED: Removed shadow and added a subtle transparent background */
+.trophy-card {
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: none; /* Was 0 5px 15px rgba(0,0,0,0.05) */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Added light border */
+}
+.trophy-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.1); /* Subtle glow effect on hover */
+}
+.trophy-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+
+/* =================================== */
+/* ==== RESPONSIVE DESIGN ==== */
+/* =================================== */
+@media (min-width: 900px) {
+  .about-content-new {
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  .about-portrait {
+    flex: 0 0 40%;
+    max-height: none;
+  }
+
+  .about-text-container {
+    flex: 1;
+    padding: 0 60px; /* Adjusted padding */
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .excellence-watermark {
+    width: 60%;
+    max-width: 350px;
+  }
+}
+@media (max-width: 480px) {
+    .trophy-grid { grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 15px; }
+}

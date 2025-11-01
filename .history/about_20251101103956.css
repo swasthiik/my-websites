@@ -1,0 +1,113 @@
+/* about.css */
+
+/* Sets a clean, light background color for the entire page */
+body.about-page {
+  background-color: #f4f7f6; 
+}
+
+/* Ensures the header doesn't overlap the new layout on small screens */
+main {
+  padding-top: var(--header-height);
+}
+
+/* =================================== */
+/* ==== NEW SPLIT-SCREEN DESIGN ==== */
+/* =================================== */
+
+/* The main container that holds both the image and the content */
+.about-container {
+  display: flex;
+  flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+  width: 100%;
+  min-height: calc(100vh - var(--header-height)); /* Fills the screen height */
+  background-color: #ffffff;
+}
+
+/* 1. The Image Panel (Left Side) */
+.about-image-panel {
+  flex: 1; /* Takes up 1 part of the available space */
+  min-width: 300px; /* Ensures the image doesn't get too small */
+  background-color: #e0e0e0; /* Fallback color while image loads */
+}
+
+.about-image-panel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image covers the panel without distortion */
+  object-position: center top; /* Focuses on the top-center of the image */
+}
+
+/* 2. The Content Panel (Right Side) */
+.about-content-panel {
+  flex: 1; /* Takes up 1 part of the available space */
+  min-width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5%; /* Use percentage for responsive padding */
+  box-sizing: border-box; /* Ensures padding is included in the width calculation */
+}
+
+.about-text {
+  max-width: 600px; /* Limits the width of the text for readability */
+  width: 100%;
+}
+
+.about-text h1 {
+  font-size: 2.8em;
+  color: var(--primary-color); /* Uses the green from your main stylesheet */
+  margin-bottom: 25px;
+  line-height: 1.2;
+}
+
+.about-text p {
+  font-size: 1.1em;
+  line-height: 1.7;
+  color: #555555; /* A softer dark color for text */
+  margin-bottom: 20px;
+}
+
+.about-text .btn {
+  margin-top: 20px;
+  font-size: 1.1em;
+}
+
+/* =================================== */
+/* ==== RESPONSIVE DESIGN ==== */
+/* =================================== */
+
+/* For tablets and smaller devices */
+@media (max-width: 900px) {
+  .about-container {
+    flex-direction: column; /* Stacks the image on top of the text */
+  }
+
+  .about-image-panel {
+    height: 400px; /* Gives the image a fixed height */
+    min-height: 400px;
+  }
+
+  .about-content-panel {
+    padding: 40px 25px; /* Adjust padding for smaller screens */
+  }
+
+  .about-text h1 {
+    font-size: 2.4em;
+  }
+}
+
+/* For mobile phones */
+@media (max-width: 480px) {
+  .about-image-panel {
+    height: 300px; /* Reduces image height further on small phones */
+    min-height: 300px;
+  }
+  
+  .about-text h1 {
+    font-size: 2em;
+  }
+
+  .about-text p {
+    font-size: 1em;
+  }
+}

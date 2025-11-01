@@ -79,44 +79,38 @@ section { padding: 80px 5%; position: relative; background-attachment: fixed; ba
 #contact-section-home { background-image: url('images/background5.jpg'); }
 #contact-page { background-image: url('images/background5.jpg'); }
 
-/* ==== MODIFIED: This rule applies a dark overlay to MOST sections ==== */
+/* ==== MODIFIED: Changed the white overlay to a dark one for better readability ==== */
 section::before {
     content: '';
     position: absolute;
     inset: 0;
-    background-color: rgba(0, 0, 0, 0.65);
+    background-color: rgba(0, 0, 0, 0.65); /* Was rgba(255, 255, 255, 0.6) */
     z-index: 0;
 }
 
-/* ==== NEW: This rule REMOVES the overlay for the #about-home section ==== */
-#about-home::before {
-    background-color: transparent;
-}
-
-
-/* ==== MODIFIED: Removed the glass card and changed text to white with a stronger shadow ==== */
+/* ==== MODIFIED: Removed the glass card background and changed text to white ==== */
 .glass-section .section-card {
-    background: transparent;
+    background: transparent; /* Was var(--glass-card-bg) */
     border-radius: 0;
     padding: 40px;
-    box-shadow: none;
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
-    border: none;
+    box-shadow: none; /* Was 0 8px 32px 0 var(--glass-card-shadow) */
+    backdrop-filter: none; /* Was blur(12px) */
+    -webkit-backdrop-filter: none; /* Was blur(12px) */
+    border: none; /* Was 1px solid var(--glass-card-border) */
     max-width: 1200px;
     width: 100%;
     z-index: 1;
-    color: var(--text-color-light);
+    color: var(--text-color-light); /* Was var(--text-color-dark) */
     text-align: center;
     box-sizing: border-box;
-    text-shadow: 1px 1px 8px rgba(0,0,0,0.9); /* MODIFIED: Made shadow stronger */
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5); /* Added for readability */
 }
 
 /* ==== MODIFIED: Changed heading color to white ==== */
 .glass-section h2 {
     font-size: 2.8em;
     margin-bottom: 30px;
-    color: var(--text-color-light);
+    color: var(--text-color-light); /* Was var(--primary-color) */
     text-shadow: 1px 1px 4px rgba(0,0,0,0.7); /* Added for readability */
 }
 
@@ -126,12 +120,13 @@ section::before {
 /* ============================ */
 .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 40px; }
 
+/* ==== MODIFIED: Made service cards transparent with a subtle border ==== */
 .service-card {
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.2); /* Was rgba(255, 255, 255, 0.85) */
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: none;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: none; /* Was 0 6px 20px 0 var(--glass-card-shadow) */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Changed to a light border */
     transition: transform 0.3s ease, background-color 0.3s ease;
     text-align: left;
     display: flex;
@@ -146,18 +141,20 @@ section::before {
 .service-card img { width: 100%; height: 200px; object-fit: cover; display: block; border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
 .service-card .svc-body { padding: 20px; flex-grow: 1; }
 
+/* ==== MODIFIED: Changed service text colors to be light ==== */
 .service-card .svc-title {
     font-size: 1.4em;
     font-weight: 600;
-    color: var(--text-color-light);
+    color: var(--text-color-light); /* Was var(--secondary-color) */
     margin-bottom: 10px;
 }
 .service-card .svc-text {
     font-size: 0.95em;
-    color: #e0e0e0;
+    color: #e0e0e0; /* Was #555555 */
     line-height: 1.5;
 }
 
+/* ==== MODIFIED: Changed contact section text to be light ==== */
 .contact-left h3, .contact-center h3, .quick-links h4 {
     color: var(--text-color-light);
 }

@@ -1,0 +1,206 @@
+/* about.css - Professional Design Inspired by Cadabams */
+
+/* =================================== */
+/* ==== 1. PAGE SETUP & BACKGROUND ==== */
+/* =================================== */
+
+body.about-page {
+  /* A clean, light grey background for a professional feel */
+  background-color: #f7f8fa;
+}
+
+main {
+  padding: 100px 20px 60px 20px; /* Top, Sides, Bottom */
+}
+
+/* =================================== */
+/* ==== 2. SHARED SECTION STYLES ==== */
+/* =================================== */
+
+.section-title {
+  text-align: center;
+  font-size: 2.8em;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 40px;
+}
+
+.section-subtitle {
+  text-align: center;
+  font-size: 1.1em;
+  color: #555;
+  max-width: 700px;
+  margin: -20px auto 40px auto;
+}
+
+/* =================================== */
+/* ==== 3. PROFILE CARD SECTION ==== */
+/* =================================== */
+
+.profile-card-container {
+  max-width: 400px; /* Sets the maximum width of the card */
+  margin: 0 auto; /* Centers the card horizontally */
+}
+
+.profile-card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  overflow: hidden; /* Keeps the image inside the rounded corners */
+  transition: all 0.3s ease;
+}
+
+.profile-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+.profile-card-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.profile-card-content {
+  padding: 25px;
+}
+
+.profile-card-content h3 {
+  font-size: 1.8em;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 15px 0;
+}
+
+.profile-detail {
+  font-size: 1.1em;
+  color: #555;
+  margin: 8px 0;
+}
+
+.profile-detail strong {
+  color: #333;
+}
+
+.btn-appointment {
+  display: inline-block;
+  background-color: #ef5350; /* Soft Red Color */
+  color: #ffffff;
+  font-size: 1.1em;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 12px 35px;
+  border-radius: 8px;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-appointment:hover {
+  background-color: #e53935; /* Slightly darker red on hover */
+}
+
+/* =================================== */
+/* ==== 4. HISTORY & JOURNEY SECTION ==== */
+/* =================================== */
+
+.history-section {
+  max-width: 1000px;
+  margin: 60px auto; /* Adds space above and below */
+  padding-top: 40px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.history-content {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  text-align: left;
+}
+
+.history-box {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  flex: 1;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.04);
+}
+
+.history-box h4 {
+  font-size: 1.4em;
+  font-weight: 600;
+  color: #2A6F5B; /* Your brand green */
+  margin: 0 0 20px 0;
+  border-bottom: 2px solid #2A6F5B;
+  padding-bottom: 10px;
+}
+
+.history-box ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.history-box li {
+  margin-bottom: 15px;
+  font-size: 1em;
+  color: #444;
+  line-height: 1.6;
+}
+
+/* =================================== */
+/* ==== 5. CERTIFICATES SECTION ==== */
+/* =================================== */
+
+.achievements-section {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding-top: 40px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.trophy-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+}
+
+.trophy-card {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #e5e5e5;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.trophy-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.trophy-card img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+
+/* =================================== */
+/* ==== 6. RESPONSIVE DESIGN ==== */
+/* =================================== */
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2.2em;
+  }
+  .history-content {
+    flex-direction: column; /* Stack history boxes on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-card-container {
+    max-width: 100%; /* Allow card to be full width on mobile */
+  }
+  .trophy-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+}
