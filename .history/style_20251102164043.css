@@ -138,7 +138,7 @@ section::before { content: ''; position: absolute; inset: 0; background-color: r
         overflow-y: auto;
     }
     
-    .nav-menu.active {
+    .nav-menu[aria-hidden="false"] {
         visibility: visible;
         transform: translateX(0);
     }
