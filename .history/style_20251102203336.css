@@ -77,27 +77,24 @@ header {
     transition: all 0.3s ease;
     transform-origin: center; /* Animate from the center */
 }
+
 footer {
-  background-color: #064635; /* dark green */
-  color: #fff; /* white text for contrast */
-  text-align: center;
-  padding: 20px 10px;
-  width: 100%;
-  box-sizing: border-box;
+    background-color: var(--secondary-color);
+    color: var(--text-color-light);
+    text-align: center;
+    padding: 20px 5%;
+    font-size: 0.9em;
 }
 
+/* === NEW: Style for links within the footer === */
 footer a {
-  color: #a8d5ba; /* light green for links */
-  text-decoration: none;
+    color: #ADD8E6; /* A light blue that should contrast well with var(--secondary-color) */
+    text-decoration: underline; /* Add underline for better visibility as a link */
 }
 
 footer a:hover {
-  text-decoration: underline;
+    color: var(--text-color-light); /* Make it white on hover for clear feedback */
 }
-
-
-
-
 
 /* ============================ */
 /* ==== HERO SECTION ==== */

@@ -2,7 +2,7 @@
 
 /* Apply a background to the body that matches the homepage */
 .contact-page-body {
-    background: url('images/background4.jpg') no-repeat center center/cover;
+    background: url('images/hero-bg.jpg') no-repeat center center/cover;
     background-attachment: fixed;
 }
 
@@ -117,13 +117,8 @@
         gap: 15px;
     }
 }
-footer {
-    background-color: var(--secondary-color) !important;
-    color: var(--text-color-light) !important;
-}
-footer a {
-    color: var(--accent-color) !important;
-}
-footer a:hover {
-    color: var(--text-color-light) !important;
+/* Footer color fix for Contact page */
+.contact-page-body footer {
+    background-color: var(--secondary-color); /* or your preferred color */
+    color: var(--text-color-light); /* ensures text is readable */
 }

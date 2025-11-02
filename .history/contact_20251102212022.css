@@ -2,7 +2,7 @@
 
 /* Apply a background to the body that matches the homepage */
 .contact-page-body {
-    background: url('images/background4.jpg') no-repeat center center/cover;
+    background: url('images/hero-bg.jpg') no-repeat center center/cover;
     background-attachment: fixed;
 }
 
@@ -118,12 +118,20 @@
     }
 }
 footer {
-    background-color: var(--secondary-color) !important;
-    color: var(--text-color-light) !important;
+    background-color: var(--secondary-color); /* Dark green from your palette */
+    color: var(--text-color-light);           /* White text */
+    text-align: center;
+    padding: 20px 5%;
+    font-size: 0.9em;
 }
+
+/* Footer links */
 footer a {
-    color: var(--accent-color) !important;
+    color: var(--accent-color); /* Lighter green accent */
+    text-decoration: underline;
+    transition: color 0.3s ease;
 }
+
 footer a:hover {
-    color: var(--text-color-light) !important;
+    color: var(--text-color-light); /* White on hover */
 }

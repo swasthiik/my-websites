@@ -117,13 +117,3 @@
         gap: 15px;
     }
 }
-footer {
-    background-color: var(--secondary-color) !important;
-    color: var(--text-color-light) !important;
-}
-footer a {
-    color: var(--accent-color) !important;
-}
-footer a:hover {
-    color: var(--text-color-light) !important;
-}

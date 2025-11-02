@@ -67,6 +67,7 @@
     </div>
   </section>
 
+ 
     <!-- SERVICES -->
   <section id="services" class="glass-section" aria-labelledby="services-title">
     <div class="section-card">
@@ -201,42 +202,38 @@
   </section>
 
   <footer>
-    <p>&copy; <span id="current-year"></span> Harpal Acupressure. All Rights Reserved.<p>
-    <p>Powered and Secured by <a href="https://www.webwiznbiz.com" target="_blank" rel="noopener noreferrer">Webwiz N Biz</a></p>
+    <p>&copy; <span id="current-year"></span> Harpal Acupressure. All Rights Reserved.</p>
   </footer>
 
- <script>
-  // ======= MOBILE MENU TOGGLE =======
+ <!-- JS -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
   const menuButton = document.getElementById('menu-button');
   const navMenu = document.getElementById('nav-menu');
+  const navLinks = navMenu.querySelectorAll('a');
 
+  // Mobile Menu Toggle
   menuButton.addEventListener('click', () => {
-    const expanded = menuButton.getAttribute('aria-expanded') === 'true';
+    const expanded = menuButton.getAttribute('aria-expanded') === 'true' || false;
     menuButton.setAttribute('aria-expanded', !expanded);
     navMenu.classList.toggle('active');
   });
 
-  // ======= SMOOTH SCROLL FOR ALL NAV LINKS =======
-  const navLinks = document.querySelectorAll('nav a[href^="#"]');
-  const headerOffset = 80; // adjust to your header height
-
+  // Handle link clicks
   navLinks.forEach(link => {
-    link.addEventListener('click', function(e) {
-      const targetId = this.getAttribute('href').substring(1);
-      const targetSection = document.getElementById(targetId);
-      if (!targetSection) return; // skip if section not found
+    link.addEventListener('click', (e) => {
+      const href = link.getAttribute('href');
 
-      e.preventDefault(); // prevent default jump
+      // If it is a section link (#id) on the same page, scroll
+      if (href.startsWith('#')) {
+        e.preventDefault();
+        const target = document.querySelector(href);
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
 
-      const elementPosition = targetSection.offsetTop;
-      const offsetPosition = elementPosition - headerOffset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth"
-      });
-
-      // Close mobile menu after clicking a link
+      // If mobile menu is open, close it
       if (navMenu.classList.contains('active')) {
         navMenu.classList.remove('active');
         menuButton.setAttribute('aria-expanded', false);
@@ -244,22 +241,10 @@
     });
   });
 
-  // ======= CLOSE MOBILE MENU WHEN CLICKING OUTSIDE =======
-  document.addEventListener('click', function(e) {
-    if (!navMenu.contains(e.target) && !menuButton.contains(e.target)) {
-      navMenu.classList.remove('active');
-      menuButton.setAttribute('aria-expanded', false);
-    }
-  });
-
-  // ======= DYNAMIC YEAR =======
-  document.getElementById('current-year').textContent = new Date().getFullYear();
-
-  // ======= OPTIONAL: CLOSE MOBILE MENU ON RESIZE =======
-  window.addEventListener('resize', () => {
-    if (window.innerWidth > 768) { // desktop breakpoint
-      navMenu.classList.remove('active');
-      menuButton.setAttribute('aria-expanded', false);
-    }
-  });
+  // Dynamic Year
+  const yearElem = document.getElementById('current-year');
+  if (yearElem) {
+    yearElem.textContent = new Date().getFullYear();
+  }
+});
 </script>

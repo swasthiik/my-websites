@@ -77,26 +77,28 @@ header {
     transition: all 0.3s ease;
     transform-origin: center; /* Animate from the center */
 }
+
+/* ============================ */
+/* ==== FOOTER ==== */
+/* ============================ */
 footer {
-  background-color: #064635; /* dark green */
-  color: #fff; /* white text for contrast */
-  text-align: center;
-  padding: 20px 10px;
-  width: 100%;
-  box-sizing: border-box;
+    background-color: var(--secondary-color); /* Dark green from your palette */
+    color: var(--text-color-light);           /* White text */
+    text-align: center;
+    padding: 20px 5%;
+    font-size: 0.9em;
 }
 
+/* Footer links */
 footer a {
-  color: #a8d5ba; /* light green for links */
-  text-decoration: none;
+    color: var(--accent-color); /* Lighter green accent */
+    text-decoration: underline;
+    transition: color 0.3s ease;
 }
 
 footer a:hover {
-  text-decoration: underline;
+    color: var(--text-color-light); /* White on hover */
 }
-
-
-
 
 
 /* ============================ */

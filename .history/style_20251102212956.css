@@ -77,25 +77,6 @@ header {
     transition: all 0.3s ease;
     transform-origin: center; /* Animate from the center */
 }
-footer {
-  background-color: #064635; /* dark green */
-  color: #fff; /* white text for contrast */
-  text-align: center;
-  padding: 20px 10px;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-footer a {
-  color: #a8d5ba; /* light green for links */
-  text-decoration: none;
-}
-
-footer a:hover {
-  text-decoration: underline;
-}
-
-
 
 
 

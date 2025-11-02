@@ -195,14 +195,8 @@ main {
     grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   }
 }
-footer {
-    background-color: var(--secondary-color) !important;
-    color: var(--text-color-light) !important;
+/* Footer color fix for About page */
+.about-page footer {
+    background-color: var(--secondary-color); /* or your preferred color */
+    color: var(--text-color-light);
 }
-footer a {
-    color: var(--accent-color) !important;
-}
-footer a:hover {
-    color: var(--text-color-light) !important;
-}
-
