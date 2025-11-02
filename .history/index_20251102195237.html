@@ -222,7 +222,7 @@
   </footer>
 
  <script>
-  // ======= MOBILE MENU TOGGLE =======
+  // Mobile Menu Toggle
   const menuButton = document.getElementById('menu-button');
   const navMenu = document.getElementById('nav-menu');
 
@@ -232,17 +232,17 @@
     navMenu.classList.toggle('active');
   });
 
-  // ======= SMOOTH SCROLL FOR ALL NAV LINKS =======
+  // Smooth scroll for all nav links
   const navLinks = document.querySelectorAll('nav a[href^="#"]');
-  const headerOffset = 80; // adjust to your header height
+  const headerOffset = 80; // height of fixed header
 
   navLinks.forEach(link => {
     link.addEventListener('click', function(e) {
+      e.preventDefault(); // prevent default jump
+
       const targetId = this.getAttribute('href').substring(1);
       const targetSection = document.getElementById(targetId);
-      if (!targetSection) return; // skip if section not found
-
-      e.preventDefault(); // prevent default jump
+      if (!targetSection) return;
 
       const elementPosition = targetSection.offsetTop;
       const offsetPosition = elementPosition - headerOffset;
@@ -252,7 +252,7 @@
         behavior: "smooth"
       });
 
-      // Close mobile menu after clicking a link
+      // Close mobile menu if open
       if (navMenu.classList.contains('active')) {
         navMenu.classList.remove('active');
         menuButton.setAttribute('aria-expanded', false);
@@ -260,7 +260,7 @@
     });
   });
 
-  // ======= CLOSE MOBILE MENU WHEN CLICKING OUTSIDE =======
+  // Optional: close menu if user clicks outside
   document.addEventListener('click', function(e) {
     if (!navMenu.contains(e.target) && !menuButton.contains(e.target)) {
       navMenu.classList.remove('active');
@@ -268,14 +268,6 @@
     }
   });
 
-  // ======= DYNAMIC YEAR =======
+  // Dynamic Year
   document.getElementById('current-year').textContent = new Date().getFullYear();
-
-  // ======= OPTIONAL: CLOSE MOBILE MENU ON RESIZE =======
-  window.addEventListener('resize', () => {
-    if (window.innerWidth > 768) { // desktop breakpoint
-      navMenu.classList.remove('active');
-      menuButton.setAttribute('aria-expanded', false);
-    }
-  });
 </script>

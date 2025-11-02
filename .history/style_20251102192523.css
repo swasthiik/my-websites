@@ -138,8 +138,7 @@ section::before { content: ''; position: absolute; inset: 0; background-color: r
         overflow-y: auto;
     }
     
-    /* ---- CRITICAL CHANGE HERE ---- */
-    .nav-menu.active { /* This CSS now directly matches the 'active' class from JS */
+    .nav-menu.active {
         visibility: visible;
         transform: translateX(0);
     }
