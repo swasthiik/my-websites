@@ -170,3 +170,33 @@
 </body>
 </html>
 
+<script>
+  const menuButton = document.getElementById('menu-button');
+  const navMenu = document.getElementById('nav-menu');
+
+  // Toggle mobile menu
+  menuButton.addEventListener('click', () => {
+    const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
+    menuButton.setAttribute('aria-expanded', !isExpanded);
+    navMenu.classList.toggle('active');
+    menuButton.classList.toggle('open');
+  });
+
+  // Close mobile menu when clicking outside
+  document.addEventListener('click', function(e) {
+    if (!navMenu.contains(e.target) && !menuButton.contains(e.target)) {
+      navMenu.classList.remove('active');
+      menuButton.setAttribute('aria-expanded', false);
+      menuButton.classList.remove('open');
+    }
+  });
+
+  // Close mobile menu on window resize
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) {
+      navMenu.classList.remove('active');
+      menuButton.setAttribute('aria-expanded', false);
+      menuButton.classList.remove('open');
+    }
+  });
+</script>

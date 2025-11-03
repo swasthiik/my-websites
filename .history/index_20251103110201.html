@@ -214,11 +214,12 @@
     const expanded = menuButton.getAttribute('aria-expanded') === 'true';
     menuButton.setAttribute('aria-expanded', !expanded);
     navMenu.classList.toggle('active');
+    document.body.classList.toggle('menu-open'); // keeps animations in sync
   });
 
   // ======= SMOOTH SCROLL FOR ALL NAV LINKS =======
   const navLinks = document.querySelectorAll('nav a[href^="#"]');
-  const headerOffset = 80; // adjust to your header height
+  const headerOffset = 80; // adjust this if your header is taller/shorter
 
   navLinks.forEach(link => {
     link.addEventListener('click', function(e) {
@@ -226,7 +227,7 @@
       const targetSection = document.getElementById(targetId);
       if (!targetSection) return; // skip if section not found
 
-      e.preventDefault(); // prevent default jump
+      e.preventDefault();
 
       const elementPosition = targetSection.offsetTop;
       const offsetPosition = elementPosition - headerOffset;
@@ -236,30 +237,36 @@
         behavior: "smooth"
       });
 
-      // Close mobile menu after clicking a link
-      if (navMenu.classList.contains('active')) {
+      // ✅ Close menu after clicking a section
+      setTimeout(() => {
         navMenu.classList.remove('active');
         menuButton.setAttribute('aria-expanded', false);
-      }
+        document.body.classList.remove('menu-open');
+      }, 200); // small delay (0.2s) so scroll looks smooth
     });
   });
 
-  // ======= CLOSE MOBILE MENU WHEN CLICKING OUTSIDE =======
+  // ======= CLOSE MENU WHEN CLICKING OUTSIDE =======
   document.addEventListener('click', function(e) {
     if (!navMenu.contains(e.target) && !menuButton.contains(e.target)) {
       navMenu.classList.remove('active');
       menuButton.setAttribute('aria-expanded', false);
+      document.body.classList.remove('menu-open');
     }
   });
 
   // ======= DYNAMIC YEAR =======
-  document.getElementById('current-year').textContent = new Date().getFullYear();
+  const yearSpan = document.getElementById('current-year');
+  if (yearSpan) {
+    yearSpan.textContent = new Date().getFullYear();
+  }
 
-  // ======= OPTIONAL: CLOSE MOBILE MENU ON RESIZE =======
+  // ======= CLOSE MENU ON RESIZE =======
   window.addEventListener('resize', () => {
-    if (window.innerWidth > 768) { // desktop breakpoint
+    if (window.innerWidth > 768) {
       navMenu.classList.remove('active');
       menuButton.setAttribute('aria-expanded', false);
+      document.body.classList.remove('menu-open');
     }
   });
 </script>

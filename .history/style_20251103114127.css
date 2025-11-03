@@ -202,13 +202,47 @@ section::before { content: ''; position: absolute; inset: 0; background-color: r
     .glass-section .section-card { padding: 25px; }
     .glass-section h2 { font-size: 1.8em; }
     .contact-left h3, .contact-center h3, .quick-links h4 { font-size: 1.4em; }
-    .brand-name { display: none; }
+
+    /* ✅ FIXED: show the company name instead of hiding it */
+    .brand-name {
+        display: inline-block;
+        font-size: 1.2em;
+        text-align: center;
+        margin-top: 5px;
+    }
+
+    /* Optional: make logo and text center-aligned */
+    .header-left {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 }
-/* --- Fix brand name visibility on all mobile sizes --- */
-.brand-name {
-  display: inline-block !important;
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--text-color-light);
-  white-space: nowrap;
+/* ====== MOBILE MENU FIX ====== */
+.nav-menu {
+  display: none;
+}
+
+.nav-menu.active {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.9);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* Hide hamburger when menu is open */
+#menu-button.open {
+  display: none;
+}
+
+/* Make sure menu button is always clickable above background */
+#menu-button {
+  position: relative;
+  z-index: 10000;
 }

@@ -214,6 +214,7 @@
     const expanded = menuButton.getAttribute('aria-expanded') === 'true';
     menuButton.setAttribute('aria-expanded', !expanded);
     navMenu.classList.toggle('active');
+    document.body.classList.toggle('menu-open'); // ✅ helps handle body overlay or animation
   });
 
   // ======= SMOOTH SCROLL FOR ALL NAV LINKS =======
@@ -236,10 +237,13 @@
         behavior: "smooth"
       });
 
-      // Close mobile menu after clicking a link
+      // ✅ Immediately close mobile menu after clicking any section
       if (navMenu.classList.contains('active')) {
-        navMenu.classList.remove('active');
-        menuButton.setAttribute('aria-expanded', false);
+        setTimeout(() => {  // optional delay for smoother UX
+          navMenu.classList.remove('active');
+          menuButton.setAttribute('aria-expanded', false);
+          document.body.classList.remove('menu-open');
+        }, 300);
       }
     });
   });
@@ -249,6 +253,7 @@
     if (!navMenu.contains(e.target) && !menuButton.contains(e.target)) {
       navMenu.classList.remove('active');
       menuButton.setAttribute('aria-expanded', false);
+      document.body.classList.remove('menu-open');
     }
   });
 
@@ -260,6 +265,7 @@
     if (window.innerWidth > 768) { // desktop breakpoint
       navMenu.classList.remove('active');
       menuButton.setAttribute('aria-expanded', false);
+      document.body.classList.remove('menu-open');
     }
   });
 </script>

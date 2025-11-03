@@ -204,11 +204,3 @@ section::before { content: ''; position: absolute; inset: 0; background-color: r
     .contact-left h3, .contact-center h3, .quick-links h4 { font-size: 1.4em; }
     .brand-name { display: none; }
 }
-/* --- Fix brand name visibility on all mobile sizes --- */
-.brand-name {
-  display: inline-block !important;
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--text-color-light);
-  white-space: nowrap;
-}

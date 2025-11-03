@@ -202,13 +202,18 @@ section::before { content: ''; position: absolute; inset: 0; background-color: r
     .glass-section .section-card { padding: 25px; }
     .glass-section h2 { font-size: 1.8em; }
     .contact-left h3, .contact-center h3, .quick-links h4 { font-size: 1.4em; }
-    .brand-name { display: none; }
-}
-/* --- Fix brand name visibility on all mobile sizes --- */
-.brand-name {
-  display: inline-block !important;
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--text-color-light);
-  white-space: nowrap;
+
+    /* ✅ FIXED: show the company name instead of hiding it */
+    .brand-name {
+        display: inline-block;
+        font-size: 1.2em;
+        text-align: center;
+        margin-top: 5px;
+    }
+
+    /* Optional: make logo and text center-aligned */
+    .header-left {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 }
